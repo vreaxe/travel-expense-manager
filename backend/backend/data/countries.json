@@ -6,9 +6,10 @@
       }
     ],
     "name": "Afghanistan",
-    "alpha2Code": "AF",
-    "alpha3Code": "AFG",
-    "latlng": [33, 65]
+    "code": "AF",
+    "alpha3": "AFG",
+    "latlng": [33, 65],
+    "flag_emoji": "🇦🇫"
   },
   {
     "currencies": [
@@ -17,9 +18,10 @@
       }
     ],
     "name": "Åland Islands",
-    "alpha2Code": "AX",
-    "alpha3Code": "ALA",
-    "latlng": [60.116667, 19.9]
+    "code": "AX",
+    "alpha3": "ALA",
+    "latlng": [60.116667, 19.9],
+    "flag_emoji": "🇦🇽"
   },
   {
     "currencies": [
@@ -28,9 +30,10 @@
       }
     ],
     "name": "Albania",
-    "alpha2Code": "AL",
-    "alpha3Code": "ALB",
-    "latlng": [41, 20]
+    "code": "AL",
+    "alpha3": "ALB",
+    "latlng": [41, 20],
+    "flag_emoji": "🇦🇱"
   },
   {
     "currencies": [
@@ -39,9 +42,10 @@
       }
     ],
     "name": "Algeria",
-    "alpha2Code": "DZ",
-    "alpha3Code": "DZA",
-    "latlng": [28, 3]
+    "code": "DZ",
+    "alpha3": "DZA",
+    "latlng": [28, 3],
+    "flag_emoji": "🇩🇿"
   },
   {
     "currencies": [
@@ -50,9 +54,10 @@
       }
     ],
     "name": "American Samoa",
-    "alpha2Code": "AS",
-    "alpha3Code": "ASM",
-    "latlng": [-14.33333333, -170]
+    "code": "AS",
+    "alpha3": "ASM",
+    "latlng": [-14.33333333, -170],
+    "flag_emoji": "🇦🇸"
   },
   {
     "currencies": [
@@ -61,9 +66,10 @@
       }
     ],
     "name": "Andorra",
-    "alpha2Code": "AD",
-    "alpha3Code": "AND",
-    "latlng": [42.5, 1.5]
+    "code": "AD",
+    "alpha3": "AND",
+    "latlng": [42.5, 1.5],
+    "flag_emoji": "🇦🇩"
   },
   {
     "currencies": [
@@ -72,9 +78,10 @@
       }
     ],
     "name": "Angola",
-    "alpha2Code": "AO",
-    "alpha3Code": "AGO",
-    "latlng": [-12.5, 18.5]
+    "code": "AO",
+    "alpha3": "AGO",
+    "latlng": [-12.5, 18.5],
+    "flag_emoji": "🇦🇴"
   },
   {
     "currencies": [
@@ -83,9 +90,10 @@
       }
     ],
     "name": "Anguilla",
-    "alpha2Code": "AI",
-    "alpha3Code": "AIA",
-    "latlng": [18.25, -63.16666666]
+    "code": "AI",
+    "alpha3": "AIA",
+    "latlng": [18.25, -63.16666666],
+    "flag_emoji": "🇦🇮"
   },
   {
     "currencies": [
@@ -97,9 +105,10 @@
       }
     ],
     "name": "Antarctica",
-    "alpha2Code": "AQ",
-    "alpha3Code": "ATA",
-    "latlng": [-74.65, 4.48]
+    "code": "AQ",
+    "alpha3": "ATA",
+    "latlng": [-74.65, 4.48],
+    "flag_emoji": "🇦🇶"
   },
   {
     "currencies": [
@@ -107,10 +116,11 @@
         "code": "XCD"
       }
     ],
-    "name": "Antigua and Barbuda",
-    "alpha2Code": "AG",
-    "alpha3Code": "ATG",
-    "latlng": [17.05, -61.8]
+    "name": "Antigua & Barbuda",
+    "code": "AG",
+    "alpha3": "ATG",
+    "latlng": [17.05, -61.8],
+    "flag_emoji": "🇦🇬"
   },
   {
     "currencies": [
@@ -119,21 +129,22 @@
       }
     ],
     "name": "Argentina",
-    "alpha2Code": "AR",
-    "alpha3Code": "ARG",
-    "latlng": [-34, -64]
+    "code": "AR",
+    "alpha3": "ARG",
+    "latlng": [-34, -64],
+    "flag_emoji": "🇦🇷"
   },
   {
     "currencies": [
       {
-        "code": "AMD",
-        "name": "Armenian dram"
+        "code": "AMD"
       }
     ],
     "name": "Armenia",
-    "alpha2Code": "AM",
-    "alpha3Code": "ARM",
-    "latlng": [40, 45]
+    "code": "AM",
+    "alpha3": "ARM",
+    "latlng": [40, 45],
+    "flag_emoji": "🇦🇲"
   },
   {
     "currencies": [
@@ -142,9 +153,10 @@
       }
     ],
     "name": "Aruba",
-    "alpha2Code": "AW",
-    "alpha3Code": "ABW",
-    "latlng": [12.5, -69.96666666]
+    "code": "AW",
+    "alpha3": "ABW",
+    "latlng": [12.5, -69.96666666],
+    "flag_emoji": "🇦🇼"
   },
   {
     "currencies": [
@@ -153,9 +165,10 @@
       }
     ],
     "name": "Australia",
-    "alpha2Code": "AU",
-    "alpha3Code": "AUS",
-    "latlng": [-27, 133]
+    "code": "AU",
+    "alpha3": "AUS",
+    "latlng": [-27, 133],
+    "flag_emoji": "🇦🇺"
   },
   {
     "currencies": [
@@ -164,21 +177,22 @@
       }
     ],
     "name": "Austria",
-    "alpha2Code": "AT",
-    "alpha3Code": "AUT",
-    "latlng": [47.33333333, 13.33333333]
+    "code": "AT",
+    "alpha3": "AUT",
+    "latlng": [47.33333333, 13.33333333],
+    "flag_emoji": "🇦🇹"
   },
   {
     "currencies": [
       {
-        "code": "AZN",
-        "name": "Azerbaijani manat"
+        "code": "AZN"
       }
     ],
     "name": "Azerbaijan",
-    "alpha2Code": "AZ",
-    "alpha3Code": "AZE",
-    "latlng": [40.5, 47.5]
+    "code": "AZ",
+    "alpha3": "AZE",
+    "latlng": [40.5, 47.5],
+    "flag_emoji": "🇦🇿"
   },
   {
     "currencies": [
@@ -187,9 +201,10 @@
       }
     ],
     "name": "Bahamas",
-    "alpha2Code": "BS",
-    "alpha3Code": "BHS",
-    "latlng": [24.25, -76]
+    "code": "BS",
+    "alpha3": "BHS",
+    "latlng": [24.25, -76],
+    "flag_emoji": "🇧🇸"
   },
   {
     "currencies": [
@@ -198,9 +213,10 @@
       }
     ],
     "name": "Bahrain",
-    "alpha2Code": "BH",
-    "alpha3Code": "BHR",
-    "latlng": [26, 50.55]
+    "code": "BH",
+    "alpha3": "BHR",
+    "latlng": [26, 50.55],
+    "flag_emoji": "🇧🇭"
   },
   {
     "currencies": [
@@ -209,9 +225,10 @@
       }
     ],
     "name": "Bangladesh",
-    "alpha2Code": "BD",
-    "alpha3Code": "BGD",
-    "latlng": [24, 90]
+    "code": "BD",
+    "alpha3": "BGD",
+    "latlng": [24, 90],
+    "flag_emoji": "🇧🇩"
   },
   {
     "currencies": [
@@ -220,9 +237,10 @@
       }
     ],
     "name": "Barbados",
-    "alpha2Code": "BB",
-    "alpha3Code": "BRB",
-    "latlng": [13.16666666, -59.53333333]
+    "code": "BB",
+    "alpha3": "BRB",
+    "latlng": [13.16666666, -59.53333333],
+    "flag_emoji": "🇧🇧"
   },
   {
     "currencies": [
@@ -234,9 +252,10 @@
       }
     ],
     "name": "Belarus",
-    "alpha2Code": "BY",
-    "alpha3Code": "BLR",
-    "latlng": [53, 28]
+    "code": "BY",
+    "alpha3": "BLR",
+    "latlng": [53, 28],
+    "flag_emoji": "🇧🇾"
   },
   {
     "currencies": [
@@ -245,9 +264,10 @@
       }
     ],
     "name": "Belgium",
-    "alpha2Code": "BE",
-    "alpha3Code": "BEL",
-    "latlng": [50.83333333, 4]
+    "code": "BE",
+    "alpha3": "BEL",
+    "latlng": [50.83333333, 4],
+    "flag_emoji": "🇧🇪"
   },
   {
     "currencies": [
@@ -256,9 +276,10 @@
       }
     ],
     "name": "Belize",
-    "alpha2Code": "BZ",
-    "alpha3Code": "BLZ",
-    "latlng": [17.25, -88.75]
+    "code": "BZ",
+    "alpha3": "BLZ",
+    "latlng": [17.25, -88.75],
+    "flag_emoji": "🇧🇿"
   },
   {
     "currencies": [
@@ -267,9 +288,10 @@
       }
     ],
     "name": "Benin",
-    "alpha2Code": "BJ",
-    "alpha3Code": "BEN",
-    "latlng": [9.5, 2.25]
+    "code": "BJ",
+    "alpha3": "BEN",
+    "latlng": [9.5, 2.25],
+    "flag_emoji": "🇧🇯"
   },
   {
     "currencies": [
@@ -278,9 +300,10 @@
       }
     ],
     "name": "Bermuda",
-    "alpha2Code": "BM",
-    "alpha3Code": "BMU",
-    "latlng": [32.33333333, -64.75]
+    "code": "BM",
+    "alpha3": "BMU",
+    "latlng": [32.33333333, -64.75],
+    "flag_emoji": "🇧🇲"
   },
   {
     "currencies": [
@@ -292,9 +315,10 @@
       }
     ],
     "name": "Bhutan",
-    "alpha2Code": "BT",
-    "alpha3Code": "BTN",
-    "latlng": [27.5, 90.5]
+    "code": "BT",
+    "alpha3": "BTN",
+    "latlng": [27.5, 90.5],
+    "flag_emoji": "🇧🇹"
   },
   {
     "currencies": [
@@ -302,10 +326,11 @@
         "code": "BOB"
       }
     ],
-    "name": "Bolivia (Plurinational State of)",
-    "alpha2Code": "BO",
-    "alpha3Code": "BOL",
-    "latlng": [-17, -65]
+    "name": "Bolivia",
+    "code": "BO",
+    "alpha3": "BOL",
+    "latlng": [-17, -65],
+    "flag_emoji": "🇧🇴"
   },
   {
     "currencies": [
@@ -313,22 +338,23 @@
         "code": "USD"
       }
     ],
-    "name": "Bonaire, Sint Eustatius and Saba",
-    "alpha2Code": "BQ",
-    "alpha3Code": "BES",
-    "latlng": [12.15, -68.266667]
+    "name": "Bonaire, Sint Eustatius & Saba",
+    "code": "BQ",
+    "alpha3": "BES",
+    "latlng": [12.15, -68.266667],
+    "flag_emoji": "🇧🇶"
   },
   {
     "currencies": [
       {
-        "code": "BAM",
-        "name": "Bosnia and Herzegovina convertible mark"
+        "code": "BAM"
       }
     ],
-    "name": "Bosnia and Herzegovina",
-    "alpha2Code": "BA",
-    "alpha3Code": "BIH",
-    "latlng": [44, 18]
+    "name": "Bosnia & Herzegovina",
+    "code": "BA",
+    "alpha3": "BIH",
+    "latlng": [44, 18],
+    "flag_emoji": "🇧🇦"
   },
   {
     "currencies": [
@@ -337,9 +363,10 @@
       }
     ],
     "name": "Botswana",
-    "alpha2Code": "BW",
-    "alpha3Code": "BWA",
-    "latlng": [-22, 24]
+    "code": "BW",
+    "alpha3": "BWA",
+    "latlng": [-22, 24],
+    "flag_emoji": "🇧🇼"
   },
   {
     "currencies": [
@@ -348,9 +375,10 @@
       }
     ],
     "name": "Bouvet Island",
-    "alpha2Code": "BV",
-    "alpha3Code": "BVT",
-    "latlng": [-54.43333333, 3.4]
+    "code": "BV",
+    "alpha3": "BVT",
+    "latlng": [-54.43333333, 3.4],
+    "flag_emoji": "🇧🇻"
   },
   {
     "currencies": [
@@ -359,9 +387,10 @@
       }
     ],
     "name": "Brazil",
-    "alpha2Code": "BR",
-    "alpha3Code": "BRA",
-    "latlng": [-10, -55]
+    "code": "BR",
+    "alpha3": "BRA",
+    "latlng": [-10, -55],
+    "flag_emoji": "🇧🇷"
   },
   {
     "currencies": [
@@ -370,9 +399,10 @@
       }
     ],
     "name": "British Indian Ocean Territory",
-    "alpha2Code": "IO",
-    "alpha3Code": "IOT",
-    "latlng": [-6, 71.5]
+    "code": "IO",
+    "alpha3": "IOT",
+    "latlng": [-6, 71.5],
+    "flag_emoji": "🇩🇬"
   },
   {
     "currencies": [
@@ -381,9 +411,10 @@
       }
     ],
     "name": "United States Minor Outlying Islands",
-    "alpha2Code": "UM",
-    "alpha3Code": "UMI",
-    "latlng": []
+    "code": "UM",
+    "alpha3": "UMI",
+    "latlng": [],
+    "flag_emoji": "🇺🇲"
   },
   {
     "currencies": [
@@ -392,9 +423,10 @@
       }
     ],
     "name": "Virgin Islands (British)",
-    "alpha2Code": "VG",
-    "alpha3Code": "VGB",
-    "latlng": [18.431383, -64.62305]
+    "code": "VG",
+    "alpha3": "VGB",
+    "latlng": [18.431383, -64.62305],
+    "flag_emoji": "🇻🇬"
   },
   {
     "currencies": [
@@ -403,9 +435,10 @@
       }
     ],
     "name": "Virgin Islands (U.S.)",
-    "alpha2Code": "VI",
-    "alpha3Code": "VIR",
-    "latlng": [18.34, -64.93]
+    "code": "VI",
+    "alpha3": "VIR",
+    "latlng": [18.34, -64.93],
+    "flag_emoji": "🇻🇮"
   },
   {
     "currencies": [
@@ -416,10 +449,11 @@
         "code": "SGD"
       }
     ],
-    "name": "Brunei Darussalam",
-    "alpha2Code": "BN",
-    "alpha3Code": "BRN",
-    "latlng": [4.5, 114.66666666]
+    "name": "Brunei",
+    "code": "BN",
+    "alpha3": "BRN",
+    "latlng": [4.5, 114.66666666],
+    "flag_emoji": "🇧🇳"
   },
   {
     "currencies": [
@@ -428,9 +462,10 @@
       }
     ],
     "name": "Bulgaria",
-    "alpha2Code": "BG",
-    "alpha3Code": "BGR",
-    "latlng": [43, 25]
+    "code": "BG",
+    "alpha3": "BGR",
+    "latlng": [43, 25],
+    "flag_emoji": "🇧🇬"
   },
   {
     "currencies": [
@@ -439,9 +474,10 @@
       }
     ],
     "name": "Burkina Faso",
-    "alpha2Code": "BF",
-    "alpha3Code": "BFA",
-    "latlng": [13, -2]
+    "code": "BF",
+    "alpha3": "BFA",
+    "latlng": [13, -2],
+    "flag_emoji": "🇧🇫"
   },
   {
     "currencies": [
@@ -450,9 +486,10 @@
       }
     ],
     "name": "Burundi",
-    "alpha2Code": "BI",
-    "alpha3Code": "BDI",
-    "latlng": [-3.5, 30]
+    "code": "BI",
+    "alpha3": "BDI",
+    "latlng": [-3.5, 30],
+    "flag_emoji": "🇧🇮"
   },
   {
     "currencies": [
@@ -464,9 +501,10 @@
       }
     ],
     "name": "Cambodia",
-    "alpha2Code": "KH",
-    "alpha3Code": "KHM",
-    "latlng": [13, 105]
+    "code": "KH",
+    "alpha3": "KHM",
+    "latlng": [13, 105],
+    "flag_emoji": "🇰🇭"
   },
   {
     "currencies": [
@@ -475,9 +513,10 @@
       }
     ],
     "name": "Cameroon",
-    "alpha2Code": "CM",
-    "alpha3Code": "CMR",
-    "latlng": [6, 12]
+    "code": "CM",
+    "alpha3": "CMR",
+    "latlng": [6, 12],
+    "flag_emoji": "🇨🇲"
   },
   {
     "currencies": [
@@ -486,9 +525,10 @@
       }
     ],
     "name": "Canada",
-    "alpha2Code": "CA",
-    "alpha3Code": "CAN",
-    "latlng": [60, -95]
+    "code": "CA",
+    "alpha3": "CAN",
+    "latlng": [60, -95],
+    "flag_emoji": "🇨🇦"
   },
   {
     "currencies": [
@@ -497,9 +537,10 @@
       }
     ],
     "name": "Cabo Verde",
-    "alpha2Code": "CV",
-    "alpha3Code": "CPV",
-    "latlng": [16, -24]
+    "code": "CV",
+    "alpha3": "CPV",
+    "latlng": [16, -24],
+    "flag_emoji": "🇨🇻"
   },
   {
     "currencies": [
@@ -508,9 +549,10 @@
       }
     ],
     "name": "Cayman Islands",
-    "alpha2Code": "KY",
-    "alpha3Code": "CYM",
-    "latlng": [19.5, -80.5]
+    "code": "KY",
+    "alpha3": "CYM",
+    "latlng": [19.5, -80.5],
+    "flag_emoji": "🇰🇾"
   },
   {
     "currencies": [
@@ -519,9 +561,10 @@
       }
     ],
     "name": "Central African Republic",
-    "alpha2Code": "CF",
-    "alpha3Code": "CAF",
-    "latlng": [7, 21]
+    "code": "CF",
+    "alpha3": "CAF",
+    "latlng": [7, 21],
+    "flag_emoji": "🇨🇫"
   },
   {
     "currencies": [
@@ -530,9 +573,10 @@
       }
     ],
     "name": "Chad",
-    "alpha2Code": "TD",
-    "alpha3Code": "TCD",
-    "latlng": [15, 19]
+    "code": "TD",
+    "alpha3": "TCD",
+    "latlng": [15, 19],
+    "flag_emoji": "🇹🇩"
   },
   {
     "currencies": [
@@ -541,9 +585,10 @@
       }
     ],
     "name": "Chile",
-    "alpha2Code": "CL",
-    "alpha3Code": "CHL",
-    "latlng": [-30, -71]
+    "code": "CL",
+    "alpha3": "CHL",
+    "latlng": [-30, -71],
+    "flag_emoji": "🇨🇱"
   },
   {
     "currencies": [
@@ -552,9 +597,10 @@
       }
     ],
     "name": "China",
-    "alpha2Code": "CN",
-    "alpha3Code": "CHN",
-    "latlng": [35, 105]
+    "code": "CN",
+    "alpha3": "CHN",
+    "latlng": [35, 105],
+    "flag_emoji": "🇨🇳"
   },
   {
     "currencies": [
@@ -563,9 +609,10 @@
       }
     ],
     "name": "Christmas Island",
-    "alpha2Code": "CX",
-    "alpha3Code": "CXR",
-    "latlng": [-10.5, 105.66666666]
+    "code": "CX",
+    "alpha3": "CXR",
+    "latlng": [-10.5, 105.66666666],
+    "flag_emoji": "🇨🇽"
   },
   {
     "currencies": [
@@ -574,9 +621,10 @@
       }
     ],
     "name": "Cocos (Keeling) Islands",
-    "alpha2Code": "CC",
-    "alpha3Code": "CCK",
-    "latlng": [-12.5, 96.83333333]
+    "code": "CC",
+    "alpha3": "CCK",
+    "latlng": [-12.5, 96.83333333],
+    "flag_emoji": "🇨🇨"
   },
   {
     "currencies": [
@@ -585,9 +633,10 @@
       }
     ],
     "name": "Colombia",
-    "alpha2Code": "CO",
-    "alpha3Code": "COL",
-    "latlng": [4, -72]
+    "code": "CO",
+    "alpha3": "COL",
+    "latlng": [4, -72],
+    "flag_emoji": "🇨🇴"
   },
   {
     "currencies": [
@@ -596,9 +645,10 @@
       }
     ],
     "name": "Comoros",
-    "alpha2Code": "KM",
-    "alpha3Code": "COM",
-    "latlng": [-12.16666666, 44.25]
+    "code": "KM",
+    "alpha3": "COM",
+    "latlng": [-12.16666666, 44.25],
+    "flag_emoji": "🇰🇲"
   },
   {
     "currencies": [
@@ -607,9 +657,10 @@
       }
     ],
     "name": "Congo",
-    "alpha2Code": "CG",
-    "alpha3Code": "COG",
-    "latlng": [-1, 15]
+    "code": "CG",
+    "alpha3": "COG",
+    "latlng": [-1, 15],
+    "flag_emoji": "🇨🇬"
   },
   {
     "currencies": [
@@ -618,9 +669,10 @@
       }
     ],
     "name": "Congo (Democratic Republic of the)",
-    "alpha2Code": "CD",
-    "alpha3Code": "COD",
-    "latlng": [0, 25]
+    "code": "CD",
+    "alpha3": "COD",
+    "latlng": [0, 25],
+    "flag_emoji": "🇨🇩"
   },
   {
     "currencies": [
@@ -632,9 +684,10 @@
       }
     ],
     "name": "Cook Islands",
-    "alpha2Code": "CK",
-    "alpha3Code": "COK",
-    "latlng": [-21.23333333, -159.76666666]
+    "code": "CK",
+    "alpha3": "COK",
+    "latlng": [-21.23333333, -159.76666666],
+    "flag_emoji": "🇨🇰"
   },
   {
     "currencies": [
@@ -643,9 +696,10 @@
       }
     ],
     "name": "Costa Rica",
-    "alpha2Code": "CR",
-    "alpha3Code": "CRI",
-    "latlng": [10, -84]
+    "code": "CR",
+    "alpha3": "CRI",
+    "latlng": [10, -84],
+    "flag_emoji": "🇨🇷"
   },
   {
     "currencies": [
@@ -654,9 +708,10 @@
       }
     ],
     "name": "Croatia",
-    "alpha2Code": "HR",
-    "alpha3Code": "HRV",
-    "latlng": [45.16666666, 15.5]
+    "code": "HR",
+    "alpha3": "HRV",
+    "latlng": [45.16666666, 15.5],
+    "flag_emoji": "🇭🇷"
   },
   {
     "currencies": [
@@ -668,9 +723,10 @@
       }
     ],
     "name": "Cuba",
-    "alpha2Code": "CU",
-    "alpha3Code": "CUB",
-    "latlng": [21.5, -80]
+    "code": "CU",
+    "alpha3": "CUB",
+    "latlng": [21.5, -80],
+    "flag_emoji": "🇨🇺"
   },
   {
     "currencies": [
@@ -679,9 +735,10 @@
       }
     ],
     "name": "Curaçao",
-    "alpha2Code": "CW",
-    "alpha3Code": "CUW",
-    "latlng": [12.116667, -68.933333]
+    "code": "CW",
+    "alpha3": "CUW",
+    "latlng": [12.116667, -68.933333],
+    "flag_emoji": "🇨🇼"
   },
   {
     "currencies": [
@@ -690,9 +747,10 @@
       }
     ],
     "name": "Cyprus",
-    "alpha2Code": "CY",
-    "alpha3Code": "CYP",
-    "latlng": [35, 33]
+    "code": "CY",
+    "alpha3": "CYP",
+    "latlng": [35, 33],
+    "flag_emoji": "🇨🇾"
   },
   {
     "currencies": [
@@ -701,9 +759,10 @@
       }
     ],
     "name": "Czech Republic",
-    "alpha2Code": "CZ",
-    "alpha3Code": "CZE",
-    "latlng": [49.75, 15.5]
+    "code": "CZ",
+    "alpha3": "CZE",
+    "latlng": [49.75, 15.5],
+    "flag_emoji": "🇨🇿"
   },
   {
     "currencies": [
@@ -712,9 +771,10 @@
       }
     ],
     "name": "Denmark",
-    "alpha2Code": "DK",
-    "alpha3Code": "DNK",
-    "latlng": [56, 10]
+    "code": "DK",
+    "alpha3": "DNK",
+    "latlng": [56, 10],
+    "flag_emoji": "🇩🇰"
   },
   {
     "currencies": [
@@ -723,9 +783,10 @@
       }
     ],
     "name": "Djibouti",
-    "alpha2Code": "DJ",
-    "alpha3Code": "DJI",
-    "latlng": [11.5, 43]
+    "code": "DJ",
+    "alpha3": "DJI",
+    "latlng": [11.5, 43],
+    "flag_emoji": "🇩🇯"
   },
   {
     "currencies": [
@@ -734,9 +795,10 @@
       }
     ],
     "name": "Dominica",
-    "alpha2Code": "DM",
-    "alpha3Code": "DMA",
-    "latlng": [15.41666666, -61.33333333]
+    "code": "DM",
+    "alpha3": "DMA",
+    "latlng": [15.41666666, -61.33333333],
+    "flag_emoji": "🇩🇲"
   },
   {
     "currencies": [
@@ -745,9 +807,10 @@
       }
     ],
     "name": "Dominican Republic",
-    "alpha2Code": "DO",
-    "alpha3Code": "DOM",
-    "latlng": [19, -70.66666666]
+    "code": "DO",
+    "alpha3": "DOM",
+    "latlng": [19, -70.66666666],
+    "flag_emoji": "🇩🇴"
   },
   {
     "currencies": [
@@ -756,9 +819,10 @@
       }
     ],
     "name": "Ecuador",
-    "alpha2Code": "EC",
-    "alpha3Code": "ECU",
-    "latlng": [-2, -77.5]
+    "code": "EC",
+    "alpha3": "ECU",
+    "latlng": [-2, -77.5],
+    "flag_emoji": "🇪🇨"
   },
   {
     "currencies": [
@@ -767,9 +831,10 @@
       }
     ],
     "name": "Egypt",
-    "alpha2Code": "EG",
-    "alpha3Code": "EGY",
-    "latlng": [27, 30]
+    "code": "EG",
+    "alpha3": "EGY",
+    "latlng": [27, 30],
+    "flag_emoji": "🇪🇬"
   },
   {
     "currencies": [
@@ -778,9 +843,10 @@
       }
     ],
     "name": "El Salvador",
-    "alpha2Code": "SV",
-    "alpha3Code": "SLV",
-    "latlng": [13.83333333, -88.91666666]
+    "code": "SV",
+    "alpha3": "SLV",
+    "latlng": [13.83333333, -88.91666666],
+    "flag_emoji": "🇸🇻"
   },
   {
     "currencies": [
@@ -789,9 +855,10 @@
       }
     ],
     "name": "Equatorial Guinea",
-    "alpha2Code": "GQ",
-    "alpha3Code": "GNQ",
-    "latlng": [2, 10]
+    "code": "GQ",
+    "alpha3": "GNQ",
+    "latlng": [2, 10],
+    "flag_emoji": "🇬🇶"
   },
   {
     "currencies": [
@@ -800,9 +867,10 @@
       }
     ],
     "name": "Eritrea",
-    "alpha2Code": "ER",
-    "alpha3Code": "ERI",
-    "latlng": [15, 39]
+    "code": "ER",
+    "alpha3": "ERI",
+    "latlng": [15, 39],
+    "flag_emoji": "🇪🇷"
   },
   {
     "currencies": [
@@ -811,9 +879,10 @@
       }
     ],
     "name": "Estonia",
-    "alpha2Code": "EE",
-    "alpha3Code": "EST",
-    "latlng": [59, 26]
+    "code": "EE",
+    "alpha3": "EST",
+    "latlng": [59, 26],
+    "flag_emoji": "🇪🇪"
   },
   {
     "currencies": [
@@ -822,9 +891,10 @@
       }
     ],
     "name": "Ethiopia",
-    "alpha2Code": "ET",
-    "alpha3Code": "ETH",
-    "latlng": [8, 38]
+    "code": "ET",
+    "alpha3": "ETH",
+    "latlng": [8, 38],
+    "flag_emoji": "🇪🇹"
   },
   {
     "currencies": [
@@ -833,23 +903,22 @@
       }
     ],
     "name": "Falkland Islands (Malvinas)",
-    "alpha2Code": "FK",
-    "alpha3Code": "FLK",
-    "latlng": [-51.75, -59]
+    "code": "FK",
+    "alpha3": "FLK",
+    "latlng": [-51.75, -59],
+    "flag_emoji": "🇫🇰"
   },
   {
     "currencies": [
       {
         "code": "DKK"
-      },
-      {
-        "code": "(none)"
       }
     ],
     "name": "Faroe Islands",
-    "alpha2Code": "FO",
-    "alpha3Code": "FRO",
-    "latlng": [62, -7]
+    "code": "FO",
+    "alpha3": "FRO",
+    "latlng": [62, -7],
+    "flag_emoji": "🇫🇴"
   },
   {
     "currencies": [
@@ -858,9 +927,10 @@
       }
     ],
     "name": "Fiji",
-    "alpha2Code": "FJ",
-    "alpha3Code": "FJI",
-    "latlng": [-18, 175]
+    "code": "FJ",
+    "alpha3": "FJI",
+    "latlng": [-18, 175],
+    "flag_emoji": "🇫🇯"
   },
   {
     "currencies": [
@@ -869,9 +939,10 @@
       }
     ],
     "name": "Finland",
-    "alpha2Code": "FI",
-    "alpha3Code": "FIN",
-    "latlng": [64, 26]
+    "code": "FI",
+    "alpha3": "FIN",
+    "latlng": [64, 26],
+    "flag_emoji": "🇫🇮"
   },
   {
     "currencies": [
@@ -880,9 +951,10 @@
       }
     ],
     "name": "France",
-    "alpha2Code": "FR",
-    "alpha3Code": "FRA",
-    "latlng": [46, 2]
+    "code": "FR",
+    "alpha3": "FRA",
+    "latlng": [46, 2],
+    "flag_emoji": "🇫🇷"
   },
   {
     "currencies": [
@@ -891,9 +963,10 @@
       }
     ],
     "name": "French Guiana",
-    "alpha2Code": "GF",
-    "alpha3Code": "GUF",
-    "latlng": [4, -53]
+    "code": "GF",
+    "alpha3": "GUF",
+    "latlng": [4, -53],
+    "flag_emoji": "🇬🇫"
   },
   {
     "currencies": [
@@ -902,9 +975,10 @@
       }
     ],
     "name": "French Polynesia",
-    "alpha2Code": "PF",
-    "alpha3Code": "PYF",
-    "latlng": [-15, -140]
+    "code": "PF",
+    "alpha3": "PYF",
+    "latlng": [-15, -140],
+    "flag_emoji": "🇵🇫"
   },
   {
     "currencies": [
@@ -913,9 +987,10 @@
       }
     ],
     "name": "French Southern Territories",
-    "alpha2Code": "TF",
-    "alpha3Code": "ATF",
-    "latlng": [-49.25, 69.167]
+    "code": "TF",
+    "alpha3": "ATF",
+    "latlng": [-49.25, 69.167],
+    "flag_emoji": "🇹🇫"
   },
   {
     "currencies": [
@@ -924,9 +999,10 @@
       }
     ],
     "name": "Gabon",
-    "alpha2Code": "GA",
-    "alpha3Code": "GAB",
-    "latlng": [-1, 11.75]
+    "code": "GA",
+    "alpha3": "GAB",
+    "latlng": [-1, 11.75],
+    "flag_emoji": "🇬🇦"
   },
   {
     "currencies": [
@@ -935,9 +1011,10 @@
       }
     ],
     "name": "Gambia",
-    "alpha2Code": "GM",
-    "alpha3Code": "GMB",
-    "latlng": [13.46666666, -16.56666666]
+    "code": "GM",
+    "alpha3": "GMB",
+    "latlng": [13.46666666, -16.56666666],
+    "flag_emoji": "🇬🇲"
   },
   {
     "currencies": [
@@ -946,9 +1023,10 @@
       }
     ],
     "name": "Georgia",
-    "alpha2Code": "GE",
-    "alpha3Code": "GEO",
-    "latlng": [42, 43.5]
+    "code": "GE",
+    "alpha3": "GEO",
+    "latlng": [42, 43.5],
+    "flag_emoji": "🇬🇪"
   },
   {
     "currencies": [
@@ -957,9 +1035,10 @@
       }
     ],
     "name": "Germany",
-    "alpha2Code": "DE",
-    "alpha3Code": "DEU",
-    "latlng": [51, 9]
+    "code": "DE",
+    "alpha3": "DEU",
+    "latlng": [51, 9],
+    "flag_emoji": "🇩🇪"
   },
   {
     "currencies": [
@@ -968,9 +1047,10 @@
       }
     ],
     "name": "Ghana",
-    "alpha2Code": "GH",
-    "alpha3Code": "GHA",
-    "latlng": [8, -2]
+    "code": "GH",
+    "alpha3": "GHA",
+    "latlng": [8, -2],
+    "flag_emoji": "🇬🇭"
   },
   {
     "currencies": [
@@ -979,9 +1059,10 @@
       }
     ],
     "name": "Gibraltar",
-    "alpha2Code": "GI",
-    "alpha3Code": "GIB",
-    "latlng": [36.13333333, -5.35]
+    "code": "GI",
+    "alpha3": "GIB",
+    "latlng": [36.13333333, -5.35],
+    "flag_emoji": "🇬🇮"
   },
   {
     "currencies": [
@@ -990,9 +1071,10 @@
       }
     ],
     "name": "Greece",
-    "alpha2Code": "GR",
-    "alpha3Code": "GRC",
-    "latlng": [39, 22]
+    "code": "GR",
+    "alpha3": "GRC",
+    "latlng": [39, 22],
+    "flag_emoji": "🇬🇷"
   },
   {
     "currencies": [
@@ -1001,9 +1083,10 @@
       }
     ],
     "name": "Greenland",
-    "alpha2Code": "GL",
-    "alpha3Code": "GRL",
-    "latlng": [72, -40]
+    "code": "GL",
+    "alpha3": "GRL",
+    "latlng": [72, -40],
+    "flag_emoji": "🇬🇱"
   },
   {
     "currencies": [
@@ -1012,9 +1095,10 @@
       }
     ],
     "name": "Grenada",
-    "alpha2Code": "GD",
-    "alpha3Code": "GRD",
-    "latlng": [12.11666666, -61.66666666]
+    "code": "GD",
+    "alpha3": "GRD",
+    "latlng": [12.11666666, -61.66666666],
+    "flag_emoji": "🇬🇩"
   },
   {
     "currencies": [
@@ -1023,9 +1107,10 @@
       }
     ],
     "name": "Guadeloupe",
-    "alpha2Code": "GP",
-    "alpha3Code": "GLP",
-    "latlng": [16.25, -61.583333]
+    "code": "GP",
+    "alpha3": "GLP",
+    "latlng": [16.25, -61.583333],
+    "flag_emoji": "🇬🇵"
   },
   {
     "currencies": [
@@ -1034,9 +1119,10 @@
       }
     ],
     "name": "Guam",
-    "alpha2Code": "GU",
-    "alpha3Code": "GUM",
-    "latlng": [13.46666666, 144.78333333]
+    "code": "GU",
+    "alpha3": "GUM",
+    "latlng": [13.46666666, 144.78333333],
+    "flag_emoji": "🇬🇺"
   },
   {
     "currencies": [
@@ -1045,23 +1131,22 @@
       }
     ],
     "name": "Guatemala",
-    "alpha2Code": "GT",
-    "alpha3Code": "GTM",
-    "latlng": [15.5, -90.25]
+    "code": "GT",
+    "alpha3": "GTM",
+    "latlng": [15.5, -90.25],
+    "flag_emoji": "🇬🇹"
   },
   {
     "currencies": [
       {
         "code": "GBP"
-      },
-      {
-        "code": "(none)"
       }
     ],
     "name": "Guernsey",
-    "alpha2Code": "GG",
-    "alpha3Code": "GGY",
-    "latlng": [49.46666666, -2.58333333]
+    "code": "GG",
+    "alpha3": "GGY",
+    "latlng": [49.46666666, -2.58333333],
+    "flag_emoji": "🇬🇬"
   },
   {
     "currencies": [
@@ -1070,9 +1155,10 @@
       }
     ],
     "name": "Guinea",
-    "alpha2Code": "GN",
-    "alpha3Code": "GIN",
-    "latlng": [11, -10]
+    "code": "GN",
+    "alpha3": "GIN",
+    "latlng": [11, -10],
+    "flag_emoji": "🇬🇳"
   },
   {
     "currencies": [
@@ -1081,9 +1167,10 @@
       }
     ],
     "name": "Guinea-Bissau",
-    "alpha2Code": "GW",
-    "alpha3Code": "GNB",
-    "latlng": [12, -15]
+    "code": "GW",
+    "alpha3": "GNB",
+    "latlng": [12, -15],
+    "flag_emoji": "🇬🇼"
   },
   {
     "currencies": [
@@ -1092,9 +1179,10 @@
       }
     ],
     "name": "Guyana",
-    "alpha2Code": "GY",
-    "alpha3Code": "GUY",
-    "latlng": [5, -59]
+    "code": "GY",
+    "alpha3": "GUY",
+    "latlng": [5, -59],
+    "flag_emoji": "🇬🇾"
   },
   {
     "currencies": [
@@ -1103,9 +1191,10 @@
       }
     ],
     "name": "Haiti",
-    "alpha2Code": "HT",
-    "alpha3Code": "HTI",
-    "latlng": [19, -72.41666666]
+    "code": "HT",
+    "alpha3": "HTI",
+    "latlng": [19, -72.41666666],
+    "flag_emoji": "🇭🇹"
   },
   {
     "currencies": [
@@ -1113,10 +1202,11 @@
         "code": "AUD"
       }
     ],
-    "name": "Heard Island and McDonald Islands",
-    "alpha2Code": "HM",
-    "alpha3Code": "HMD",
-    "latlng": [-53.1, 72.51666666]
+    "name": "Heard Island & McDonald Islands",
+    "code": "HM",
+    "alpha3": "HMD",
+    "latlng": [-53.1, 72.51666666],
+    "flag_emoji": "🇭🇲"
   },
   {
     "currencies": [
@@ -1124,10 +1214,11 @@
         "code": "EUR"
       }
     ],
-    "name": "Holy See",
-    "alpha2Code": "VA",
-    "alpha3Code": "VAT",
-    "latlng": [41.9, 12.45]
+    "name": "Holy See (Vatican City)",
+    "code": "VA",
+    "alpha3": "VAT",
+    "latlng": [41.9, 12.45],
+    "flag_emoji": "🇻🇦"
   },
   {
     "currencies": [
@@ -1136,9 +1227,10 @@
       }
     ],
     "name": "Honduras",
-    "alpha2Code": "HN",
-    "alpha3Code": "HND",
-    "latlng": [15, -86.5]
+    "code": "HN",
+    "alpha3": "HND",
+    "latlng": [15, -86.5],
+    "flag_emoji": "🇭🇳"
   },
   {
     "currencies": [
@@ -1147,9 +1239,10 @@
       }
     ],
     "name": "Hong Kong",
-    "alpha2Code": "HK",
-    "alpha3Code": "HKG",
-    "latlng": [22.25, 114.16666666]
+    "code": "HK",
+    "alpha3": "HKG",
+    "latlng": [22.25, 114.16666666],
+    "flag_emoji": "🇭🇰"
   },
   {
     "currencies": [
@@ -1158,9 +1251,10 @@
       }
     ],
     "name": "Hungary",
-    "alpha2Code": "HU",
-    "alpha3Code": "HUN",
-    "latlng": [47, 20]
+    "code": "HU",
+    "alpha3": "HUN",
+    "latlng": [47, 20],
+    "flag_emoji": "🇭🇺"
   },
   {
     "currencies": [
@@ -1169,9 +1263,10 @@
       }
     ],
     "name": "Iceland",
-    "alpha2Code": "IS",
-    "alpha3Code": "ISL",
-    "latlng": [65, -18]
+    "code": "IS",
+    "alpha3": "ISL",
+    "latlng": [65, -18],
+    "flag_emoji": "🇮🇸"
   },
   {
     "currencies": [
@@ -1180,9 +1275,10 @@
       }
     ],
     "name": "India",
-    "alpha2Code": "IN",
-    "alpha3Code": "IND",
-    "latlng": [20, 77]
+    "code": "IN",
+    "alpha3": "IND",
+    "latlng": [20, 77],
+    "flag_emoji": "🇮🇳"
   },
   {
     "currencies": [
@@ -1191,9 +1287,10 @@
       }
     ],
     "name": "Indonesia",
-    "alpha2Code": "ID",
-    "alpha3Code": "IDN",
-    "latlng": [-5, 120]
+    "code": "ID",
+    "alpha3": "IDN",
+    "latlng": [-5, 120],
+    "flag_emoji": "🇮🇩"
   },
   {
     "currencies": [
@@ -1202,9 +1299,10 @@
       }
     ],
     "name": "Côte d'Ivoire",
-    "alpha2Code": "CI",
-    "alpha3Code": "CIV",
-    "latlng": [8, -5]
+    "code": "CI",
+    "alpha3": "CIV",
+    "latlng": [8, -5],
+    "flag_emoji": "🇨🇮"
   },
   {
     "currencies": [
@@ -1212,10 +1310,11 @@
         "code": "IRR"
       }
     ],
-    "name": "Iran (Islamic Republic of)",
-    "alpha2Code": "IR",
-    "alpha3Code": "IRN",
-    "latlng": [32, 53]
+    "name": "Iran",
+    "code": "IR",
+    "alpha3": "IRN",
+    "latlng": [32, 53],
+    "flag_emoji": "🇮🇷"
   },
   {
     "currencies": [
@@ -1224,9 +1323,10 @@
       }
     ],
     "name": "Iraq",
-    "alpha2Code": "IQ",
-    "alpha3Code": "IRQ",
-    "latlng": [33, 44]
+    "code": "IQ",
+    "alpha3": "IRQ",
+    "latlng": [33, 44],
+    "flag_emoji": "🇮🇶"
   },
   {
     "currencies": [
@@ -1235,9 +1335,10 @@
       }
     ],
     "name": "Ireland",
-    "alpha2Code": "IE",
-    "alpha3Code": "IRL",
-    "latlng": [53, -8]
+    "code": "IE",
+    "alpha3": "IRL",
+    "latlng": [53, -8],
+    "flag_emoji": "🇮🇪"
   },
   {
     "currencies": [
@@ -1245,13 +1346,14 @@
         "code": "GBP"
       },
       {
-        "code": "IMP[G]"
+        "code": "IMP"
       }
     ],
     "name": "Isle of Man",
-    "alpha2Code": "IM",
-    "alpha3Code": "IMN",
-    "latlng": [54.25, -4.5]
+    "code": "IM",
+    "alpha3": "IMN",
+    "latlng": [54.25, -4.5],
+    "flag_emoji": "🇮🇲"
   },
   {
     "currencies": [
@@ -1260,9 +1362,10 @@
       }
     ],
     "name": "Israel",
-    "alpha2Code": "IL",
-    "alpha3Code": "ISR",
-    "latlng": [31.5, 34.75]
+    "code": "IL",
+    "alpha3": "ISR",
+    "latlng": [31.5, 34.75],
+    "flag_emoji": "🇮🇱"
   },
   {
     "currencies": [
@@ -1271,9 +1374,10 @@
       }
     ],
     "name": "Italy",
-    "alpha2Code": "IT",
-    "alpha3Code": "ITA",
-    "latlng": [42.83333333, 12.83333333]
+    "code": "IT",
+    "alpha3": "ITA",
+    "latlng": [42.83333333, 12.83333333],
+    "flag_emoji": "🇮🇹"
   },
   {
     "currencies": [
@@ -1282,9 +1386,10 @@
       }
     ],
     "name": "Jamaica",
-    "alpha2Code": "JM",
-    "alpha3Code": "JAM",
-    "latlng": [18.25, -77.5]
+    "code": "JM",
+    "alpha3": "JAM",
+    "latlng": [18.25, -77.5],
+    "flag_emoji": "🇯🇲"
   },
   {
     "currencies": [
@@ -1293,9 +1398,10 @@
       }
     ],
     "name": "Japan",
-    "alpha2Code": "JP",
-    "alpha3Code": "JPN",
-    "latlng": [36, 138]
+    "code": "JP",
+    "alpha3": "JPN",
+    "latlng": [36, 138],
+    "flag_emoji": "🇯🇵"
   },
   {
     "currencies": [
@@ -1303,13 +1409,14 @@
         "code": "GBP"
       },
       {
-        "code": "JEP[G]"
+        "code": "JEP"
       }
     ],
     "name": "Jersey",
-    "alpha2Code": "JE",
-    "alpha3Code": "JEY",
-    "latlng": [49.25, -2.16666666]
+    "code": "JE",
+    "alpha3": "JEY",
+    "latlng": [49.25, -2.16666666],
+    "flag_emoji": "🇯🇪"
   },
   {
     "currencies": [
@@ -1318,21 +1425,22 @@
       }
     ],
     "name": "Jordan",
-    "alpha2Code": "JO",
-    "alpha3Code": "JOR",
-    "latlng": [31, 36]
+    "code": "JO",
+    "alpha3": "JOR",
+    "latlng": [31, 36],
+    "flag_emoji": "🇯🇴"
   },
   {
     "currencies": [
       {
-        "code": "KZT",
-        "name": "Kazakhstani tenge"
+        "code": "KZT"
       }
     ],
     "name": "Kazakhstan",
-    "alpha2Code": "KZ",
-    "alpha3Code": "KAZ",
-    "latlng": [48, 68]
+    "code": "KZ",
+    "alpha3": "KAZ",
+    "latlng": [48, 68],
+    "flag_emoji": "🇰🇿"
   },
   {
     "currencies": [
@@ -1341,23 +1449,22 @@
       }
     ],
     "name": "Kenya",
-    "alpha2Code": "KE",
-    "alpha3Code": "KEN",
-    "latlng": [1, 38]
+    "code": "KE",
+    "alpha3": "KEN",
+    "latlng": [1, 38],
+    "flag_emoji": "🇰🇪"
   },
   {
     "currencies": [
       {
         "code": "AUD"
-      },
-      {
-        "code": "(none)"
       }
     ],
     "name": "Kiribati",
-    "alpha2Code": "KI",
-    "alpha3Code": "KIR",
-    "latlng": [1.41666666, 173]
+    "code": "KI",
+    "alpha3": "KIR",
+    "latlng": [1.41666666, 173],
+    "flag_emoji": "🇰🇮"
   },
   {
     "currencies": [
@@ -1366,9 +1473,10 @@
       }
     ],
     "name": "Kuwait",
-    "alpha2Code": "KW",
-    "alpha3Code": "KWT",
-    "latlng": [29.5, 45.75]
+    "code": "KW",
+    "alpha3": "KWT",
+    "latlng": [29.5, 45.75],
+    "flag_emoji": "🇰🇼"
   },
   {
     "currencies": [
@@ -1377,9 +1485,10 @@
       }
     ],
     "name": "Kyrgyzstan",
-    "alpha2Code": "KG",
-    "alpha3Code": "KGZ",
-    "latlng": [41, 75]
+    "code": "KG",
+    "alpha3": "KGZ",
+    "latlng": [41, 75],
+    "flag_emoji": "🇰🇬"
   },
   {
     "currencies": [
@@ -1387,10 +1496,11 @@
         "code": "LAK"
       }
     ],
-    "name": "Lao People's Democratic Republic",
-    "alpha2Code": "LA",
-    "alpha3Code": "LAO",
-    "latlng": [18, 105]
+    "name": "Laos",
+    "code": "LA",
+    "alpha3": "LAO",
+    "latlng": [18, 105],
+    "flag_emoji": "🇱🇦"
   },
   {
     "currencies": [
@@ -1399,9 +1509,10 @@
       }
     ],
     "name": "Latvia",
-    "alpha2Code": "LV",
-    "alpha3Code": "LVA",
-    "latlng": [57, 25]
+    "code": "LV",
+    "alpha3": "LVA",
+    "latlng": [57, 25],
+    "flag_emoji": "🇱🇻"
   },
   {
     "currencies": [
@@ -1410,9 +1521,10 @@
       }
     ],
     "name": "Lebanon",
-    "alpha2Code": "LB",
-    "alpha3Code": "LBN",
-    "latlng": [33.83333333, 35.83333333]
+    "code": "LB",
+    "alpha3": "LBN",
+    "latlng": [33.83333333, 35.83333333],
+    "flag_emoji": "🇱🇧"
   },
   {
     "currencies": [
@@ -1424,9 +1536,10 @@
       }
     ],
     "name": "Lesotho",
-    "alpha2Code": "LS",
-    "alpha3Code": "LSO",
-    "latlng": [-29.5, 28.5]
+    "code": "LS",
+    "alpha3": "LSO",
+    "latlng": [-29.5, 28.5],
+    "flag_emoji": "🇱🇸"
   },
   {
     "currencies": [
@@ -1435,9 +1548,10 @@
       }
     ],
     "name": "Liberia",
-    "alpha2Code": "LR",
-    "alpha3Code": "LBR",
-    "latlng": [6.5, -9.5]
+    "code": "LR",
+    "alpha3": "LBR",
+    "latlng": [6.5, -9.5],
+    "flag_emoji": "🇱🇷"
   },
   {
     "currencies": [
@@ -1446,9 +1560,10 @@
       }
     ],
     "name": "Libya",
-    "alpha2Code": "LY",
-    "alpha3Code": "LBY",
-    "latlng": [25, 17]
+    "code": "LY",
+    "alpha3": "LBY",
+    "latlng": [25, 17],
+    "flag_emoji": "🇱🇾"
   },
   {
     "currencies": [
@@ -1457,9 +1572,10 @@
       }
     ],
     "name": "Liechtenstein",
-    "alpha2Code": "LI",
-    "alpha3Code": "LIE",
-    "latlng": [47.26666666, 9.53333333]
+    "code": "LI",
+    "alpha3": "LIE",
+    "latlng": [47.26666666, 9.53333333],
+    "flag_emoji": "🇱🇮"
   },
   {
     "currencies": [
@@ -1468,9 +1584,10 @@
       }
     ],
     "name": "Lithuania",
-    "alpha2Code": "LT",
-    "alpha3Code": "LTU",
-    "latlng": [56, 24]
+    "code": "LT",
+    "alpha3": "LTU",
+    "latlng": [56, 24],
+    "flag_emoji": "🇱🇹"
   },
   {
     "currencies": [
@@ -1479,9 +1596,10 @@
       }
     ],
     "name": "Luxembourg",
-    "alpha2Code": "LU",
-    "alpha3Code": "LUX",
-    "latlng": [49.75, 6.16666666]
+    "code": "LU",
+    "alpha3": "LUX",
+    "latlng": [49.75, 6.16666666],
+    "flag_emoji": "🇱🇺"
   },
   {
     "currencies": [
@@ -1490,9 +1608,10 @@
       }
     ],
     "name": "Macao",
-    "alpha2Code": "MO",
-    "alpha3Code": "MAC",
-    "latlng": [22.16666666, 113.55]
+    "code": "MO",
+    "alpha3": "MAC",
+    "latlng": [22.16666666, 113.55],
+    "flag_emoji": "🇲🇴"
   },
   {
     "currencies": [
@@ -1500,10 +1619,11 @@
         "code": "MKD"
       }
     ],
-    "name": "Macedonia (the former Yugoslav Republic of)",
-    "alpha2Code": "MK",
-    "alpha3Code": "MKD",
-    "latlng": [41.83333333, 22]
+    "name": "Macedonia",
+    "code": "MK",
+    "alpha3": "MKD",
+    "latlng": [41.83333333, 22],
+    "flag_emoji": "🇲🇰"
   },
   {
     "currencies": [
@@ -1512,9 +1632,10 @@
       }
     ],
     "name": "Madagascar",
-    "alpha2Code": "MG",
-    "alpha3Code": "MDG",
-    "latlng": [-20, 47]
+    "code": "MG",
+    "alpha3": "MDG",
+    "latlng": [-20, 47],
+    "flag_emoji": "🇲🇬"
   },
   {
     "currencies": [
@@ -1523,9 +1644,10 @@
       }
     ],
     "name": "Malawi",
-    "alpha2Code": "MW",
-    "alpha3Code": "MWI",
-    "latlng": [-13.5, 34]
+    "code": "MW",
+    "alpha3": "MWI",
+    "latlng": [-13.5, 34],
+    "flag_emoji": "🇲🇼"
   },
   {
     "currencies": [
@@ -1534,9 +1656,10 @@
       }
     ],
     "name": "Malaysia",
-    "alpha2Code": "MY",
-    "alpha3Code": "MYS",
-    "latlng": [2.5, 112.5]
+    "code": "MY",
+    "alpha3": "MYS",
+    "latlng": [2.5, 112.5],
+    "flag_emoji": "🇲🇾"
   },
   {
     "currencies": [
@@ -1545,9 +1668,10 @@
       }
     ],
     "name": "Maldives",
-    "alpha2Code": "MV",
-    "alpha3Code": "MDV",
-    "latlng": [3.25, 73]
+    "code": "MV",
+    "alpha3": "MDV",
+    "latlng": [3.25, 73],
+    "flag_emoji": "🇲🇻"
   },
   {
     "currencies": [
@@ -1556,9 +1680,10 @@
       }
     ],
     "name": "Mali",
-    "alpha2Code": "ML",
-    "alpha3Code": "MLI",
-    "latlng": [17, -4]
+    "code": "ML",
+    "alpha3": "MLI",
+    "latlng": [17, -4],
+    "flag_emoji": "🇲🇱"
   },
   {
     "currencies": [
@@ -1567,9 +1692,10 @@
       }
     ],
     "name": "Malta",
-    "alpha2Code": "MT",
-    "alpha3Code": "MLT",
-    "latlng": [35.83333333, 14.58333333]
+    "code": "MT",
+    "alpha3": "MLT",
+    "latlng": [35.83333333, 14.58333333],
+    "flag_emoji": "🇲🇹"
   },
   {
     "currencies": [
@@ -1578,9 +1704,10 @@
       }
     ],
     "name": "Marshall Islands",
-    "alpha2Code": "MH",
-    "alpha3Code": "MHL",
-    "latlng": [9, 168]
+    "code": "MH",
+    "alpha3": "MHL",
+    "latlng": [9, 168],
+    "flag_emoji": "🇲🇭"
   },
   {
     "currencies": [
@@ -1589,9 +1716,10 @@
       }
     ],
     "name": "Martinique",
-    "alpha2Code": "MQ",
-    "alpha3Code": "MTQ",
-    "latlng": [14.666667, -61]
+    "code": "MQ",
+    "alpha3": "MTQ",
+    "latlng": [14.666667, -61],
+    "flag_emoji": "🇲🇶"
   },
   {
     "currencies": [
@@ -1600,9 +1728,10 @@
       }
     ],
     "name": "Mauritania",
-    "alpha2Code": "MR",
-    "alpha3Code": "MRT",
-    "latlng": [20, -12]
+    "code": "MR",
+    "alpha3": "MRT",
+    "latlng": [20, -12],
+    "flag_emoji": "🇲🇷"
   },
   {
     "currencies": [
@@ -1611,9 +1740,10 @@
       }
     ],
     "name": "Mauritius",
-    "alpha2Code": "MU",
-    "alpha3Code": "MUS",
-    "latlng": [-20.28333333, 57.55]
+    "code": "MU",
+    "alpha3": "MUS",
+    "latlng": [-20.28333333, 57.55],
+    "flag_emoji": "🇲🇺"
   },
   {
     "currencies": [
@@ -1622,9 +1752,10 @@
       }
     ],
     "name": "Mayotte",
-    "alpha2Code": "YT",
-    "alpha3Code": "MYT",
-    "latlng": [-12.83333333, 45.16666666]
+    "code": "YT",
+    "alpha3": "MYT",
+    "latlng": [-12.83333333, 45.16666666],
+    "flag_emoji": "🇾🇹"
   },
   {
     "currencies": [
@@ -1633,9 +1764,10 @@
       }
     ],
     "name": "Mexico",
-    "alpha2Code": "MX",
-    "alpha3Code": "MEX",
-    "latlng": [23, -102]
+    "code": "MX",
+    "alpha3": "MEX",
+    "latlng": [23, -102],
+    "flag_emoji": "🇲🇽"
   },
   {
     "currencies": [
@@ -1643,10 +1775,11 @@
         "code": "USD"
       }
     ],
-    "name": "Micronesia (Federated States of)",
-    "alpha2Code": "FM",
-    "alpha3Code": "FSM",
-    "latlng": [6.91666666, 158.25]
+    "name": "Micronesia",
+    "code": "FM",
+    "alpha3": "FSM",
+    "latlng": [6.91666666, 158.25],
+    "flag_emoji": "🇫🇲"
   },
   {
     "currencies": [
@@ -1654,10 +1787,11 @@
         "code": "MDL"
       }
     ],
-    "name": "Moldova (Republic of)",
-    "alpha2Code": "MD",
-    "alpha3Code": "MDA",
-    "latlng": [47, 29]
+    "name": "Moldova",
+    "code": "MD",
+    "alpha3": "MDA",
+    "latlng": [47, 29],
+    "flag_emoji": "🇲🇩"
   },
   {
     "currencies": [
@@ -1666,9 +1800,10 @@
       }
     ],
     "name": "Monaco",
-    "alpha2Code": "MC",
-    "alpha3Code": "MCO",
-    "latlng": [43.73333333, 7.4]
+    "code": "MC",
+    "alpha3": "MCO",
+    "latlng": [43.73333333, 7.4],
+    "flag_emoji": "🇲🇨"
   },
   {
     "currencies": [
@@ -1677,9 +1812,10 @@
       }
     ],
     "name": "Mongolia",
-    "alpha2Code": "MN",
-    "alpha3Code": "MNG",
-    "latlng": [46, 105]
+    "code": "MN",
+    "alpha3": "MNG",
+    "latlng": [46, 105],
+    "flag_emoji": "🇲🇳"
   },
   {
     "currencies": [
@@ -1688,9 +1824,10 @@
       }
     ],
     "name": "Montenegro",
-    "alpha2Code": "ME",
-    "alpha3Code": "MNE",
-    "latlng": [42.5, 19.3]
+    "code": "ME",
+    "alpha3": "MNE",
+    "latlng": [42.5, 19.3],
+    "flag_emoji": "🇲🇪"
   },
   {
     "currencies": [
@@ -1699,9 +1836,10 @@
       }
     ],
     "name": "Montserrat",
-    "alpha2Code": "MS",
-    "alpha3Code": "MSR",
-    "latlng": [16.75, -62.2]
+    "code": "MS",
+    "alpha3": "MSR",
+    "latlng": [16.75, -62.2],
+    "flag_emoji": "🇲🇸"
   },
   {
     "currencies": [
@@ -1710,9 +1848,10 @@
       }
     ],
     "name": "Morocco",
-    "alpha2Code": "MA",
-    "alpha3Code": "MAR",
-    "latlng": [32, -5]
+    "code": "MA",
+    "alpha3": "MAR",
+    "latlng": [32, -5],
+    "flag_emoji": "🇲🇦"
   },
   {
     "currencies": [
@@ -1721,9 +1860,10 @@
       }
     ],
     "name": "Mozambique",
-    "alpha2Code": "MZ",
-    "alpha3Code": "MOZ",
-    "latlng": [-18.25, 35]
+    "code": "MZ",
+    "alpha3": "MOZ",
+    "latlng": [-18.25, 35],
+    "flag_emoji": "🇲🇿"
   },
   {
     "currencies": [
@@ -1732,9 +1872,10 @@
       }
     ],
     "name": "Myanmar",
-    "alpha2Code": "MM",
-    "alpha3Code": "MMR",
-    "latlng": [22, 98]
+    "code": "MM",
+    "alpha3": "MMR",
+    "latlng": [22, 98],
+    "flag_emoji": "🇲🇲"
   },
   {
     "currencies": [
@@ -1746,9 +1887,10 @@
       }
     ],
     "name": "Namibia",
-    "alpha2Code": "NA",
-    "alpha3Code": "NAM",
-    "latlng": [-22, 17]
+    "code": "NA",
+    "alpha3": "NAM",
+    "latlng": [-22, 17],
+    "flag_emoji": "🇳🇦"
   },
   {
     "currencies": [
@@ -1757,9 +1899,10 @@
       }
     ],
     "name": "Nauru",
-    "alpha2Code": "NR",
-    "alpha3Code": "NRU",
-    "latlng": [-0.53333333, 166.91666666]
+    "code": "NR",
+    "alpha3": "NRU",
+    "latlng": [-0.53333333, 166.91666666],
+    "flag_emoji": "🇳🇷"
   },
   {
     "currencies": [
@@ -1768,9 +1911,10 @@
       }
     ],
     "name": "Nepal",
-    "alpha2Code": "NP",
-    "alpha3Code": "NPL",
-    "latlng": [28, 84]
+    "code": "NP",
+    "alpha3": "NPL",
+    "latlng": [28, 84],
+    "flag_emoji": "🇳🇵"
   },
   {
     "currencies": [
@@ -1779,9 +1923,10 @@
       }
     ],
     "name": "Netherlands",
-    "alpha2Code": "NL",
-    "alpha3Code": "NLD",
-    "latlng": [52.5, 5.75]
+    "code": "NL",
+    "alpha3": "NLD",
+    "latlng": [52.5, 5.75],
+    "flag_emoji": "🇳🇱"
   },
   {
     "currencies": [
@@ -1790,9 +1935,10 @@
       }
     ],
     "name": "New Caledonia",
-    "alpha2Code": "NC",
-    "alpha3Code": "NCL",
-    "latlng": [-21.5, 165.5]
+    "code": "NC",
+    "alpha3": "NCL",
+    "latlng": [-21.5, 165.5],
+    "flag_emoji": "🇳🇨"
   },
   {
     "currencies": [
@@ -1801,9 +1947,10 @@
       }
     ],
     "name": "New Zealand",
-    "alpha2Code": "NZ",
-    "alpha3Code": "NZL",
-    "latlng": [-41, 174]
+    "code": "NZ",
+    "alpha3": "NZL",
+    "latlng": [-41, 174],
+    "flag_emoji": "🇳🇿"
   },
   {
     "currencies": [
@@ -1812,9 +1959,10 @@
       }
     ],
     "name": "Nicaragua",
-    "alpha2Code": "NI",
-    "alpha3Code": "NIC",
-    "latlng": [13, -85]
+    "code": "NI",
+    "alpha3": "NIC",
+    "latlng": [13, -85],
+    "flag_emoji": "🇳🇮"
   },
   {
     "currencies": [
@@ -1823,9 +1971,10 @@
       }
     ],
     "name": "Niger",
-    "alpha2Code": "NE",
-    "alpha3Code": "NER",
-    "latlng": [16, 8]
+    "code": "NE",
+    "alpha3": "NER",
+    "latlng": [16, 8],
+    "flag_emoji": "🇳🇪"
   },
   {
     "currencies": [
@@ -1834,23 +1983,22 @@
       }
     ],
     "name": "Nigeria",
-    "alpha2Code": "NG",
-    "alpha3Code": "NGA",
-    "latlng": [10, 8]
+    "code": "NG",
+    "alpha3": "NGA",
+    "latlng": [10, 8],
+    "flag_emoji": "🇳🇬"
   },
   {
     "currencies": [
       {
         "code": "NZD"
-      },
-      {
-        "code": "(none)"
       }
     ],
     "name": "Niue",
-    "alpha2Code": "NU",
-    "alpha3Code": "NIU",
-    "latlng": [-19.03333333, -169.86666666]
+    "code": "NU",
+    "alpha3": "NIU",
+    "latlng": [-19.03333333, -169.86666666],
+    "flag_emoji": "🇳🇺"
   },
   {
     "currencies": [
@@ -1859,9 +2007,10 @@
       }
     ],
     "name": "Norfolk Island",
-    "alpha2Code": "NF",
-    "alpha3Code": "NFK",
-    "latlng": [-29.03333333, 167.95]
+    "code": "NF",
+    "alpha3": "NFK",
+    "latlng": [-29.03333333, 167.95],
+    "flag_emoji": "🇳🇫"
   },
   {
     "currencies": [
@@ -1869,10 +2018,11 @@
         "code": "KPW"
       }
     ],
-    "name": "Korea (Democratic People's Republic of)",
-    "alpha2Code": "KP",
-    "alpha3Code": "PRK",
-    "latlng": [40, 127]
+    "name": "North Korea",
+    "code": "KP",
+    "alpha3": "PRK",
+    "latlng": [40, 127],
+    "flag_emoji": "🇰🇵"
   },
   {
     "currencies": [
@@ -1881,9 +2031,10 @@
       }
     ],
     "name": "Northern Mariana Islands",
-    "alpha2Code": "MP",
-    "alpha3Code": "MNP",
-    "latlng": [15.2, 145.75]
+    "code": "MP",
+    "alpha3": "MNP",
+    "latlng": [15.2, 145.75],
+    "flag_emoji": "🇲🇵"
   },
   {
     "currencies": [
@@ -1892,9 +2043,10 @@
       }
     ],
     "name": "Norway",
-    "alpha2Code": "NO",
-    "alpha3Code": "NOR",
-    "latlng": [62, 10]
+    "code": "NO",
+    "alpha3": "NOR",
+    "latlng": [62, 10],
+    "flag_emoji": "🇳🇴"
   },
   {
     "currencies": [
@@ -1903,9 +2055,10 @@
       }
     ],
     "name": "Oman",
-    "alpha2Code": "OM",
-    "alpha3Code": "OMN",
-    "latlng": [21, 57]
+    "code": "OM",
+    "alpha3": "OMN",
+    "latlng": [21, 57],
+    "flag_emoji": "🇴🇲"
   },
   {
     "currencies": [
@@ -1914,23 +2067,22 @@
       }
     ],
     "name": "Pakistan",
-    "alpha2Code": "PK",
-    "alpha3Code": "PAK",
-    "latlng": [30, 70]
+    "code": "PK",
+    "alpha3": "PAK",
+    "latlng": [30, 70],
+    "flag_emoji": "🇵🇰"
   },
   {
     "currencies": [
-      {
-        "code": "(none)"
-      },
       {
         "code": "USD"
       }
     ],
     "name": "Palau",
-    "alpha2Code": "PW",
-    "alpha3Code": "PLW",
-    "latlng": [7.5, 134.5]
+    "code": "PW",
+    "alpha3": "PLW",
+    "latlng": [7.5, 134.5],
+    "flag_emoji": "🇵🇼"
   },
   {
     "currencies": [
@@ -1938,10 +2090,11 @@
         "code": "ILS"
       }
     ],
-    "name": "Palestine, State of",
-    "alpha2Code": "PS",
-    "alpha3Code": "PSE",
-    "latlng": [31.9, 35.2]
+    "name": "Palestine",
+    "code": "PS",
+    "alpha3": "PSE",
+    "latlng": [31.9, 35.2],
+    "flag_emoji": "🇵🇸"
   },
   {
     "currencies": [
@@ -1953,9 +2106,10 @@
       }
     ],
     "name": "Panama",
-    "alpha2Code": "PA",
-    "alpha3Code": "PAN",
-    "latlng": [9, -80]
+    "code": "PA",
+    "alpha3": "PAN",
+    "latlng": [9, -80],
+    "flag_emoji": "🇵🇦"
   },
   {
     "currencies": [
@@ -1964,9 +2118,10 @@
       }
     ],
     "name": "Papua New Guinea",
-    "alpha2Code": "PG",
-    "alpha3Code": "PNG",
-    "latlng": [-6, 147]
+    "code": "PG",
+    "alpha3": "PNG",
+    "latlng": [-6, 147],
+    "flag_emoji": "🇵🇬"
   },
   {
     "currencies": [
@@ -1975,9 +2130,10 @@
       }
     ],
     "name": "Paraguay",
-    "alpha2Code": "PY",
-    "alpha3Code": "PRY",
-    "latlng": [-23, -58]
+    "code": "PY",
+    "alpha3": "PRY",
+    "latlng": [-23, -58],
+    "flag_emoji": "🇵🇾"
   },
   {
     "currencies": [
@@ -1986,9 +2142,10 @@
       }
     ],
     "name": "Peru",
-    "alpha2Code": "PE",
-    "alpha3Code": "PER",
-    "latlng": [-10, -76]
+    "code": "PE",
+    "alpha3": "PER",
+    "latlng": [-10, -76],
+    "flag_emoji": "🇵🇪"
   },
   {
     "currencies": [
@@ -1997,9 +2154,10 @@
       }
     ],
     "name": "Philippines",
-    "alpha2Code": "PH",
-    "alpha3Code": "PHL",
-    "latlng": [13, 122]
+    "code": "PH",
+    "alpha3": "PHL",
+    "latlng": [13, 122],
+    "flag_emoji": "🇵🇭"
   },
   {
     "currencies": [
@@ -2008,9 +2166,10 @@
       }
     ],
     "name": "Pitcairn",
-    "alpha2Code": "PN",
-    "alpha3Code": "PCN",
-    "latlng": [-25.06666666, -130.1]
+    "code": "PN",
+    "alpha3": "PCN",
+    "latlng": [-25.06666666, -130.1],
+    "flag_emoji": "🇵🇳"
   },
   {
     "currencies": [
@@ -2019,9 +2178,10 @@
       }
     ],
     "name": "Poland",
-    "alpha2Code": "PL",
-    "alpha3Code": "POL",
-    "latlng": [52, 20]
+    "code": "PL",
+    "alpha3": "POL",
+    "latlng": [52, 20],
+    "flag_emoji": "🇵🇱"
   },
   {
     "currencies": [
@@ -2030,9 +2190,10 @@
       }
     ],
     "name": "Portugal",
-    "alpha2Code": "PT",
-    "alpha3Code": "PRT",
-    "latlng": [39.5, -8]
+    "code": "PT",
+    "alpha3": "PRT",
+    "latlng": [39.5, -8],
+    "flag_emoji": "🇵🇹"
   },
   {
     "currencies": [
@@ -2041,9 +2202,10 @@
       }
     ],
     "name": "Puerto Rico",
-    "alpha2Code": "PR",
-    "alpha3Code": "PRI",
-    "latlng": [18.25, -66.5]
+    "code": "PR",
+    "alpha3": "PRI",
+    "latlng": [18.25, -66.5],
+    "flag_emoji": "🇵🇷"
   },
   {
     "currencies": [
@@ -2052,9 +2214,10 @@
       }
     ],
     "name": "Qatar",
-    "alpha2Code": "QA",
-    "alpha3Code": "QAT",
-    "latlng": [25.5, 51.25]
+    "code": "QA",
+    "alpha3": "QAT",
+    "latlng": [25.5, 51.25],
+    "flag_emoji": "🇶🇦"
   },
   {
     "currencies": [
@@ -2062,10 +2225,11 @@
         "code": "EUR"
       }
     ],
-    "name": "Republic of Kosovo",
-    "alpha2Code": "XK",
-    "alpha3Code": "KOS",
-    "latlng": [42.666667, 21.166667]
+    "name": "Kosovo",
+    "code": "XK",
+    "alpha3": "KOS",
+    "latlng": [42.666667, 21.166667],
+    "flag_emoji": "🇽🇰"
   },
   {
     "currencies": [
@@ -2074,9 +2238,10 @@
       }
     ],
     "name": "Réunion",
-    "alpha2Code": "RE",
-    "alpha3Code": "REU",
-    "latlng": [-21.15, 55.5]
+    "code": "RE",
+    "alpha3": "REU",
+    "latlng": [-21.15, 55.5],
+    "flag_emoji": "🇷🇪"
   },
   {
     "currencies": [
@@ -2085,9 +2250,10 @@
       }
     ],
     "name": "Romania",
-    "alpha2Code": "RO",
-    "alpha3Code": "ROU",
-    "latlng": [46, 25]
+    "code": "RO",
+    "alpha3": "ROU",
+    "latlng": [46, 25],
+    "flag_emoji": "🇷🇴"
   },
   {
     "currencies": [
@@ -2095,10 +2261,11 @@
         "code": "RUB"
       }
     ],
-    "name": "Russian Federation",
-    "alpha2Code": "RU",
-    "alpha3Code": "RUS",
-    "latlng": [60, 100]
+    "name": "Russia",
+    "code": "RU",
+    "alpha3": "RUS",
+    "latlng": [60, 100],
+    "flag_emoji": "🇷🇺"
   },
   {
     "currencies": [
@@ -2107,9 +2274,10 @@
       }
     ],
     "name": "Rwanda",
-    "alpha2Code": "RW",
-    "alpha3Code": "RWA",
-    "latlng": [-2, 30]
+    "code": "RW",
+    "alpha3": "RWA",
+    "latlng": [-2, 30],
+    "flag_emoji": "🇷🇼"
   },
   {
     "currencies": [
@@ -2118,9 +2286,10 @@
       }
     ],
     "name": "Saint Barthélemy",
-    "alpha2Code": "BL",
-    "alpha3Code": "BLM",
-    "latlng": [18.5, -63.41666666]
+    "code": "BL",
+    "alpha3": "BLM",
+    "latlng": [18.5, -63.41666666],
+    "flag_emoji": "🇧🇱"
   },
   {
     "currencies": [
@@ -2128,10 +2297,11 @@
         "code": "SHP"
       }
     ],
-    "name": "Saint Helena, Ascension and Tristan da Cunha",
-    "alpha2Code": "SH",
-    "alpha3Code": "SHN",
-    "latlng": [-15.95, -5.7]
+    "name": "Saint Helena, Ascension & Tristan da Cunha",
+    "code": "SH",
+    "alpha3": "SHN",
+    "latlng": [-15.95, -5.7],
+    "flag_emoji": "🇦🇨"
   },
   {
     "currencies": [
@@ -2139,10 +2309,11 @@
         "code": "XCD"
       }
     ],
-    "name": "Saint Kitts and Nevis",
-    "alpha2Code": "KN",
-    "alpha3Code": "KNA",
-    "latlng": [17.33333333, -62.75]
+    "name": "Saint Kitts & Nevis",
+    "code": "KN",
+    "alpha3": "KNA",
+    "latlng": [17.33333333, -62.75],
+    "flag_emoji": "🇰🇳"
   },
   {
     "currencies": [
@@ -2151,9 +2322,10 @@
       }
     ],
     "name": "Saint Lucia",
-    "alpha2Code": "LC",
-    "alpha3Code": "LCA",
-    "latlng": [13.88333333, -60.96666666]
+    "code": "LC",
+    "alpha3": "LCA",
+    "latlng": [13.88333333, -60.96666666],
+    "flag_emoji": "🇱🇨"
   },
   {
     "currencies": [
@@ -2161,10 +2333,11 @@
         "code": "EUR"
       }
     ],
-    "name": "Saint Martin (French part)",
-    "alpha2Code": "MF",
-    "alpha3Code": "MAF",
-    "latlng": [18.08333333, -63.95]
+    "name": "Saint Martin",
+    "code": "MF",
+    "alpha3": "MAF",
+    "latlng": [18.08333333, -63.95],
+    "flag_emoji": "🇲🇫"
   },
   {
     "currencies": [
@@ -2172,10 +2345,11 @@
         "code": "EUR"
       }
     ],
-    "name": "Saint Pierre and Miquelon",
-    "alpha2Code": "PM",
-    "alpha3Code": "SPM",
-    "latlng": [46.83333333, -56.33333333]
+    "name": "Saint Pierre & Miquelon",
+    "code": "PM",
+    "alpha3": "SPM",
+    "latlng": [46.83333333, -56.33333333],
+    "flag_emoji": "🇵🇲"
   },
   {
     "currencies": [
@@ -2183,10 +2357,11 @@
         "code": "XCD"
       }
     ],
-    "name": "Saint Vincent and the Grenadines",
-    "alpha2Code": "VC",
-    "alpha3Code": "VCT",
-    "latlng": [13.25, -61.2]
+    "name": "Saint Vincent & Grenadines",
+    "code": "VC",
+    "alpha3": "VCT",
+    "latlng": [13.25, -61.2],
+    "flag_emoji": "🇻🇨"
   },
   {
     "currencies": [
@@ -2195,9 +2370,10 @@
       }
     ],
     "name": "Samoa",
-    "alpha2Code": "WS",
-    "alpha3Code": "WSM",
-    "latlng": [-13.58333333, -172.33333333]
+    "code": "WS",
+    "alpha3": "WSM",
+    "latlng": [-13.58333333, -172.33333333],
+    "flag_emoji": "🇼🇸"
   },
   {
     "currencies": [
@@ -2206,9 +2382,10 @@
       }
     ],
     "name": "San Marino",
-    "alpha2Code": "SM",
-    "alpha3Code": "SMR",
-    "latlng": [43.76666666, 12.41666666]
+    "code": "SM",
+    "alpha3": "SMR",
+    "latlng": [43.76666666, 12.41666666],
+    "flag_emoji": "🇸🇲"
   },
   {
     "currencies": [
@@ -2216,10 +2393,11 @@
         "code": "STD"
       }
     ],
-    "name": "Sao Tome and Principe",
-    "alpha2Code": "ST",
-    "alpha3Code": "STP",
-    "latlng": [1, 7]
+    "name": "Sao Tome & Principe",
+    "code": "ST",
+    "alpha3": "STP",
+    "latlng": [1, 7],
+    "flag_emoji": "🇸🇹"
   },
   {
     "currencies": [
@@ -2228,9 +2406,10 @@
       }
     ],
     "name": "Saudi Arabia",
-    "alpha2Code": "SA",
-    "alpha3Code": "SAU",
-    "latlng": [25, 45]
+    "code": "SA",
+    "alpha3": "SAU",
+    "latlng": [25, 45],
+    "flag_emoji": "🇸🇦"
   },
   {
     "currencies": [
@@ -2239,9 +2418,10 @@
       }
     ],
     "name": "Senegal",
-    "alpha2Code": "SN",
-    "alpha3Code": "SEN",
-    "latlng": [14, -14]
+    "code": "SN",
+    "alpha3": "SEN",
+    "latlng": [14, -14],
+    "flag_emoji": "🇸🇳"
   },
   {
     "currencies": [
@@ -2250,9 +2430,10 @@
       }
     ],
     "name": "Serbia",
-    "alpha2Code": "RS",
-    "alpha3Code": "SRB",
-    "latlng": [44, 21]
+    "code": "RS",
+    "alpha3": "SRB",
+    "latlng": [44, 21],
+    "flag_emoji": "🇷🇸"
   },
   {
     "currencies": [
@@ -2261,9 +2442,10 @@
       }
     ],
     "name": "Seychelles",
-    "alpha2Code": "SC",
-    "alpha3Code": "SYC",
-    "latlng": [-4.58333333, 55.66666666]
+    "code": "SC",
+    "alpha3": "SYC",
+    "latlng": [-4.58333333, 55.66666666],
+    "flag_emoji": "🇸🇨"
   },
   {
     "currencies": [
@@ -2272,9 +2454,10 @@
       }
     ],
     "name": "Sierra Leone",
-    "alpha2Code": "SL",
-    "alpha3Code": "SLE",
-    "latlng": [8.5, -11.5]
+    "code": "SL",
+    "alpha3": "SLE",
+    "latlng": [8.5, -11.5],
+    "flag_emoji": "🇸🇱"
   },
   {
     "currencies": [
@@ -2286,9 +2469,10 @@
       }
     ],
     "name": "Singapore",
-    "alpha2Code": "SG",
-    "alpha3Code": "SGP",
-    "latlng": [1.36666666, 103.8]
+    "code": "SG",
+    "alpha3": "SGP",
+    "latlng": [1.36666666, 103.8],
+    "flag_emoji": "🇸🇬"
   },
   {
     "currencies": [
@@ -2296,10 +2480,11 @@
         "code": "ANG"
       }
     ],
-    "name": "Sint Maarten (Dutch part)",
-    "alpha2Code": "SX",
-    "alpha3Code": "SXM",
-    "latlng": [18.033333, -63.05]
+    "name": "Sint Maarten",
+    "code": "SX",
+    "alpha3": "SXM",
+    "latlng": [18.033333, -63.05],
+    "flag_emoji": "🇸🇽"
   },
   {
     "currencies": [
@@ -2308,9 +2493,10 @@
       }
     ],
     "name": "Slovakia",
-    "alpha2Code": "SK",
-    "alpha3Code": "SVK",
-    "latlng": [48.66666666, 19.5]
+    "code": "SK",
+    "alpha3": "SVK",
+    "latlng": [48.66666666, 19.5],
+    "flag_emoji": "🇸🇰"
   },
   {
     "currencies": [
@@ -2319,9 +2505,10 @@
       }
     ],
     "name": "Slovenia",
-    "alpha2Code": "SI",
-    "alpha3Code": "SVN",
-    "latlng": [46.11666666, 14.81666666]
+    "code": "SI",
+    "alpha3": "SVN",
+    "latlng": [46.11666666, 14.81666666],
+    "flag_emoji": "🇸🇮"
   },
   {
     "currencies": [
@@ -2330,9 +2517,10 @@
       }
     ],
     "name": "Solomon Islands",
-    "alpha2Code": "SB",
-    "alpha3Code": "SLB",
-    "latlng": [-8, 159]
+    "code": "SB",
+    "alpha3": "SLB",
+    "latlng": [-8, 159],
+    "flag_emoji": "🇸🇧"
   },
   {
     "currencies": [
@@ -2341,9 +2529,10 @@
       }
     ],
     "name": "Somalia",
-    "alpha2Code": "SO",
-    "alpha3Code": "SOM",
-    "latlng": [10, 49]
+    "code": "SO",
+    "alpha3": "SOM",
+    "latlng": [10, 49],
+    "flag_emoji": "🇸🇴"
   },
   {
     "currencies": [
@@ -2352,9 +2541,10 @@
       }
     ],
     "name": "South Africa",
-    "alpha2Code": "ZA",
-    "alpha3Code": "ZAF",
-    "latlng": [-29, 24]
+    "code": "ZA",
+    "alpha3": "ZAF",
+    "latlng": [-29, 24],
+    "flag_emoji": "🇿🇦"
   },
   {
     "currencies": [
@@ -2362,10 +2552,11 @@
         "code": "GBP"
       }
     ],
-    "name": "South Georgia and the South Sandwich Islands",
-    "alpha2Code": "GS",
-    "alpha3Code": "SGS",
-    "latlng": [-54.5, -37]
+    "name": "South Georgia & the South Sandwich Islands",
+    "code": "GS",
+    "alpha3": "SGS",
+    "latlng": [-54.5, -37],
+    "flag_emoji": "🇬🇸"
   },
   {
     "currencies": [
@@ -2373,10 +2564,11 @@
         "code": "KRW"
       }
     ],
-    "name": "Korea (Republic of)",
-    "alpha2Code": "KR",
-    "alpha3Code": "KOR",
-    "latlng": [37, 127.5]
+    "name": "Korea",
+    "code": "KR",
+    "alpha3": "KOR",
+    "latlng": [37, 127.5],
+    "flag_emoji": "🇰🇷"
   },
   {
     "currencies": [
@@ -2385,9 +2577,10 @@
       }
     ],
     "name": "South Sudan",
-    "alpha2Code": "SS",
-    "alpha3Code": "SSD",
-    "latlng": [7, 30]
+    "code": "SS",
+    "alpha3": "SSD",
+    "latlng": [7, 30],
+    "flag_emoji": "🇸🇸"
   },
   {
     "currencies": [
@@ -2396,9 +2589,10 @@
       }
     ],
     "name": "Spain",
-    "alpha2Code": "ES",
-    "alpha3Code": "ESP",
-    "latlng": [40, -4]
+    "code": "ES",
+    "alpha3": "ESP",
+    "latlng": [40, -4],
+    "flag_emoji": "🇪🇸"
   },
   {
     "currencies": [
@@ -2407,9 +2601,10 @@
       }
     ],
     "name": "Sri Lanka",
-    "alpha2Code": "LK",
-    "alpha3Code": "LKA",
-    "latlng": [7, 81]
+    "code": "LK",
+    "alpha3": "LKA",
+    "latlng": [7, 81],
+    "flag_emoji": "🇱🇰"
   },
   {
     "currencies": [
@@ -2418,9 +2613,10 @@
       }
     ],
     "name": "Sudan",
-    "alpha2Code": "SD",
-    "alpha3Code": "SDN",
-    "latlng": [15, 30]
+    "code": "SD",
+    "alpha3": "SDN",
+    "latlng": [15, 30],
+    "flag_emoji": "🇸🇩"
   },
   {
     "currencies": [
@@ -2429,9 +2625,10 @@
       }
     ],
     "name": "Suriname",
-    "alpha2Code": "SR",
-    "alpha3Code": "SUR",
-    "latlng": [4, -56]
+    "code": "SR",
+    "alpha3": "SUR",
+    "latlng": [4, -56],
+    "flag_emoji": "🇸🇷"
   },
   {
     "currencies": [
@@ -2439,10 +2636,11 @@
         "code": "NOK"
       }
     ],
-    "name": "Svalbard and Jan Mayen",
-    "alpha2Code": "SJ",
-    "alpha3Code": "SJM",
-    "latlng": [78, 20]
+    "name": "Svalbard & Jan Mayen",
+    "code": "SJ",
+    "alpha3": "SJM",
+    "latlng": [78, 20],
+    "flag_emoji": "🇸🇯"
   },
   {
     "currencies": [
@@ -2450,10 +2648,11 @@
         "code": "SZL"
       }
     ],
-    "name": "Swaziland",
-    "alpha2Code": "SZ",
-    "alpha3Code": "SWZ",
-    "latlng": [-26.5, 31.5]
+    "name": "Eswatini",
+    "code": "SZ",
+    "alpha3": "SWZ",
+    "latlng": [-26.5, 31.5],
+    "flag_emoji": "🇸🇿"
   },
   {
     "currencies": [
@@ -2462,9 +2661,10 @@
       }
     ],
     "name": "Sweden",
-    "alpha2Code": "SE",
-    "alpha3Code": "SWE",
-    "latlng": [62, 15]
+    "code": "SE",
+    "alpha3": "SWE",
+    "latlng": [62, 15],
+    "flag_emoji": "🇸🇪"
   },
   {
     "currencies": [
@@ -2473,9 +2673,10 @@
       }
     ],
     "name": "Switzerland",
-    "alpha2Code": "CH",
-    "alpha3Code": "CHE",
-    "latlng": [47, 8]
+    "code": "CH",
+    "alpha3": "CHE",
+    "latlng": [47, 8],
+    "flag_emoji": "🇨🇭"
   },
   {
     "currencies": [
@@ -2483,10 +2684,11 @@
         "code": "SYP"
       }
     ],
-    "name": "Syrian Arab Republic",
-    "alpha2Code": "SY",
-    "alpha3Code": "SYR",
-    "latlng": [35, 38]
+    "name": "Syria",
+    "code": "SY",
+    "alpha3": "SYR",
+    "latlng": [35, 38],
+    "flag_emoji": "🇸🇾"
   },
   {
     "currencies": [
@@ -2495,9 +2697,10 @@
       }
     ],
     "name": "Taiwan",
-    "alpha2Code": "TW",
-    "alpha3Code": "TWN",
-    "latlng": [23.5, 121]
+    "code": "TW",
+    "alpha3": "TWN",
+    "latlng": [23.5, 121],
+    "flag_emoji": "🇹🇼"
   },
   {
     "currencies": [
@@ -2506,9 +2709,10 @@
       }
     ],
     "name": "Tajikistan",
-    "alpha2Code": "TJ",
-    "alpha3Code": "TJK",
-    "latlng": [39, 71]
+    "code": "TJ",
+    "alpha3": "TJK",
+    "latlng": [39, 71],
+    "flag_emoji": "🇹🇯"
   },
   {
     "currencies": [
@@ -2516,10 +2720,11 @@
         "code": "TZS"
       }
     ],
-    "name": "Tanzania, United Republic of",
-    "alpha2Code": "TZ",
-    "alpha3Code": "TZA",
-    "latlng": [-6, 35]
+    "name": "Tanzania",
+    "code": "TZ",
+    "alpha3": "TZA",
+    "latlng": [-6, 35],
+    "flag_emoji": "🇹🇿"
   },
   {
     "currencies": [
@@ -2528,21 +2733,22 @@
       }
     ],
     "name": "Thailand",
-    "alpha2Code": "TH",
-    "alpha3Code": "THA",
-    "latlng": [15, 100]
+    "code": "TH",
+    "alpha3": "THA",
+    "latlng": [15, 100],
+    "flag_emoji": "🇹🇭"
   },
   {
     "currencies": [
       {
         "code": "USD"
-      },
-      {}
+      }
     ],
     "name": "Timor-Leste",
-    "alpha2Code": "TL",
-    "alpha3Code": "TLS",
-    "latlng": [-8.83333333, 125.91666666]
+    "code": "TL",
+    "alpha3": "TLS",
+    "latlng": [-8.83333333, 125.91666666],
+    "flag_emoji": "🇹🇱"
   },
   {
     "currencies": [
@@ -2551,9 +2757,10 @@
       }
     ],
     "name": "Togo",
-    "alpha2Code": "TG",
-    "alpha3Code": "TGO",
-    "latlng": [8, 1.16666666]
+    "code": "TG",
+    "alpha3": "TGO",
+    "latlng": [8, 1.16666666],
+    "flag_emoji": "🇹🇬"
   },
   {
     "currencies": [
@@ -2562,9 +2769,10 @@
       }
     ],
     "name": "Tokelau",
-    "alpha2Code": "TK",
-    "alpha3Code": "TKL",
-    "latlng": [-9, -172]
+    "code": "TK",
+    "alpha3": "TKL",
+    "latlng": [-9, -172],
+    "flag_emoji": "🇹🇰"
   },
   {
     "currencies": [
@@ -2573,9 +2781,10 @@
       }
     ],
     "name": "Tonga",
-    "alpha2Code": "TO",
-    "alpha3Code": "TON",
-    "latlng": [-20, -175]
+    "code": "TO",
+    "alpha3": "TON",
+    "latlng": [-20, -175],
+    "flag_emoji": "🇹🇴"
   },
   {
     "currencies": [
@@ -2583,10 +2792,11 @@
         "code": "TTD"
       }
     ],
-    "name": "Trinidad and Tobago",
-    "alpha2Code": "TT",
-    "alpha3Code": "TTO",
-    "latlng": [11, -61]
+    "name": "Trinidad & Tobago",
+    "code": "TT",
+    "alpha3": "TTO",
+    "latlng": [11, -61],
+    "flag_emoji": "🇹🇹"
   },
   {
     "currencies": [
@@ -2595,9 +2805,10 @@
       }
     ],
     "name": "Tunisia",
-    "alpha2Code": "TN",
-    "alpha3Code": "TUN",
-    "latlng": [34, 9]
+    "code": "TN",
+    "alpha3": "TUN",
+    "latlng": [34, 9],
+    "flag_emoji": "🇹🇳"
   },
   {
     "currencies": [
@@ -2607,9 +2818,10 @@
       }
     ],
     "name": "Turkey",
-    "alpha2Code": "TR",
-    "alpha3Code": "TUR",
-    "latlng": [39, 35]
+    "code": "TR",
+    "alpha3": "TUR",
+    "latlng": [39, 35],
+    "flag_emoji": "🇹🇷"
   },
   {
     "currencies": [
@@ -2618,9 +2830,10 @@
       }
     ],
     "name": "Turkmenistan",
-    "alpha2Code": "TM",
-    "alpha3Code": "TKM",
-    "latlng": [40, 60]
+    "code": "TM",
+    "alpha3": "TKM",
+    "latlng": [40, 60],
+    "flag_emoji": "🇹🇲"
   },
   {
     "currencies": [
@@ -2628,10 +2841,11 @@
         "code": "USD"
       }
     ],
-    "name": "Turks and Caicos Islands",
-    "alpha2Code": "TC",
-    "alpha3Code": "TCA",
-    "latlng": [21.75, -71.58333333]
+    "name": "Turks & Caicos Islands",
+    "code": "TC",
+    "alpha3": "TCA",
+    "latlng": [21.75, -71.58333333],
+    "flag_emoji": "🇹🇨"
   },
   {
     "currencies": [
@@ -2639,13 +2853,14 @@
         "code": "AUD"
       },
       {
-        "code": "TVD[G]"
+        "code": "TVD"
       }
     ],
     "name": "Tuvalu",
-    "alpha2Code": "TV",
-    "alpha3Code": "TUV",
-    "latlng": [-8, 178]
+    "code": "TV",
+    "alpha3": "TUV",
+    "latlng": [-8, 178],
+    "flag_emoji": "🇹🇻"
   },
   {
     "currencies": [
@@ -2654,9 +2869,10 @@
       }
     ],
     "name": "Uganda",
-    "alpha2Code": "UG",
-    "alpha3Code": "UGA",
-    "latlng": [1, 32]
+    "code": "UG",
+    "alpha3": "UGA",
+    "latlng": [1, 32],
+    "flag_emoji": "🇺🇬"
   },
   {
     "currencies": [
@@ -2665,9 +2881,10 @@
       }
     ],
     "name": "Ukraine",
-    "alpha2Code": "UA",
-    "alpha3Code": "UKR",
-    "latlng": [49, 32]
+    "code": "UA",
+    "alpha3": "UKR",
+    "latlng": [49, 32],
+    "flag_emoji": "🇺🇦"
   },
   {
     "currencies": [
@@ -2676,9 +2893,10 @@
       }
     ],
     "name": "United Arab Emirates",
-    "alpha2Code": "AE",
-    "alpha3Code": "ARE",
-    "latlng": [24, 54]
+    "code": "AE",
+    "alpha3": "ARE",
+    "latlng": [24, 54],
+    "flag_emoji": "🇦🇪"
   },
   {
     "currencies": [
@@ -2686,10 +2904,11 @@
         "code": "GBP"
       }
     ],
-    "name": "United Kingdom of Great Britain and Northern Ireland",
-    "alpha2Code": "GB",
-    "alpha3Code": "GBR",
-    "latlng": [54, -2]
+    "name": "United Kingdom",
+    "code": "GB",
+    "alpha3": "GBR",
+    "latlng": [54, -2],
+    "flag_emoji": "🇬🇧"
   },
   {
     "currencies": [
@@ -2698,9 +2917,10 @@
       }
     ],
     "name": "United States of America",
-    "alpha2Code": "US",
-    "alpha3Code": "USA",
-    "latlng": [38, -97]
+    "code": "US",
+    "alpha3": "USA",
+    "latlng": [38, -97],
+    "flag_emoji": "🇺🇸"
   },
   {
     "currencies": [
@@ -2709,9 +2929,10 @@
       }
     ],
     "name": "Uruguay",
-    "alpha2Code": "UY",
-    "alpha3Code": "URY",
-    "latlng": [-33, -56]
+    "code": "UY",
+    "alpha3": "URY",
+    "latlng": [-33, -56],
+    "flag_emoji": "🇺🇾"
   },
   {
     "currencies": [
@@ -2721,9 +2942,10 @@
       }
     ],
     "name": "Uzbekistan",
-    "alpha2Code": "UZ",
-    "alpha3Code": "UZB",
-    "latlng": [41, 64]
+    "code": "UZ",
+    "alpha3": "UZB",
+    "latlng": [41, 64],
+    "flag_emoji": "🇺🇿"
   },
   {
     "currencies": [
@@ -2732,9 +2954,10 @@
       }
     ],
     "name": "Vanuatu",
-    "alpha2Code": "VU",
-    "alpha3Code": "VUT",
-    "latlng": [-16, 167]
+    "code": "VU",
+    "alpha3": "VUT",
+    "latlng": [-16, 167],
+    "flag_emoji": "🇻🇺"
   },
   {
     "currencies": [
@@ -2742,10 +2965,11 @@
         "code": "VEF"
       }
     ],
-    "name": "Venezuela (Bolivarian Republic of)",
-    "alpha2Code": "VE",
-    "alpha3Code": "VEN",
-    "latlng": [8, -66]
+    "name": "Venezuela",
+    "code": "VE",
+    "alpha3": "VEN",
+    "latlng": [8, -66],
+    "flag_emoji": "🇻🇪"
   },
   {
     "currencies": [
@@ -2753,10 +2977,11 @@
         "code": "VND"
       }
     ],
-    "name": "Viet Nam",
-    "alpha2Code": "VN",
-    "alpha3Code": "VNM",
-    "latlng": [16.16666666, 107.83333333]
+    "name": "Vietnam",
+    "code": "VN",
+    "alpha3": "VNM",
+    "latlng": [16.16666666, 107.83333333],
+    "flag_emoji": "🇻🇳"
   },
   {
     "currencies": [
@@ -2764,10 +2989,11 @@
         "code": "XPF"
       }
     ],
-    "name": "Wallis and Futuna",
-    "alpha2Code": "WF",
-    "alpha3Code": "WLF",
-    "latlng": [-13.3, -176.2]
+    "name": "Wallis & Futuna",
+    "code": "WF",
+    "alpha3": "WLF",
+    "latlng": [-13.3, -176.2],
+    "flag_emoji": "🇼🇫"
   },
   {
     "currencies": [
@@ -2779,9 +3005,10 @@
       }
     ],
     "name": "Western Sahara",
-    "alpha2Code": "EH",
-    "alpha3Code": "ESH",
-    "latlng": [24.5, -13]
+    "code": "EH",
+    "alpha3": "ESH",
+    "latlng": [24.5, -13],
+    "flag_emoji": "🇪🇭"
   },
   {
     "currencies": [
@@ -2790,9 +3017,10 @@
       }
     ],
     "name": "Yemen",
-    "alpha2Code": "YE",
-    "alpha3Code": "YEM",
-    "latlng": [15, 48]
+    "code": "YE",
+    "alpha3": "YEM",
+    "latlng": [15, 48],
+    "flag_emoji": "🇾🇪"
   },
   {
     "currencies": [
@@ -2801,9 +3029,10 @@
       }
     ],
     "name": "Zambia",
-    "alpha2Code": "ZM",
-    "alpha3Code": "ZMB",
-    "latlng": [-15, 30]
+    "code": "ZM",
+    "alpha3": "ZMB",
+    "latlng": [-15, 30],
+    "flag_emoji": "🇿🇲"
   },
   {
     "currencies": [
@@ -2833,8 +3062,9 @@
       }
     ],
     "name": "Zimbabwe",
-    "alpha2Code": "ZW",
-    "alpha3Code": "ZWE",
-    "latlng": [-20, 30]
+    "code": "ZW",
+    "alpha3": "ZWE",
+    "latlng": [-20, 30],
+    "flag_emoji": "🇿🇼"
   }
 ]
