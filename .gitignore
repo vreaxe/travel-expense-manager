@@ -1,0 +1,19 @@
+# General
+.venv
+.env
+
+# Frontend
+yarn-error.log
+npm-debug.log
+.next
+node_modules
+
+# Backend
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+pip-log.txt
+backend/static/admin
