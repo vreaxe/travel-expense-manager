@@ -368,6 +368,14 @@
     "name_plural": "Falkland Island Pounds"
   },
   {
+    "symbol": "FJ$",
+    "name": "Fijian Dollar",
+    "symbol_native": "FJ$",
+    "decimal_digits": 2,
+    "code": "FJD",
+    "name_plural": "Fijian Dollars"
+  },
+  {
     "symbol": "£",
     "name": "British Pound Sterling",
     "symbol_native": "£",
@@ -408,6 +416,14 @@
     "name_plural": "Gibraltar pound"
   },
   {
+    "symbol": "D",
+    "name": "Gambian Dalasi",
+    "symbol_native": "D",
+    "decimal_digits": 2,
+    "code": "GMD",
+    "name_plural": "Gambian Dalasis"
+  },
+  {
     "symbol": "FG",
     "name": "Guinean Franc",
     "symbol_native": "FG",
@@ -422,6 +438,14 @@
     "decimal_digits": 2,
     "code": "GTQ",
     "name_plural": "Guatemalan quetzals"
+  },
+  {
+    "symbol": "$",
+    "name": "Guyanese Dollar",
+    "symbol_native": "$",
+    "decimal_digits": 2,
+    "code": "GYD",
+    "name_plural": "Guyanese Dollars"
   },
   {
     "symbol": "HK$",
@@ -750,6 +774,14 @@
     "decimal_digits": 0,
     "code": "MUR",
     "name_plural": "Mauritian rupees"
+  },
+  {
+    "symbol": "UM",
+    "name": "Mauritanian Ouguiya",
+    "symbol_native": "UM",
+    "decimal_digits": 2,
+    "code": "MRO",
+    "name_plural": "Mauritanian Ouguiya"
   },
   {
     "symbol": "Rf",
