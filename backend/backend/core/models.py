@@ -27,6 +27,23 @@ class Currency(TimestampsMixins):
         return self.name
 
 
+class Country(TimestampsMixins):
+    name = models.CharField(_('name'), max_length=255)
+    code = models.CharField(_('code'), max_length=2)
+    alpha3 = models.CharField(_('aplha3'), max_length=3)
+    flag_emoji = models.CharField(_('flag emoji'), max_length=200)
+    latitude = models.DecimalField(max_digits=22, decimal_places=16)
+    longitude = models.DecimalField(max_digits=22, decimal_places=16)
+    currencies = models.ManyToManyField(Currency, related_name="countries")
+
+    class Meta:
+        verbose_name = _('country')
+        verbose_name_plural = _('countries')
+
+    def __str__(self):
+        return self.name
+
+
 class User(AbstractBaseUser, PermissionsMixin, TimestampsMixins):
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
     last_name = models.CharField(_('last name'), max_length=150, blank=True)
@@ -44,6 +61,7 @@ class User(AbstractBaseUser, PermissionsMixin, TimestampsMixins):
             'Unselect this instead of deleting accounts.'
         ),
     )
+    base_currency = models.ForeignKey(Currency, null=True, on_delete=models.PROTECT,)
 
     objects = UserManager()
 

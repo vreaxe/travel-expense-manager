@@ -1,6 +1,7 @@
+import graphene
 from graphene_django.types import DjangoObjectType
 
-from backend.core.models import User, Currency
+from backend.core.models import User, Currency, Country
 
 
 class UserType(DjangoObjectType):
@@ -12,3 +13,8 @@ class UserType(DjangoObjectType):
 class CurrencyType(DjangoObjectType):
     class Meta:
         model = Currency
+
+
+class CountryType(DjangoObjectType):
+    class Meta:
+        model = Country

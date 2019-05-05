@@ -2,7 +2,7 @@ import graphene
 from graphene_django.types import ObjectType
 
 from backend.core.graphql.types import CurrencyType
-from backend.core.models import Currency
+from backend.core.models import Currency, Country
 from backend.graphql.exceptions import NotFoundError
 
 def resolve_currencies(info):
@@ -15,5 +15,14 @@ def resolve_currency(info, id=None, code=None):
         return Currency.objects.get(id=id)
     elif code is not None:
         return Currency.objects.get(code=code)
-    else:
-        raise NotFoundError()
+
+def resolve_countries(info):
+    return Country.objects.all()
+
+def resolve_country(info, id=None, code=None):
+    assert id or code, 'Id or code are required.'
+
+    if id is not None:
+        return Country.objects.get(id=id)
+    elif code is not None:
+        return Country.objects.get(code=code)
