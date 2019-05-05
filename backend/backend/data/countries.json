@@ -413,7 +413,7 @@
     "name": "United States Minor Outlying Islands",
     "code": "UM",
     "alpha3": "UMI",
-    "latlng": [],
+    "latlng": [-0.37435, -159.996719],
     "flag_emoji": "🇺🇲"
   },
   {
