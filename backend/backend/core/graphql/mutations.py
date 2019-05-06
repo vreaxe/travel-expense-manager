@@ -2,6 +2,7 @@ import graphene
 from graphql import GraphQLError
 from graphql_jwt.shortcuts import get_token
 from graphql_jwt import JSONWebTokenMutation
+from django.core.exceptions import ValidationError as DjangoValidationError
 
 from backend.graphql.exceptions import ValidationError
 from backend.core.models import User
@@ -26,9 +27,12 @@ class RegisterUser(graphene.Mutation):
     def mutate(self, info, input):
         user_exists = User.objects.filter(email=input['email']).exists()
         if not user_exists:
-            user = User.objects.create_user(input['email'], input['password'])
-            token = get_token(user)
-            return RegisterUser(token=token, user=user)
+            try:
+                user = User.objects.create_user(input['email'], input['password'])
+                token = get_token(user)
+                return RegisterUser(token=token, user=user)
+            except DjangoValidationError as django_validation_error:
+                raise ValidationError(form_errors=django_validation_error.message_dict)
         else:
             raise ValidationError(form_errors={'email': "This email is already taken."})
 
