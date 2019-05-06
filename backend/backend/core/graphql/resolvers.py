@@ -1,7 +1,3 @@
-import graphene
-from graphene_django.types import ObjectType
-
-from backend.core.graphql.types import CurrencyType
 from backend.core.models import Currency, Country
 from backend.graphql.exceptions import NotFoundError
 

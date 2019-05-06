@@ -6,8 +6,8 @@ from django.core.mail import send_mail
 from django.core.validators import MinValueValidator
 from django.utils import timezone
 
-from .mixins import TimestampsMixins
-from .managers import UserManager
+from backend.core.mixins import TimestampsMixins
+from backend.core.managers import UserManager
 
 
 class Currency(TimestampsMixins):
