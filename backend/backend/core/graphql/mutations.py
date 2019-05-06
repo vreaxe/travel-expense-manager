@@ -2,6 +2,7 @@ import graphene
 from graphql import GraphQLError
 from graphql_jwt.shortcuts import get_token
 from graphql_jwt import JSONWebTokenMutation
+from django.contrib.auth.models import update_last_login
 from django.core.exceptions import ValidationError as DjangoValidationError
 
 from backend.graphql.exceptions import ValidationError
@@ -30,6 +31,7 @@ class RegisterUser(graphene.Mutation):
             try:
                 user = User.objects.create_user(input['email'], input['password'])
                 token = get_token(user)
+                update_last_login(None, user)
                 return RegisterUser(token=token, user=user)
             except DjangoValidationError as django_validation_error:
                 raise ValidationError(form_errors=django_validation_error.message_dict)
@@ -42,4 +44,5 @@ class ObtainJSONWebToken(JSONWebTokenMutation):
 
     @classmethod
     def resolve(cls, root, info, **kwargs):
+        update_last_login(None, info.context.user)
         return cls(user=info.context.user)
