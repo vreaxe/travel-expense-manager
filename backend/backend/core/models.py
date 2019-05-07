@@ -61,7 +61,7 @@ class User(AbstractBaseUser, PermissionsMixin, TimestampsMixins):
             'Unselect this instead of deleting accounts.'
         ),
     )
-    base_currency = models.ForeignKey(Currency, null=True, blank=True, on_delete=models.PROTECT,)
+    base_currency = models.ForeignKey(Currency, null=True, blank=True, on_delete=models.PROTECT, related_name='users')
 
     objects = UserManager()
 

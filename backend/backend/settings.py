@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'graphene_django',
     # My apps
     'backend.core',
+    'backend.trip',
 ]
 
 MIDDLEWARE = [

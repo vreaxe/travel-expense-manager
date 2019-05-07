@@ -2,9 +2,10 @@ import graphene
 import graphql_jwt
 
 import backend.core.schema
+import backend.trip.schema
 
 
-class Query(backend.core.schema.Query, graphene.ObjectType):
+class Query(backend.core.schema.Query, backend.trip.schema.Query, graphene.ObjectType):
     pass
 
 

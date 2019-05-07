@@ -13,8 +13,10 @@ class UserType(DjangoObjectType):
 class CurrencyType(DjangoObjectType):
     class Meta:
         model = Currency
+        exclude_fields = ('trips', 'users',)
 
 
 class CountryType(DjangoObjectType):
     class Meta:
         model = Country
+        exclude_fields = ('trips',)
