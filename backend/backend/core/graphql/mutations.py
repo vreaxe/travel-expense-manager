@@ -36,7 +36,7 @@ class RegisterUser(graphene.Mutation):
             except DjangoValidationError as django_validation_error:
                 raise ValidationError(form_errors=django_validation_error.message_dict)
         else:
-            raise ValidationError(form_errors={'email': "This email is already taken."})
+            raise ValidationError(form_errors={'email': 'This email is already taken.'})
 
 
 class ObtainJSONWebToken(JSONWebTokenMutation):
