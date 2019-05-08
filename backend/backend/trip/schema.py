@@ -4,6 +4,7 @@ from graphql_jwt.decorators import login_required
 
 from backend.trip.graphql.types import TripType
 from backend.trip.graphql.resolvers import resolve_trips, resolve_trip
+from backend.trip.graphql.mutations import CreateTrip
 
 
 class Query(ObjectType):
@@ -19,4 +20,8 @@ class Query(ObjectType):
         return resolve_trip(info, id)
 
 
-schema = graphene.Schema(query=Query)
+class Mutation(ObjectType):
+    create_trip = CreateTrip.Field()
+
+
+schema = graphene.Schema(query=Query, mutation=Mutation)

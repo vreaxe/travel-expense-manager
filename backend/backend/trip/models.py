@@ -27,7 +27,7 @@ class Trip(TimestampsMixins):
 class TripUser(TimestampsMixins):
     trip = models.ForeignKey(Trip, on_delete=models.PROTECT, related_name='trip_user')
     user = models.ForeignKey(User, on_delete=models.PROTECT, related_name='trip_user')
-    role = models.CharField(_('role'), max_length=100, choices=TripUserRoles.values)
+    role = models.CharField(_('role'), max_length=100, choices=TripUserRoles.values, default=TripUserRoles.DEFAULT)
 
     class Meta:
         db_table = 'trip_trip_user'
