@@ -25,11 +25,23 @@ class Trip(TimestampsMixins):
 
 
 class TripUser(TimestampsMixins):
-    trip = models.ForeignKey(Trip, on_delete=models.PROTECT, related_name='trip_user')
-    user = models.ForeignKey(User, on_delete=models.PROTECT, related_name='trip_user')
+    trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='trip_user')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='trip_user')
     role = models.CharField(_('role'), max_length=100, choices=TripUserRoles.values, default=TripUserRoles.DEFAULT)
 
     class Meta:
         db_table = 'trip_trip_user'
         verbose_name = _('trip user')
         verbose_name_plural = _('trips users')
+
+
+class Expense(TimestampsMixins):
+    title = models.CharField(_('title'), max_length=255)
+    amount = models.DecimalField(_('amount'), validators=[MinValueValidator(0.01)], max_digits=20, decimal_places=2)
+    created_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name='expenses')
+    currency = models.ForeignKey(Currency, on_delete=models.PROTECT, related_name='expenses')
+    trip = models.ForeignKey(Trip, on_delete=models.PROTECT, related_name='expenses')
+
+    class Meta:
+        verbose_name = _('expense')
+        verbose_name_plural = _('expenses')

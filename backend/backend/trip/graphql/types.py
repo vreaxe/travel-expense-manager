@@ -1,11 +1,13 @@
 import graphene
 from graphene_django.types import DjangoObjectType
 
-from backend.trip.models import Trip, TripUser
+from backend.trip.models import Trip, TripUser, Expense
+
 
 class TripUserType(DjangoObjectType):
     class Meta:
         model = TripUser
+
 
 class TripType(DjangoObjectType):
     # Rename field trip_user to users
@@ -18,3 +20,8 @@ class TripType(DjangoObjectType):
     class Meta:
         model = Trip
         exclude_fields = ('trip_user',)
+
+
+class ExpenseType(DjangoObjectType):
+    class Meta:
+        model = Expense
