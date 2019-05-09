@@ -3,11 +3,11 @@ from graphql import GraphQLError
 from graphql_jwt.shortcuts import get_token
 from graphql_jwt import JSONWebTokenMutation
 from django.contrib.auth.models import update_last_login
-from django.core.exceptions import ValidationError as DjangoValidationError
 
 from backend.graphql.exceptions import ValidationError
 from backend.core.models import User
 from backend.core.graphql.types import UserType
+from backend.graphql.mutations import BaseMutation
 
 
 class AuthenticationUserInput(graphene.InputObjectType):
@@ -15,7 +15,7 @@ class AuthenticationUserInput(graphene.InputObjectType):
     password = graphene.String(required=True)
 
 
-class RegisterUser(graphene.Mutation):
+class RegisterUser(BaseMutation):
     class Arguments:
         input = AuthenticationUserInput(required=True)
 
@@ -25,16 +25,13 @@ class RegisterUser(graphene.Mutation):
     token = graphene.String()
     user = graphene.Field(UserType)
 
-    def mutate(self, info, input):
+    def perform_mutation(self, info, input):
         user_exists = User.objects.filter(email=input['email']).exists()
         if not user_exists:
-            try:
-                user = User.objects.create_user(input['email'], input['password'])
-                token = get_token(user)
-                update_last_login(None, user)
-                return RegisterUser(token=token, user=user)
-            except DjangoValidationError as django_validation_error:
-                raise ValidationError(form_errors=django_validation_error.message_dict)
+            user = User.objects.create_user(input['email'], input['password'])
+            token = get_token(user)
+            update_last_login(None, user)
+            return RegisterUser(token=token, user=user)
         else:
             raise ValidationError(form_errors={'email': 'This email is already taken.'})
 
