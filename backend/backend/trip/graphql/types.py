@@ -12,10 +12,23 @@ class TripUserType(DjangoObjectType):
 class TripType(DjangoObjectType):
     # Rename field trip_user to users
     users = graphene.List(TripUserType)
+    daily_budget = graphene.Float()
 
     @graphene.resolve_only_args
     def resolve_users(self):
         return self.trip_user.all()
+
+    @graphene.resolve_only_args
+    def resolve_daily_budget(self):
+        total = 0
+        expenses = self.expenses.all()
+        for expense in expenses:
+            # TODO: Support exchange currency
+            total += expense.amount
+
+        days = (expenses.last().created_at - expenses.first().created_at).days + 1
+
+        return (total / days)
 
     class Meta:
         model = Trip
