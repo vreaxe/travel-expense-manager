@@ -45,3 +45,8 @@ class ValidationError(GraphQLError):
 class NotFoundError(GraphQLError):
     default_message = _('Item not found')
     default_code = 'NOT_FOUND'
+
+
+class PermissionDenied(GraphQLError):
+    default_message = _('You do not have permission to perform this action')
+    default_code = 'PERMISSION_DENIED'
