@@ -18,3 +18,7 @@ def resolve_expense(info, id=None):
     if id is not None:
         user = info.context.user
         return Expense.objects.get(id=id, trip__users__id=user.id)
+
+def resolve_expenses(info, trip_id):
+    user = info.context.user
+    return Expense.objects.filter(trip_id=trip_id)
