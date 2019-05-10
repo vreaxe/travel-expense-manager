@@ -1,7 +1,7 @@
 from backend.graphql.exceptions import PermissionDenied
 from functools import wraps
 
-def permissions_required(permissions=None):
+def permission_classes(permissions=None):
     def decorator(function):
         @wraps(function)
         def wrapper(cls, info, **data):

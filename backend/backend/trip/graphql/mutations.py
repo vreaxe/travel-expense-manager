@@ -11,7 +11,7 @@ from backend.trip.constants import TripUserRoles
 from backend.core.services import get_countries, get_currency
 from backend.trip.permissions import UserIsInTripPermission
 from backend.graphql.mutations import BaseMutation
-from backend.graphql.decorators import permissions_required
+from backend.graphql.decorators import permission_classes
 
 
 class CreateTripInput(graphene.InputObjectType):
@@ -76,7 +76,7 @@ class UpdateTrip(BaseMutation):
     class Meta:
         description = 'Update trip'
 
-    @permissions_required([UserIsInTripPermission,])
+    @permission_classes([UserIsInTripPermission,])
     def perform_mutation(cls, info, id, input):
         countries = None
         if 'countries' in input:
