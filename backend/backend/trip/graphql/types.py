@@ -4,6 +4,11 @@ from graphene_django.types import DjangoObjectType
 from backend.trip.models import Trip, TripUser, Expense
 
 
+class ExpenseType(DjangoObjectType):
+    class Meta:
+        model = Expense
+
+
 class TripUserType(DjangoObjectType):
     class Meta:
         model = TripUser
@@ -13,6 +18,7 @@ class TripType(DjangoObjectType):
     # Rename field trip_user to users
     users = graphene.List(TripUserType)
     daily_budget = graphene.Float()
+    expenses = graphene.List(ExpenseType)
 
     @graphene.resolve_only_args
     def resolve_users(self):
@@ -21,20 +27,30 @@ class TripType(DjangoObjectType):
     @graphene.resolve_only_args
     def resolve_daily_budget(self):
         total = 0
-        expenses = self.expenses.all()
+        expenses = self.expenses.order_by('date').all()
         for expense in expenses:
             # TODO: Support exchange currency
             total += expense.amount
 
-        days = (expenses.last().created_at - expenses.first().created_at).days + 1
+        last_expense = 0
+        first_expense = 0
 
-        return (total / days)
+        if len(expenses) > 0:
+            if expenses.last():
+                last_expense = expenses.last().date.date()
+            if expenses.first():
+                first_expense = expenses.first().date.date()
+
+            days = (last_expense - first_expense).days + 1
+
+            return (total / days)
+
+        return 0
+
+    @graphene.resolve_only_args
+    def resolve_expenses(self):
+        return self.expenses.order_by('date').all()
 
     class Meta:
         model = Trip
         exclude_fields = ('trip_user',)
-
-
-class ExpenseType(DjangoObjectType):
-    class Meta:
-        model = Expense

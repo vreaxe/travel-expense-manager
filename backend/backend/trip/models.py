@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 from django.core.validators import MinValueValidator
 
@@ -38,6 +39,7 @@ class TripUser(TimestampsMixins):
 class Expense(TimestampsMixins):
     title = models.CharField(_('title'), max_length=255)
     amount = models.DecimalField(_('amount'), validators=[MinValueValidator(0.01)], max_digits=20, decimal_places=2)
+    date = models.DateTimeField(_('date'), default=now)
     created_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name='expenses')
     currency = models.ForeignKey(Currency, on_delete=models.PROTECT, related_name='expenses')
     trip = models.ForeignKey(Trip, on_delete=models.PROTECT, related_name='expenses')

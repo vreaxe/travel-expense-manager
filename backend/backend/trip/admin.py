@@ -10,7 +10,7 @@ class TripUserInline(admin.TabularInline):
 
 class ExpenseInline(admin.TabularInline):
     model = Expense
-    fields = ('title', 'amount', 'currency', 'created_by',)
+    fields = ('title', 'amount', 'currency', 'created_by', 'date',)
 
 
 class TripAdmin(admin.ModelAdmin):
@@ -25,7 +25,7 @@ admin.site.register(Trip, TripAdmin)
 
 
 class ExpenseAdmin(admin.ModelAdmin):
-    list_display = ('title', 'amount', 'currency', 'trip', 'created_by',)
+    list_display = ('title', 'amount', 'currency', 'trip', 'created_by', 'date',)
     search_fields = ('title',)
 
 admin.site.register(Expense, ExpenseAdmin)
