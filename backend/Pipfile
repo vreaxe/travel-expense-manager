@@ -14,6 +14,7 @@ gunicorn = "*"
 django-environ = ">=0.4.5"
 requests = ">=2.21.0"
 mysqlclient = "*"
+django-cors-headers = ">=3.0.0"
 
 
 [requires]
