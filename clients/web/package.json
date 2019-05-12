@@ -7,14 +7,23 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "prod": "NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "apollo-boost": "^0.3.1",
     "dotenv": "^7.0.0",
     "dotenv-webpack": "^1.7.0",
+    "graphql": "^14.3.0",
+    "lodash": "^4.17.11",
     "next": "^8.1.0",
     "next-routes": "^1.4.2",
+    "next-with-apollo": "^3.4.0",
+    "node-sass": "^4.12.0",
+    "nookies": "^2.0.5",
+    "nprogress": "^0.2.0",
     "react": "^16.8.6",
+    "react-apollo": "^2.5.5",
     "react-dom": "^16.8.6",
     "styled-components": "^4.2.0"
   },
