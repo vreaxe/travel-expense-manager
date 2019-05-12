@@ -1,22 +1,28 @@
-import React from "react";
 import App, { Container } from "next/app";
+import { ApolloProvider } from "react-apollo";
+import withApollo from "../lib/withApollo";
+import NProgress from "nprogress";
+import Router from "next/router";
+import Page from "../components/Page";
 
-class Layout extends React.Component {
-  render() {
-    const { children } = this.props;
-    return <div className="layout">{children}</div>;
-  }
-}
+NProgress.configure({ showSpinner: true });
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
 
-export default class MyApp extends App {
+class MyApp extends App {
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, apollo } = this.props;
     return (
       <Container>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <ApolloProvider client={apollo}>
+          <Page>
+            <Component {...pageProps} />
+          </Page>
+        </ApolloProvider>
       </Container>
     );
   }
 }
+
+export default withApollo(MyApp);
