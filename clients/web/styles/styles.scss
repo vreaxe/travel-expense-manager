@@ -1,2 +1,6 @@
 @import "../node_modules/nprogress/nprogress.css";
 @import "./tailwind.css";
+
+body {
+  @apply bg-gray-200;
+}
