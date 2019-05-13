@@ -1,4 +1,3 @@
-import "../styles/styles.scss";
 import Head from "next/head";
 
 const Meta = ({ title = "" }) => (
