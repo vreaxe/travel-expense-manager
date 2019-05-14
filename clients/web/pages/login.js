@@ -6,7 +6,7 @@ import { Mutation } from "react-apollo";
 import { setCookie } from "nookies";
 import classNames from "classnames";
 import { checkIfLoggedIn } from "../lib/utils";
-import redirect from "next-redirect";
+import { checkIfLoggedIn, redirect } from "../lib/utils";
 
 const TOKEN_AUTH_MUTATION = gql`
   mutation tokenAuth($email: String!, $password: String!) {

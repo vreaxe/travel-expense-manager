@@ -19,7 +19,6 @@
     "graphql": "^14.3.0",
     "lodash": "^4.17.11",
     "next": "^8.1.0",
-    "next-redirect": "^1.0.1",
     "next-routes": "^1.4.2",
     "next-with-apollo": "^3.4.0",
     "node-sass": "^4.12.0",

@@ -1,3 +1,4 @@
+import Router from "next/router";
 import { parseCookies } from "nookies";
 
 export function checkIfLoggedIn(ctx = null) {
@@ -5,4 +6,13 @@ export function checkIfLoggedIn(ctx = null) {
   return typeof cookies.token !== "undefined" ? true : false;
 }
 
-export default { checkIfLoggedIn };
+export function redirect(context, target) {
+  if (context.res) {
+    context.res.writeHead(303, { Location: target });
+    context.res.end();
+  } else {
+    Router.replace(target);
+  }
+}
+
+export default { checkIfLoggedIn, redirect };
