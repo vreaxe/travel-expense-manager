@@ -4,7 +4,9 @@ import { parseCookies } from "nookies";
 
 export default withApollo(({ ctx, headers, initialState }) => {
   const client = new ApolloClient({
-    uri: process.env.GRAPHQL_URL,
+    uri: process.browser
+      ? process.env.GRAPHQL_URL_FOR_CLIENT
+      : process.env.GRAPHQL_URL_FOR_BACKEND,
     fetchOptions: {
       credentials: "include"
     },

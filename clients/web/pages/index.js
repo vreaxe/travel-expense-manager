@@ -1,7 +1,13 @@
+import React from "react";
 import { Link } from "../routes";
+import withAuth from "../lib/withAuth";
+import { redirect } from "../lib/utils";
 
-function Home() {
-  return <div>Welcome to Next.js! - Env var.: {process.env.GRAPHQL_URL}</div>;
+class Index extends React.Component {
+  static async getInitialProps(ctx) {
+    redirect(ctx, "/dashboard");
+  }
+  render() {}
 }
 
-export default Home;
+export default Index;

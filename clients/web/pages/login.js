@@ -1,11 +1,10 @@
 import React from "react";
+import classNames from "classnames";
+import { Mutation } from "react-apollo";
+import { gql } from "apollo-boost";
+import { setCookie } from "nookies";
 import { Link, Router } from "../routes";
 import Meta from "../components/Meta";
-import { gql } from "apollo-boost";
-import { Mutation } from "react-apollo";
-import { setCookie } from "nookies";
-import classNames from "classnames";
-import { checkIfLoggedIn } from "../lib/utils";
 import { checkIfLoggedIn, redirect } from "../lib/utils";
 
 const TOKEN_AUTH_MUTATION = gql`
@@ -24,7 +23,7 @@ class Login extends React.Component {
 
   static async getInitialProps(ctx) {
     if (checkIfLoggedIn(ctx)) {
-      return redirect(ctx, "/");
+      return redirect(ctx, "/dashboard");
     }
     return {};
   }
@@ -80,7 +79,7 @@ class Login extends React.Component {
                   )}
                   type="submit"
                 >
-                  {loading ? "Loading" : "Login"}
+                  Login
                 </button>
               </form>
             )}
