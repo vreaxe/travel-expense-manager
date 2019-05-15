@@ -1,6 +1,6 @@
 import withApollo from "next-with-apollo";
 import ApolloClient, { InMemoryCache } from "apollo-boost";
-import { parseCookies } from "nookies";
+import { parseCookies, destroyCookie } from "nookies";
 
 export default withApollo(({ ctx, headers, initialState }) => {
   const client = new ApolloClient({
@@ -19,9 +19,9 @@ export default withApollo(({ ctx, headers, initialState }) => {
         }
       });
     },
-    onError: ({ networkError }) => {
-      if (networkError) {
-        console.log("Network Error", networkError);
+    onError: error => {
+      if (error.graphQLErrors[0].type == "JSONWebTokenError") {
+        destroyCookie(ctx, "token");
       }
     },
     cache: new InMemoryCache().restore(initialState || {})
