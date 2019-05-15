@@ -170,6 +170,16 @@ module.exports = {
         '"Liberation Mono"',
         '"Courier New"',
         "monospace"
+      ],
+      emoji: [
+        "apple color emoji",
+        "segoe ui emoji",
+        "noto color emoji",
+        "android emoji",
+        "emojisymbols",
+        "emojione mozilla",
+        "twemoji mozilla",
+        "segoe ui symbol"
       ]
     },
     fontSize: {
