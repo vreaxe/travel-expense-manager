@@ -1,6 +1,19 @@
 @import "../node_modules/nprogress/nprogress.css";
 @import "./tailwind.css";
 
+#nprogress .bar {
+  background: #48bb78 !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #48bb78, 0 0 5px #48bb78 !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #48bb78 !important;
+  border-left-color: #48bb78 !important;
+}
+
 body {
   @apply bg-gray-200;
 }
