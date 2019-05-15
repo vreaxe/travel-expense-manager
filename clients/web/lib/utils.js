@@ -7,11 +7,11 @@ export function checkIfLoggedIn(ctx = null) {
 }
 
 export function redirect(context, target) {
-  if (context.res) {
+  if (context && context.res) {
     context.res.writeHead(302, { Location: target });
     context.res.end();
   } else {
-    Router.replace(target);
+    Router.pushRoute(target);
   }
 }
 
