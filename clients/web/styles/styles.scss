@@ -21,3 +21,16 @@ body {
 .emoji {
   @apply font-emoji;
 }
+
+.sidebar {
+  a {
+    &.active {
+      @apply font-bold;
+    }
+  }
+  ul {
+    li {
+      @apply my-5;
+    }
+  }
+}

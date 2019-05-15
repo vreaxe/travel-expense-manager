@@ -2,6 +2,7 @@ import React from "react";
 import { Query } from "react-apollo";
 import { gql } from "apollo-boost";
 import { checkIfLoggedIn, redirect } from "./utils";
+import AuthWrapper from "../components/AuthWrapper";
 
 const ME_QUERY = gql`
   query {
@@ -30,7 +31,11 @@ export default function withAuth(WrappedComponent, to = "/login") {
     }
 
     render() {
-      return <WrappedComponent {...this.props} />;
+      return (
+        <AuthWrapper {...this.props}>
+          <WrappedComponent {...this.props} />
+        </AuthWrapper>
+      );
     }
   };
 }
