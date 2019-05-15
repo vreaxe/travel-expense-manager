@@ -41,7 +41,7 @@ class LoginForm extends React.Component {
                   maxAge: 30 * 24 * 60 * 60,
                   path: "/"
                 });
-                Router.pushRoute("index");
+                Router.pushRoute("dashboard");
               }}
             >
               <ErrorMessage error={error} />
