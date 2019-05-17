@@ -7,7 +7,9 @@ class Index extends React.Component {
   static async getInitialProps(ctx) {
     redirect(ctx, "/dashboard");
   }
-  render() {}
+  render() {
+    return <div />;
+  }
 }
 
-export default Index;
+export default withAuth(Index);
