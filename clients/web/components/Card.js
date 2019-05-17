@@ -5,7 +5,7 @@ import moment from "moment";
 const Card = props => {
   return (
     <div className="w-1/3 px-2">
-      <div className="px-6 py-4 mb-5 shadow overflow-hidden">
+      <div className="px-6 py-4 mb-5 shadow bg-white overflow-hidden">
         <div className="font-bold text-xl mb-1">{props.trip.title}</div>
         <div className="mb-1">
           {props.trip.countries.map(country => {
