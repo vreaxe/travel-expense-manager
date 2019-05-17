@@ -23,6 +23,11 @@ export default withApollo(({ ctx, headers, initialState }) => {
       if (error.graphQLErrors[0].type == "JSONWebTokenError") {
         destroyCookie(ctx, "token");
       }
+
+      // TODO: Refresh token automatically
+      if (error.graphQLErrors[0].type == "JSONWebTokenExpired") {
+        destroyCookie(ctx, "token");
+      }
     },
     cache: new InMemoryCache().restore(initialState || {})
   });
