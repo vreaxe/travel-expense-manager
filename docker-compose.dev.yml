@@ -22,7 +22,7 @@ services:
     volumes:
       - ./clients/web:/data/web
       - ./clients/.env:/data/web/.env
-    command: npm run dev
+    command: sh -c "npm rebuild node-sass && npm run dev"
 
   database:
     container_name: tem-database
