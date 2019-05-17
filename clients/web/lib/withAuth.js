@@ -15,8 +15,13 @@ const ME_QUERY = gql`
 
 export default function withAuth(WrappedComponent, to = "/login") {
   return class Authenticated extends React.Component {
-    static async getInitialProps(context) {
-      const loggedUser = await context.apolloClient
+    static async getInitialProps(ctx) {
+      let componentProps = {};
+      if (WrappedComponent.getInitialProps) {
+        componentProps = await WrappedComponent.getInitialProps(ctx);
+      }
+
+      const loggedUser = await ctx.apolloClient
         .query({
           query: ME_QUERY
         })
@@ -24,10 +29,10 @@ export default function withAuth(WrappedComponent, to = "/login") {
         .catch(error => null);
 
       if (!loggedUser) {
-        redirect(context, to);
+        redirect(ctx, to);
       }
 
-      return { loggedUser };
+      return { loggedUser, ...componentProps };
     }
 
     render() {
