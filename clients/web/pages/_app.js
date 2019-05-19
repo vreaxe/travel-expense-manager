@@ -3,7 +3,7 @@ import { ApolloProvider } from "react-apollo";
 import withApollo from "../lib/withApollo";
 import NProgress from "nprogress";
 import Router from "next/router";
-import Page from "../components/Page";
+import Page from "../components/layouts/Page";
 
 NProgress.configure({ showSpinner: true });
 Router.events.on("routeChangeStart", () => NProgress.start());

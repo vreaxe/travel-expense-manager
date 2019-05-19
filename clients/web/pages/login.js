@@ -1,5 +1,5 @@
 import React from "react";
-import Meta from "../components/Meta";
+import Meta from "../components/layouts/Meta";
 import LoginForm from "../components/forms/LoginForm";
 import { checkIfLoggedIn, redirect } from "../lib/utils";
 
