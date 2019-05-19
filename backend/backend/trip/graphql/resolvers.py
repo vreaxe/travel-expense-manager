@@ -21,4 +21,4 @@ def resolve_expense(info, id=None):
 
 def resolve_expenses(info, trip_id):
     user = info.context.user
-    return Expense.objects.filter(trip_id=trip_id)
+    return Expense.objects.filter(trip_id=trip_id).order_by('-date')
