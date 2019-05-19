@@ -144,8 +144,8 @@ module.exports = {
     screens: {
       sm: "640px",
       md: "768px",
-      lg: "1024px",
-      xl: "1280px"
+      lg: "960px",
+      xl: "1024px"
     },
     fontFamily: {
       sans: [
@@ -172,14 +172,13 @@ module.exports = {
         "monospace"
       ],
       emoji: [
-        "apple color emoji",
-        "segoe ui emoji",
-        "noto color emoji",
-        "android emoji",
-        "emojisymbols",
-        "emojione mozilla",
-        "twemoji mozilla",
-        "segoe ui symbol"
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+        '"Android Emoji"',
+        '"EmojiOne Mozilla"',
+        '"Twemoji Mozilla"'
       ]
     },
     fontSize: {
