@@ -5,7 +5,7 @@ import Content from "./layouts/Content";
 
 const AuthWrapper = props => {
   return (
-    <div className="container w-full flex flex-wrap mx-auto">
+    <div className="container w-full flex flex-wrap mx-auto p-6 xl:p-0">
       <div className="w-full lg:w-1/5 lg:px-6">
         <Sidebar {...props} />
       </div>
