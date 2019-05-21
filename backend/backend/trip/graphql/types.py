@@ -17,7 +17,8 @@ class TripUserType(DjangoObjectType):
 class TripType(DjangoObjectType):
     # Rename field trip_user to users
     users = graphene.List(TripUserType)
-    daily_budget = graphene.Float()
+    total_spent = graphene.Float()
+    daily_avg_spent = graphene.Float()
     expenses = graphene.List(ExpenseType)
 
     @graphene.resolve_only_args
@@ -25,7 +26,18 @@ class TripType(DjangoObjectType):
         return self.trip_user.all()
 
     @graphene.resolve_only_args
-    def resolve_daily_budget(self):
+    def resolve_total_spent(self):
+        total = 0
+        expenses = self.expenses.order_by('date').all()
+        for expense in expenses:
+            # TODO: Support exchange currency
+            total += expense.amount
+
+        return total
+
+    @graphene.resolve_only_args
+    def resolve_daily_avg_spent(self):
+        # TODO: Improve. No repeat
         total = 0
         expenses = self.expenses.order_by('date').all()
         for expense in expenses:
