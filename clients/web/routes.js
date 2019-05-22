@@ -5,4 +5,5 @@ module.exports = routes()
   .add("index", "")
   .add("dashboard")
   .add("trips")
+  .add("trip", "/trips/:id", "trip")
   .add("login");

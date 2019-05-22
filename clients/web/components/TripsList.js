@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./Card";
+import TripCard from "./TripCard";
 import { Query } from "react-apollo";
 import { gql } from "apollo-boost";
 
@@ -12,6 +12,7 @@ const TRIPS_QUERY = gql`
       startDate
       endDate
       countries {
+        id
         name
         flagEmoji
       }
@@ -19,24 +20,22 @@ const TRIPS_QUERY = gql`
   }
 `;
 
-class TripsList extends React.Component {
-  render() {
-    return (
-      <div class="flex flex-wrap -mx-2">
-        <Query query={TRIPS_QUERY}>
-          {({ data: { trips }, loading, error }) => {
-            return (
-              <React.Fragment>
-                {trips.map(trip => (
-                  <Card trip={trip} />
-                ))}
-              </React.Fragment>
-            );
-          }}
-        </Query>
-      </div>
-    );
-  }
-}
+const TripsList = props => {
+  return (
+    <div className="flex flex-wrap -mx-2">
+      <Query query={TRIPS_QUERY}>
+        {({ data: { trips }, loading, error }) => {
+          return (
+            <>
+              {trips.map(trip => (
+                <TripCard key={trip.id} trip={trip} />
+              ))}
+            </>
+          );
+        }}
+      </Query>
+    </div>
+  );
+};
 
 export default TripsList;

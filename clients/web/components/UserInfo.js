@@ -8,7 +8,7 @@ const UserInfo = props => {
     redirect(null, "/login");
   };
   return (
-    <div className="mb-6">
+    <div className="my-6">
       <img
         className="rounded-full mx-auto my-6"
         src={"https://via.placeholder.com/150?text=User"}

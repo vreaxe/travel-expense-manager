@@ -26,6 +26,7 @@
     "nookies": "^2.0.5",
     "nprogress": "^0.2.0",
     "react": "^16.8.6",
+    "react-adopt": "^0.6.0",
     "react-apollo": "^2.5.5",
     "react-dom": "^16.8.6",
     "tailwindcss": "^1.0.1",
