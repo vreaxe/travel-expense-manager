@@ -13,10 +13,10 @@ class Login extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <Meta title="Login" />
         <LoginForm />
-      </React.Fragment>
+      </>
     );
   }
 }
