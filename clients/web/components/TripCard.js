@@ -10,7 +10,7 @@ const TripCard = props => {
         <Link route="trip" params={{ id: props.trip.id }}>
           <a className="p-6 block">
             <div className="font-bold text-xl mb-1">{props.trip.title}</div>
-            <div className="mb-1">
+            <div className="mb-1 truncate">
               {props.trip.countries.map(country => {
                 return <CountryFlag key={country.id} country={country} />;
               })}

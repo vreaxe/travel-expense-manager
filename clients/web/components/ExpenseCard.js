@@ -1,4 +1,5 @@
 import React from "react";
+import CurrencyNumber from "./elements/CurrencyNumber";
 
 const ExpenseCard = props => {
   return (
@@ -8,8 +9,10 @@ const ExpenseCard = props => {
       </div>
       <div className="w-1/2">
         <p className="text-right">
-          {props.expense.amount}&nbsp;
-          {props.expense.currency.symbol}
+          <CurrencyNumber
+            number={props.expense.amount}
+            currency={props.expense.currency}
+          />
         </p>
       </div>
     </div>
