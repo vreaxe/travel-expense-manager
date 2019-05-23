@@ -1,4 +1,5 @@
 import React from "react";
+import CountryFlag from "./elements/CountryFlag";
 
 const TripInfo = props => {
   return (
@@ -20,7 +21,11 @@ const TripInfo = props => {
         <h3 className="block font-bold text-md">
           {props.trip.countries.length == 1 ? "Country" : "Countries"}
         </h3>
-        <p>{props.trip.countries.map(country => country.flagEmoji)}</p>
+        <p>
+          {props.trip.countries.map(country => (
+            <CountryFlag key={country.id} country={country} />
+          ))}
+        </p>
       </div>
     </div>
   );

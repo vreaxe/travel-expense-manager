@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import { Link } from "../routes";
+import CountryFlag from "./elements/CountryFlag";
 
 const TripCard = props => {
   return (
@@ -11,11 +12,7 @@ const TripCard = props => {
             <div className="font-bold text-xl mb-1">{props.trip.title}</div>
             <div className="mb-1">
               {props.trip.countries.map(country => {
-                return (
-                  <span key={country.id} className="mr-1">
-                    {country.flagEmoji}
-                  </span>
-                );
+                return <CountryFlag key={country.id} country={country} />;
               })}
             </div>
             <p className="text-sm text-gray-600">
