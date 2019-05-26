@@ -1,17 +1,16 @@
-FROM node:alpine
+FROM node:slim
 
 # Create directory
 RUN mkdir -p /data/web
 WORKDIR /data/web
 
+# Copy code
+COPY ./clients/web /data/web
+
 # Install dependencies
-COPY ./clients/web/package.json /data/web/
 RUN npm install
 
 # Copy environment variables
-COPY ./clients/.env /data/web/
-
-# Copy code
-COPY ./clients/web /data/web
+COPY ./clients/.env /data/web/.env
 
 EXPOSE 3000

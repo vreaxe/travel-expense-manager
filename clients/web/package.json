@@ -1,7 +1,7 @@
 {
-  "name": "frontend",
+  "name": "web",
   "version": "1.0.0",
-  "description": "Frontend",
+  "description": "Web",
   "author": "vreaxe",
   "license": "MIT",
   "scripts": {
