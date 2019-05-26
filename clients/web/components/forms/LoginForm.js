@@ -1,19 +1,11 @@
 import React from "react";
 import classNames from "classnames";
 import { Mutation } from "react-apollo";
-import { gql } from "apollo-boost";
 import { setCookie } from "nookies";
 import { Link, Router } from "../../routes";
 import { redirect } from "../../lib/utils";
 import ErrorMessage from "../errors/ErrorMessage";
-
-const TOKEN_AUTH_MUTATION = gql`
-  mutation tokenAuth($email: String!, $password: String!) {
-    tokenAuth(email: $email, password: $password) {
-      token
-    }
-  }
-`;
+import { TOKEN_AUTH_MUTATION } from "../../graphql/mutations";
 
 class LoginForm extends React.Component {
   state = {

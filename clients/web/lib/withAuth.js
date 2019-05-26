@@ -3,15 +3,7 @@ import { Query } from "react-apollo";
 import { gql } from "apollo-boost";
 import { checkIfLoggedIn, redirect } from "./utils";
 import AuthWrapper from "../components/AuthWrapper";
-
-const ME_QUERY = gql`
-  query {
-    me {
-      id
-      email
-    }
-  }
-`;
+import { ME_QUERY } from "../graphql/queries";
 
 export default function withAuth(WrappedComponent, to = "/login") {
   return class Authenticated extends React.Component {

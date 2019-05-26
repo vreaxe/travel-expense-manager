@@ -2,23 +2,7 @@ import React from "react";
 import TripCard from "./TripCard";
 import { Query } from "react-apollo";
 import { gql } from "apollo-boost";
-
-const TRIPS_QUERY = gql`
-  query {
-    trips {
-      id
-      title
-      budget
-      startDate
-      endDate
-      countries {
-        id
-        name
-        flagEmoji
-      }
-    }
-  }
-`;
+import { TRIPS_QUERY } from "../graphql/queries";
 
 const TripsList = props => {
   return (

@@ -1,49 +1,11 @@
 import React from "react";
-import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
 import { adopt } from "react-adopt";
 import moment from "moment";
 import Meta from "./layouts/Meta";
 import ExpensesList from "./ExpensesList";
 import TripInfo from "./TripInfo";
-
-const TRIP_QUERY = gql`
-  query trip($id: ID!) {
-    trip(id: $id) {
-      title
-      budget
-      startDate
-      endDate
-      dailyAvgSpent
-      totalSpent
-      countries {
-        id
-        name
-        flagEmoji
-      }
-      baseCurrency {
-        code
-        symbol
-      }
-    }
-  }
-`;
-
-const TRIP_EXPENSES_QUERY = gql`
-  query expenses($tripId: ID!) {
-    expenses(tripId: $tripId) {
-      id
-      title
-      amount
-      date
-      currency {
-        id
-        code
-        symbol
-      }
-    }
-  }
-`;
+import { TRIP_QUERY, TRIP_EXPENSES_QUERY } from "../graphql/queries";
 
 const TripItem = props => {
   const Queries = adopt({
