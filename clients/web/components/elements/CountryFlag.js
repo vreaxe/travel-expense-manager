@@ -1,13 +1,22 @@
 import React from "react";
-import Tippy from "@tippy.js/react";
+import Tooltip from "rc-tooltip";
 
 const CountryFlag = props => {
   return (
-    <Tippy content={props.country.name} arrow={true}>
+    <Tooltip
+      placement="top"
+      overlay={props.country.name}
+      overlayStyle={{
+        opacity: 1
+      }}
+      align={{
+        offset: [0, 2]
+      }}
+    >
       <span key={props.country.id} className="mr-1">
         {props.country.flagEmoji}
       </span>
-    </Tippy>
+    </Tooltip>
   );
 };
 

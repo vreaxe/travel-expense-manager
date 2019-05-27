@@ -32,11 +32,11 @@ const TripInfo = props => {
         <h3 className="block font-bold text-md mb-1">
           {props.trip.countries.length == 1 ? "Country" : "Countries"}
         </h3>
-        <p className="break-words">
+        <div className="break-words">
           {props.trip.countries.map(country => (
             <CountryFlag key={country.id} country={country} />
           ))}
-        </p>
+        </div>
       </div>
     </div>
   );
