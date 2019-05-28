@@ -12,6 +12,7 @@ export const ME_QUERY = gql`
 export const TRIP_QUERY = gql`
   query trip($id: ID!) {
     trip(id: $id) {
+      id
       title
       budget
       startDate
