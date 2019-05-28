@@ -5,6 +5,8 @@ import moment from "moment";
 import Meta from "./layouts/Meta";
 import ExpensesList from "./ExpensesList";
 import TripInfo from "./TripInfo";
+import FAB from "./elements/FAB";
+import { Router } from "../routes";
 import { TRIP_QUERY, TRIP_EXPENSES_QUERY } from "../graphql/queries";
 
 const TripItem = props => {
@@ -36,6 +38,15 @@ const TripItem = props => {
             </h1>
             <TripInfo trip={trip.data.trip} />
             <ExpensesList expenses={expenses.data} />
+            <FAB
+              onClick={() =>
+                Router.pushRoute("addExpense", { id: trip.data.trip.id })
+              }
+              position={{ bottom: 30, right: 30 }}
+              tooltipContent="Add Expense"
+            >
+              <p className="text-center w-full text-2xl text-white">＋</p>
+            </FAB>
           </>
         );
       }}
