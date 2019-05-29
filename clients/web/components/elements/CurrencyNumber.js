@@ -3,7 +3,7 @@ import React from "react";
 const CurrencyNumber = props => {
   return (
     <span>
-      {/* get language from user selected */}
+      {/* TODO get language from user selected */}
       {new Intl.NumberFormat("en", {
         style: "currency",
         currency: props.currency.code,
