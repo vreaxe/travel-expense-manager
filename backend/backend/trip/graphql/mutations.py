@@ -4,11 +4,12 @@ from graphql_jwt.decorators import login_required
 
 from backend.graphql.exceptions import ValidationError
 from backend.core.graphql.scalars import Decimal
-from backend.trip.graphql.types import TripType
-from backend.trip.models import Trip, TripUser
+from backend.trip.graphql.types import TripType, ExpenseType
+from backend.trip.models import Trip, TripUser, Expense
 from backend.core.models import Currency
 from backend.trip.constants import TripUserRoles
 from backend.core.services import get_countries, get_currency
+from backend.trip.services import get_trip
 from backend.trip.permissions import UserIsInTripPermission
 from backend.graphql.mutations import BaseMutation
 from backend.graphql.decorators import permission_classes
@@ -29,6 +30,14 @@ class UpdateTripInput(graphene.InputObjectType):
     start_date = graphene.DateTime()
     end_date = graphene.DateTime()
     countries = graphene.List(graphene.ID)
+
+
+class CreateExpenseInput(graphene.InputObjectType):
+    title = graphene.String(required=True)
+    amount = Decimal(required=True)
+    date = graphene.DateTime(required=True)
+    currency = graphene.ID(required=True)
+    trip = graphene.ID(required=True)
 
 
 class CreateTrip(BaseMutation):
@@ -92,3 +101,31 @@ class UpdateTrip(BaseMutation):
             if countries:
                 trip.countries.add(*countries)
         return UpdateTrip(trip=trip)
+
+
+class CreateExpense(BaseMutation):
+    expense = graphene.Field(ExpenseType)
+
+    class Arguments:
+        input = CreateExpenseInput(required=True)
+
+    class Meta:
+        description = 'Create expense'
+
+    @permission_classes([UserIsInTripPermission,])
+    def perform_mutation(cls, info, input):
+        currency = get_currency(input['currency'])
+        trip = get_trip(input['trip'])
+
+        with transaction.atomic():
+            expense = Expense(
+                title = input['title'],
+                amount = input['amount'],
+                date = input['date'],
+                created_by = info.context.user,
+                currency = currency,
+                trip = trip,
+            )
+            expense.full_clean()
+            expense.save()
+        return CreateExpense(expense=expense)
