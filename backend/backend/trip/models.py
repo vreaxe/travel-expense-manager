@@ -6,6 +6,7 @@ from django.core.validators import MinValueValidator
 from backend.core.mixins import TimestampsMixins
 from backend.core.models import Currency, Country, User
 from backend.trip.constants import TripUserRoles
+from backend.core.validators import validate_date_range
 
 
 class Trip(TimestampsMixins):
@@ -47,3 +48,7 @@ class Expense(TimestampsMixins):
     class Meta:
         verbose_name = _('expense')
         verbose_name_plural = _('expenses')
+
+    def clean(self, *args, **kwargs):
+        validate_date_range(self.trip.start_date, self.trip.end_date, self.date, 'date')
+        super(Expense, self).clean(*args, **kwargs)
