@@ -4,7 +4,7 @@ from graphql_jwt.decorators import login_required
 
 from backend.trip.graphql.types import TripType, ExpenseType
 from backend.trip.graphql.resolvers import resolve_trips, resolve_trip, resolve_expense, resolve_expenses
-from backend.trip.graphql.mutations import CreateTrip, UpdateTrip, CreateExpense
+from backend.trip.graphql.mutations import CreateTrip, UpdateTrip, CreateExpense, UpdateExpense
 from backend.trip.permissions import UserIsInTripPermission
 from backend.graphql.decorators import permission_classes
 
@@ -37,5 +37,6 @@ class Mutation(ObjectType):
     create_trip = CreateTrip.Field()
     update_trip = UpdateTrip.Field()
     create_expense = CreateExpense.Field()
+    update_expense = UpdateExpense.Field()
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

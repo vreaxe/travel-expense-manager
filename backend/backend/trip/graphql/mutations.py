@@ -40,6 +40,12 @@ class CreateExpenseInput(graphene.InputObjectType):
     trip = graphene.ID(required=True)
 
 
+class UpdateExpenseInput(graphene.InputObjectType):
+    title = graphene.String()
+    amount = Decimal()
+    date = graphene.DateTime()
+
+
 class CreateTrip(BaseMutation):
     trip = graphene.Field(TripType)
 
@@ -131,3 +137,26 @@ class CreateExpense(BaseMutation):
             expense.full_clean()
             expense.save()
         return CreateExpense(expense=expense)
+
+
+class UpdateExpense(BaseMutation):
+    expense = graphene.Field(ExpenseType)
+
+    class Arguments:
+        id = graphene.ID(required=True)
+        input = UpdateExpenseInput(required=True)
+
+    class Meta:
+        description = 'Update expense'
+
+    @login_required
+    @permission_classes([UserIsInTripPermission,])
+    def perform_mutation(cls, info, id, input):
+        with transaction.atomic():
+            expense = Expense.objects.get(id=id)
+            for key, value in input.items():
+                setattr(expense, key, value)
+            expense.full_clean()
+            expense.save()
+
+        return UpdateExpense(expense=expense)
