@@ -85,6 +85,7 @@ class UpdateTrip(BaseMutation):
     class Meta:
         description = 'Update trip'
 
+    @login_required
     @permission_classes([UserIsInTripPermission,])
     def perform_mutation(cls, info, id, input):
         countries = None
@@ -112,6 +113,7 @@ class CreateExpense(BaseMutation):
     class Meta:
         description = 'Create expense'
 
+    @login_required
     @permission_classes([UserIsInTripPermission,])
     def perform_mutation(cls, info, input):
         currency = get_currency(input['currency'])
