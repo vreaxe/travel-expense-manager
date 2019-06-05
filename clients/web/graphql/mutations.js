@@ -8,4 +8,22 @@ export const TOKEN_AUTH_MUTATION = gql`
   }
 `;
 
-export default { TOKEN_AUTH_MUTATION };
+export const CREATE_EXPENSE_MUTATION = gql`
+  mutation createExpense($input: CreateExpenseInput!) {
+    createExpense(input: $input) {
+      expense {
+        id
+        title
+        amount
+        date
+        currency {
+          id
+          code
+          symbol
+        }
+      }
+    }
+  }
+`;
+
+export default { TOKEN_AUTH_MUTATION, CREATE_EXPENSE_MUTATION };
