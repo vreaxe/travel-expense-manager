@@ -23,6 +23,11 @@ export const TRIP_QUERY = gql`
         id
         name
         flagEmoji
+        currencies {
+          id
+          name
+          symbol
+        }
       }
       baseCurrency {
         code
