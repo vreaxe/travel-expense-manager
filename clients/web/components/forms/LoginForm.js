@@ -3,7 +3,6 @@ import classNames from "classnames";
 import { Mutation } from "react-apollo";
 import { setCookie } from "nookies";
 import { Link, Router } from "../../routes";
-import { redirect } from "../../lib/utils";
 import ErrorMessage from "../errors/ErrorMessage";
 import { TOKEN_AUTH_MUTATION } from "../../graphql/mutations";
 
