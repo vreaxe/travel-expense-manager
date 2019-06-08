@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import classNames from "classnames";
 
 const ErrorMessageContainer = props => {
+  const [show, setShow] = useState(true);
   return (
-    <div className="bg-red-500 text-white font-bold p-3 border border-red-700 rounded-lg my-5">
+    <div
+      className={classNames(
+        "bg-red-500 text-white font-bold p-3 border border-red-700 rounded-lg my-5 relative",
+        { hidden: !show }
+      )}
+    >
       {props.children}
+      <span
+        className="cursor-pointer absolute top-0 right-0 mr-4 mt-1 text-xl"
+        onClick={() => setShow(false)}
+      >
+        &times;
+      </span>
     </div>
   );
 };
