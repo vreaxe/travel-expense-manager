@@ -1,5 +1,6 @@
 import React from "react";
 import { Query } from "react-apollo";
+import { Router } from "../routes";
 import withAuth from "../lib/withAuth";
 import Meta from "../components/layouts/Meta";
 import { TRIP_QUERY } from "../graphql/queries";
@@ -18,10 +19,16 @@ class AddExpense extends React.Component {
             return (
               <>
                 <Meta title={`Add Expense to ${trip.title}`} />
-                <h1 className="font-bold text-2xl mb-4 border-b-2 pb-2 border-green-500 uppercase">
+                <h1 className="flex items-center font-bold text-2xl mb-4 border-b-2 pb-2 border-green-500 uppercase">
+                  <span
+                    className="text-gray-600 hover:text-gray-700 text-sm mr-2 pr-2 border-r border-gray-600 cursor-pointer"
+                    onClick={() => Router.pushRoute("trip", { id: trip.id })}
+                  >
+                    ← Back
+                  </span>
                   ADD EXPENSE TO {trip.title}
                 </h1>
-                <AddExpenseForm />
+                <AddExpenseForm trip={trip} />
               </>
             );
           }}

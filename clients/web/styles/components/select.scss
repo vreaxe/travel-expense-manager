@@ -1,0 +1,15 @@
+.react-select {
+  .react-select__control {
+    @apply rounded-lg border-gray-400;
+    &:hover {
+      @apply border-gray-500;
+    }
+    &.react-select__control--is-focused {
+      @apply border-green-500;
+      box-shadow: 0 0 0 1px #48bb78;
+    }
+    .react-select__value-container {
+      @apply p-2;
+    }
+  }
+}

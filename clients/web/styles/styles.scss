@@ -1,6 +1,9 @@
 @import "../node_modules/nprogress/nprogress.css";
 @import "../node_modules/rc-tooltip/assets/bootstrap.css";
+@import "../node_modules/react-datepicker/dist/react-datepicker.css";
 @import "./tailwind.css";
+@import "./components/select";
+@import "./components/input";
 
 #nprogress .bar {
   background: #48bb78 !important;
