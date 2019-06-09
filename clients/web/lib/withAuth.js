@@ -1,6 +1,5 @@
 import React from "react";
 import { Query } from "react-apollo";
-import { gql } from "apollo-boost";
 import { checkIfLoggedIn, redirect } from "./utils";
 import AuthWrapper from "../components/AuthWrapper";
 import { ME_QUERY } from "../graphql/queries";

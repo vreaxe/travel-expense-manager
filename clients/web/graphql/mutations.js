@@ -1,4 +1,4 @@
-import { gql } from "apollo-boost";
+import gql from "graphql-tag";
 
 export const TOKEN_AUTH_MUTATION = gql`
   mutation tokenAuth($email: String!, $password: String!) {
