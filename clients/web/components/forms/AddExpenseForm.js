@@ -8,6 +8,7 @@ import classNames from "classnames";
 import { Link, Router } from "../../routes";
 import { redirect } from "../../lib/utils";
 import ErrorMessage from "../errors/ErrorMessage";
+import ErrorField from "../errors/ErrorField";
 import { CREATE_EXPENSE_MUTATION } from "../../graphql/mutations";
 
 class DatePickerCustomInput extends React.Component {
@@ -97,6 +98,7 @@ class AddExpenseForm extends React.Component {
                     onChange={this.handleChange}
                     value={this.state.title}
                   />
+                  <ErrorField error={error} field="title" />
                 </div>
                 <div className="flex mb-4">
                   <div className="w-1/2 mr-4">
@@ -114,6 +116,7 @@ class AddExpenseForm extends React.Component {
                       onChange={this.handleChange}
                       value={this.state.amount}
                     />
+                    <ErrorField error={error} field="amount" />
                   </div>
                   <div className="w-1/2 ml-4">
                     <label className="block text-gray-700 text-xl font-bold mb-2">
@@ -127,6 +130,7 @@ class AddExpenseForm extends React.Component {
                       className="react-select"
                       classNamePrefix="react-select"
                     />
+                    <ErrorField error={error} field="currency" />
                   </div>
                 </div>
                 <div className="mb-4">
@@ -150,6 +154,7 @@ class AddExpenseForm extends React.Component {
                     showYearDropdown
                     shouldCloseOnSelect={true}
                   />
+                  <ErrorField error={error} field="date" />
                 </div>
                 <div className="flex items-center justify-end">
                   <button
