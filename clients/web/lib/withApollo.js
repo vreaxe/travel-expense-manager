@@ -29,9 +29,7 @@ export default withApollo(({ ctx, headers, initialState }) => {
           .then(oper => request(oper))
           .then(() => {
             handle = forward(operation).subscribe({
-              next: result => {
-                observer.next(result);
-              },
+              next: observer.next.bind(observer),
               error: observer.error.bind(observer),
               complete: observer.complete.bind(observer)
             });
