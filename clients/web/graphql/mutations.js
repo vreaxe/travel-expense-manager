@@ -27,8 +27,8 @@ export const CREATE_EXPENSE_MUTATION = gql`
 `;
 
 export const UPDATE_EXPENSE_MUTATION = gql`
-  mutation createExpense($id: ID!, $input: UpdateExpenseInput!) {
-    createExpense(id: $id, input: $input) {
+  mutation updateExpense($id: ID!, $input: UpdateExpenseInput!) {
+    updateExpense(id: $id, input: $input) {
       expense {
         id
         title
