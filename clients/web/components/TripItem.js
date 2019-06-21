@@ -5,6 +5,7 @@ import moment from "moment";
 import Meta from "./layouts/Meta";
 import ExpensesList from "./ExpensesList";
 import TripInfo from "./TripInfo";
+import BackButton from "./elements/BackButton";
 import FAB from "./elements/FAB";
 import { Router } from "../routes";
 import { TRIP_QUERY, TRIP_EXPENSES_QUERY } from "../graphql/queries";
@@ -29,6 +30,7 @@ const TripItem = props => {
           <>
             <Meta title={trip.data.trip.title} />
             <h1 className="flex items-center font-bold text-2xl mb-4 border-b-2 pb-2 border-green-500 uppercase">
+              <BackButton routeName="trips" />
               {trip.data.trip.title}
               <span className="ml-auto text-sm text-gray-600 text-right">
                 {moment(trip.data.trip.startDate).format("DD-MM-YYYY")}
