@@ -6,6 +6,7 @@ import Meta from "./layouts/Meta";
 import ExpensesList from "./ExpensesList";
 import TripInfo from "./TripInfo";
 import BackButton from "./elements/BackButton";
+import NoItems from "./NoItems";
 import FAB from "./elements/FAB";
 import { Router } from "../routes";
 import { TRIP_QUERY, TRIP_EXPENSES_QUERY } from "../graphql/queries";
@@ -26,6 +27,15 @@ const TripItem = props => {
   return (
     <Queries>
       {({ trip, expenses }) => {
+        if (
+          typeof trip.data === "undefined" ||
+          typeof trip.data.trip === "undefined" ||
+          typeof expenses.data === "undefined" ||
+          typeof expenses.data.expenses === "undefined"
+        ) {
+          return <NoItems itemName="trip" />;
+        }
+
         return (
           <>
             <Meta title={trip.data.trip.title} />
