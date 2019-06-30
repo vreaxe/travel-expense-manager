@@ -27,6 +27,10 @@ body {
   @apply bg-gray-200;
 }
 
+input {
+  outline: none;
+}
+
 .emoji {
   @apply font-emoji;
 }
