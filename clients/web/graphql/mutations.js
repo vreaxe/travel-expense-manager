@@ -49,12 +49,6 @@ export const CREATE_TRIP_MUTATION = gql`
     createTrip(input: $input) {
       trip {
         id
-        title
-        baseCurrency {
-          id
-          code
-          symbol
-        }
       }
     }
   }
