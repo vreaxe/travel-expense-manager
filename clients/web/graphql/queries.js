@@ -70,4 +70,32 @@ export const TRIPS_QUERY = gql`
   }
 `;
 
-export default { ME_QUERY, TRIPS_QUERY, TRIP_QUERY, TRIP_EXPENSES_QUERY };
+export const CURRENCIES_QUERY = gql`
+  query {
+    currencies {
+      id
+      code
+      name
+      symbol
+    }
+  }
+`;
+
+export const COUNTRIES_QUERY = gql`
+  query {
+    countries {
+      id
+      name
+      flagEmoji
+    }
+  }
+`;
+
+export default {
+  ME_QUERY,
+  TRIPS_QUERY,
+  TRIP_QUERY,
+  TRIP_EXPENSES_QUERY,
+  CURRENCIES_QUERY,
+  COUNTRIES_QUERY
+};

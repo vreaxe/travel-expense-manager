@@ -44,8 +44,25 @@ export const UPDATE_EXPENSE_MUTATION = gql`
   }
 `;
 
+export const CREATE_TRIP_MUTATION = gql`
+  mutation createTrip($input: CreateTripInput!) {
+    createTrip(input: $input) {
+      trip {
+        id
+        title
+        baseCurrency {
+          id
+          code
+          symbol
+        }
+      }
+    }
+  }
+`;
+
 export default {
   TOKEN_AUTH_MUTATION,
   CREATE_EXPENSE_MUTATION,
-  UPDATE_EXPENSE_MUTATION
+  UPDATE_EXPENSE_MUTATION,
+  CREATE_TRIP_MUTATION
 };
