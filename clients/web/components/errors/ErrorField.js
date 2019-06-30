@@ -18,8 +18,10 @@ const ErrorField = ({ error, field }) => {
             if (errorItem.extensions.form_errors[field]) {
               return errorItem.extensions.form_errors[field].map(
                 (errorText, x) => {
+                  errorText =
+                    typeof errorText === "string" ? errorText : errorText[0];
                   return (
-                    <p key={i}>{errorText[0].replace("GraphQL error: ", "")}</p>
+                    <p key={i}>{errorText.replace("GraphQL error: ", "")}</p>
                   );
                 }
               );
