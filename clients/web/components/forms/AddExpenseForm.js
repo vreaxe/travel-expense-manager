@@ -10,6 +10,7 @@ import { redirect } from "../../lib/utils";
 import ErrorMessage from "../errors/ErrorMessage";
 import ErrorField from "../errors/ErrorField";
 import { CREATE_EXPENSE_MUTATION } from "../../graphql/mutations";
+import { TRIP_EXPENSES_QUERY } from "../../graphql/queries";
 
 class DatePickerCustomInput extends React.Component {
   render() {
@@ -74,6 +75,12 @@ class AddExpenseForm extends React.Component {
             variables={{
               input: { ...this.state, currency: this.state.currency.value }
             }}
+            refetchQueries={[
+              {
+                query: TRIP_EXPENSES_QUERY,
+                variables: { tripId: this.props.trip.id }
+              }
+            ]}
           >
             {(createExpense, { loading, error }) => (
               <form
