@@ -14,7 +14,7 @@ const BackButton = props => {
 };
 
 BackButton.propTypes = {
-  routeName: PropTypes.isRequired,
+  routeName: PropTypes.string.isRequired,
   routeParams: PropTypes.object
 };
 
