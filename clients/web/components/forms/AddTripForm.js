@@ -8,25 +8,13 @@ import { Link, Router } from "../../routes";
 import { redirect } from "../../lib/utils";
 import ErrorMessage from "../errors/ErrorMessage";
 import ErrorField from "../errors/ErrorField";
+import DatePickerCustomInput from "../elements/DatePickerCustomInput";
 import { CREATE_TRIP_MUTATION } from "../../graphql/mutations";
 import {
   TRIP_QUERY,
   TRIP_EXPENSES_QUERY,
   TRIPS_QUERY
 } from "../../graphql/queries";
-
-class DatePickerCustomInput extends React.Component {
-  render() {
-    return (
-      <input
-        className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
-        onClick={this.props.onClick}
-        onChange={this.props.onChange}
-        value={this.props.value}
-      />
-    );
-  }
-}
 
 class AddTripForm extends React.Component {
   state = {
