@@ -88,9 +88,11 @@ class AddTripForm extends React.Component {
               input: {
                 ...this.state,
                 baseCurrency: this.state.baseCurrency.value,
-                countries: this.state.countries.map(country => {
-                  return country.value;
-                })
+                countries: this.state.countries
+                  ? this.state.countries.map(country => {
+                      return country.value;
+                    })
+                  : []
               }
             }}
             refetchQueries={({ data }) => {
