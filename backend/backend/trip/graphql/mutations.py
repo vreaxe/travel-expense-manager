@@ -3,14 +3,13 @@ from django.db import IntegrityError, transaction
 from graphql_jwt.decorators import login_required
 
 from backend.graphql.exceptions import ValidationError
-from backend.core.graphql.scalars import Decimal
 from backend.trip.graphql.types import TripType, ExpenseType
 from backend.trip.graphql.inputs import CreateTripInput, UpdateTripInput, CreateExpenseInput, UpdateExpenseInput
 from backend.trip.models import Trip, TripUser, Expense
 from backend.core.models import Currency
 from backend.trip.constants import TripUserRoles
 from backend.core.services import get_countries, get_currency
-from backend.trip.services import get_trip
+from backend.trip.services import get_trip, get_expense_in_trip
 from backend.trip.permissions import UserIsInTripPermission
 from backend.graphql.mutations import BaseMutation
 from backend.graphql.decorators import permission_classes
@@ -79,6 +78,26 @@ class UpdateTrip(BaseMutation):
         return UpdateTrip(trip=trip)
 
 
+class DeleteTrip(BaseMutation):
+    id = graphene.ID()
+
+    class Arguments:
+        id = graphene.ID(required=True)
+
+    class Meta:
+        description = 'Delete trip'
+
+    @login_required
+    @permission_classes([UserIsInTripPermission,])
+    def perform_mutation(cls, info, id):
+        trip = get_trip(id)
+
+        with transaction.atomic():
+            trip.delete()
+
+        return DeleteTrip(id=id)
+
+
 class CreateExpense(BaseMutation):
     expense = graphene.Field(ExpenseType)
 
@@ -129,3 +148,24 @@ class UpdateExpense(BaseMutation):
             expense.save()
 
         return UpdateExpense(expense=expense)
+
+
+class DeleteExpense(BaseMutation):
+    id = graphene.ID()
+
+    class Arguments:
+        expense_id= graphene.ID(required=True)
+        trip_id = graphene.ID(required=True)
+
+    class Meta:
+        description = 'Delete expense'
+
+    @login_required
+    @permission_classes([UserIsInTripPermission,])
+    def perform_mutation(cls, info, expense_id, trip_id):
+        expense = get_expense_in_trip(expense_id, trip_id)
+
+        with transaction.atomic():
+            expense.delete()
+
+        return DeleteExpense(id=expense_id)
