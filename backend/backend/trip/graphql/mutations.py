@@ -5,6 +5,7 @@ from graphql_jwt.decorators import login_required
 from backend.graphql.exceptions import ValidationError
 from backend.core.graphql.scalars import Decimal
 from backend.trip.graphql.types import TripType, ExpenseType
+from backend.trip.graphql.inputs import CreateTripInput, UpdateTripInput, CreateExpenseInput, UpdateExpenseInput
 from backend.trip.models import Trip, TripUser, Expense
 from backend.core.models import Currency
 from backend.trip.constants import TripUserRoles
@@ -13,38 +14,6 @@ from backend.trip.services import get_trip
 from backend.trip.permissions import UserIsInTripPermission
 from backend.graphql.mutations import BaseMutation
 from backend.graphql.decorators import permission_classes
-
-
-class CreateTripInput(graphene.InputObjectType):
-    title = graphene.String(required=True)
-    budget = Decimal(required=True)
-    start_date = graphene.DateTime(required=True)
-    end_date = graphene.DateTime(required=True)
-    base_currency = graphene.ID(required=True)
-    countries = graphene.List(graphene.ID, required=True)
-
-
-class UpdateTripInput(graphene.InputObjectType):
-    title = graphene.String()
-    budget = Decimal()
-    start_date = graphene.DateTime()
-    end_date = graphene.DateTime()
-    countries = graphene.List(graphene.ID)
-
-
-class CreateExpenseInput(graphene.InputObjectType):
-    title = graphene.String(required=True)
-    amount = Decimal(required=True)
-    date = graphene.DateTime(required=True)
-    currency = graphene.ID(required=True)
-    trip = graphene.ID(required=True)
-
-
-class UpdateExpenseInput(graphene.InputObjectType):
-    title = graphene.String()
-    amount = Decimal()
-    date = graphene.DateTime()
-
 
 class CreateTrip(BaseMutation):
     trip = graphene.Field(TripType)
