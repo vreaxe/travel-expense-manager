@@ -43,7 +43,7 @@ class Expense(TimestampsMixins):
     date = models.DateTimeField(_('date'), default=now)
     created_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name='expenses')
     currency = models.ForeignKey(Currency, on_delete=models.PROTECT, related_name='expenses')
-    trip = models.ForeignKey(Trip, on_delete=models.PROTECT, related_name='expenses')
+    trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='expenses')
 
     class Meta:
         verbose_name = _('expense')
