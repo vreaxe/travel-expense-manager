@@ -54,9 +54,18 @@ export const CREATE_TRIP_MUTATION = gql`
   }
 `;
 
+export const DELETE_TRIP_MUTATION = gql`
+  mutation deleteTrip($id: ID!) {
+    deleteTrip(id: $id) {
+      id
+    }
+  }
+`;
+
 export default {
   TOKEN_AUTH_MUTATION,
   CREATE_EXPENSE_MUTATION,
   UPDATE_EXPENSE_MUTATION,
-  CREATE_TRIP_MUTATION
+  CREATE_TRIP_MUTATION,
+  DELETE_TRIP_MUTATION
 };
