@@ -49,6 +49,9 @@ export const TRIP_EXPENSES_QUERY = gql`
         code
         symbol
       }
+      trip {
+        id
+      }
     }
   }
 `;

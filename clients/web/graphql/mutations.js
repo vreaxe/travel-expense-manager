@@ -8,6 +8,24 @@ export const TOKEN_AUTH_MUTATION = gql`
   }
 `;
 
+export const CREATE_TRIP_MUTATION = gql`
+  mutation createTrip($input: CreateTripInput!) {
+    createTrip(input: $input) {
+      trip {
+        id
+      }
+    }
+  }
+`;
+
+export const DELETE_TRIP_MUTATION = gql`
+  mutation deleteTrip($id: ID!) {
+    deleteTrip(id: $id) {
+      id
+    }
+  }
+`;
+
 export const CREATE_EXPENSE_MUTATION = gql`
   mutation createExpense($input: CreateExpenseInput!) {
     createExpense(input: $input) {
@@ -44,19 +62,9 @@ export const UPDATE_EXPENSE_MUTATION = gql`
   }
 `;
 
-export const CREATE_TRIP_MUTATION = gql`
-  mutation createTrip($input: CreateTripInput!) {
-    createTrip(input: $input) {
-      trip {
-        id
-      }
-    }
-  }
-`;
-
-export const DELETE_TRIP_MUTATION = gql`
-  mutation deleteTrip($id: ID!) {
-    deleteTrip(id: $id) {
+export const DELETE_EXPENSE_MUTATION = gql`
+  mutation deleteExpense($expenseId: ID!, $tripId: ID!) {
+    deleteExpense(expenseId: $expenseId, tripId: $tripId) {
       id
     }
   }
