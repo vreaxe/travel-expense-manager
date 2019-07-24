@@ -27,6 +27,10 @@ const TripItem = props => {
   return (
     <Queries>
       {({ trip, expenses }) => {
+        if (trip.loading || expenses.loading) {
+          return "Loading...";
+        }
+
         if (
           typeof trip.data === "undefined" ||
           typeof trip.data.trip === "undefined" ||

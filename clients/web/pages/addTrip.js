@@ -20,6 +20,7 @@ class AddTrip extends React.Component {
     return (
       <Queries>
         {({ countries, currencies }) => {
+          if (countries.loading || currencies.loading) return "Loading...";
           return (
             <>
               <Meta title={`Add trip`} />

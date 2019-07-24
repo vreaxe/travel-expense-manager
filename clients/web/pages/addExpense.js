@@ -17,6 +17,9 @@ class AddExpense extends React.Component {
       <>
         <Query query={TRIP_QUERY} variables={{ id: this.props.tripId }}>
           {({ data: { trip }, loading, error }) => {
+            if (loading) {
+              return "Loading...";
+            }
             return (
               <>
                 <Meta title={`Add Expense to ${trip.title}`} />

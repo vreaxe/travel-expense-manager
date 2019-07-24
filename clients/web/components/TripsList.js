@@ -10,6 +10,7 @@ const TripsList = props => {
     <div className="flex flex-wrap -mx-2">
       <Query query={TRIPS_QUERY}>
         {({ data: { trips }, loading, error }) => {
+          if (loading) return "Loading...";
           return (
             <>
               {trips.map(trip => (
