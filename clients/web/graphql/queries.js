@@ -30,7 +30,9 @@ export const TRIP_QUERY = gql`
         }
       }
       baseCurrency {
+        id
         code
+        name
         symbol
       }
     }
@@ -47,6 +49,7 @@ export const TRIP_EXPENSES_QUERY = gql`
       currency {
         id
         code
+        name
         symbol
       }
       trip {

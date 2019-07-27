@@ -54,6 +54,12 @@ class AddExpenseForm extends React.Component {
         });
       })
       .flat();
+    currencies.push({
+      value: this.props.trip.baseCurrency.id,
+      label: `${this.props.trip.baseCurrency.symbol} (${
+        this.props.trip.baseCurrency.name
+      })`
+    });
     currencies = uniqBy(currencies, "value");
     return (
       <div className="">
