@@ -26,7 +26,7 @@ class AddTripForm extends React.Component {
       value: null,
       label: null
     },
-    countries: []
+    countries: null
   };
 
   handleChange = event => {
@@ -92,7 +92,7 @@ class AddTripForm extends React.Component {
                   ? this.state.countries.map(country => {
                       return country.value;
                     })
-                  : []
+                  : null
               }
             }}
             refetchQueries={({ data }) => {
