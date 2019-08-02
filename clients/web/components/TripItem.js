@@ -10,6 +10,7 @@ import NoItems from "./NoItems";
 import FAB from "./elements/FAB";
 import { Router } from "../routes";
 import { TRIP_QUERY, TRIP_EXPENSES_QUERY } from "../graphql/queries";
+import TripItemLoader from "./loaders/TripItemLoader";
 
 const TripItem = props => {
   const Queries = adopt({
@@ -28,7 +29,7 @@ const TripItem = props => {
     <Queries>
       {({ trip, expenses }) => {
         if (trip.loading || expenses.loading) {
-          return "Loading...";
+          return <TripItemLoader />;
         }
 
         if (

@@ -6,6 +6,7 @@ import Meta from "../components/layouts/Meta";
 import { TRIP_QUERY } from "../graphql/queries";
 import AddExpenseForm from "../components/forms/AddExpenseForm";
 import BackButton from "../components/elements/BackButton";
+import AddExpenseLoader from "../components/loaders/AddExpenseLoader";
 
 class AddExpense extends React.Component {
   static async getInitialProps({ query }) {
@@ -18,7 +19,7 @@ class AddExpense extends React.Component {
         <Query query={TRIP_QUERY} variables={{ id: this.props.tripId }}>
           {({ data: { trip }, loading, error }) => {
             if (loading) {
-              return "Loading...";
+              return <AddExpenseLoader />;
             }
             return (
               <>

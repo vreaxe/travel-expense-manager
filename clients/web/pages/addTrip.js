@@ -6,6 +6,7 @@ import Meta from "../components/layouts/Meta";
 import { COUNTRIES_QUERY, CURRENCIES_QUERY } from "../graphql/queries";
 import AddTripForm from "../components/forms/AddTripForm";
 import BackButton from "../components/elements/BackButton";
+import AddTripLoader from "../components/loaders/AddTripLoader";
 
 class AddTrip extends React.Component {
   render() {
@@ -20,7 +21,7 @@ class AddTrip extends React.Component {
     return (
       <Queries>
         {({ countries, currencies }) => {
-          if (countries.loading || currencies.loading) return "Loading...";
+          if (countries.loading || currencies.loading) return <AddTripLoader />;
           return (
             <>
               <Meta title={`Add trip`} />
