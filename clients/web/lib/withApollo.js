@@ -49,7 +49,6 @@ export default withApollo(({ ctx, headers, initialState }) => {
           destroyCookie(ctx, "token");
         }
 
-        // FIX: When token expires, it throws an error and can't continue
         // TODO: Refresh token automatically
         if (graphQLErrors && graphQLErrors[0].type == "JSONWebTokenExpired") {
           destroyCookie(ctx, "token");
