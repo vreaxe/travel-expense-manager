@@ -3,12 +3,13 @@ import { Mutation } from "react-apollo";
 import DatePicker from "react-datepicker";
 import Select from "react-select";
 import { subDays, addDays, parse } from "date-fns";
-import classNames from "classnames";
 import { Link, Router } from "../../routes";
 import { redirect } from "../../lib/utils";
-import ErrorMessage from "../errors/ErrorMessage";
-import ErrorField from "../errors/ErrorField";
-import DatePickerCustomInput from "../elements/DatePickerCustomInput";
+import ErrorMessage from "./errors/ErrorMessage";
+import ErrorField from "./errors/ErrorField";
+import Button from "../elements/Button";
+import Label from "./elements/Label";
+import DatePickerCustomInput from "./elements/DatePickerCustomInput";
 import { CREATE_TRIP_MUTATION } from "../../graphql/mutations";
 import {
   TRIP_QUERY,
@@ -122,11 +123,10 @@ class AddTripForm extends React.Component {
               >
                 <ErrorMessage error={error} />
                 <div className="mb-4">
-                  <label className="block text-gray-700 text-xl font-bold mb-2">
-                    Title
-                  </label>
+                  <Label for="title">Title</Label>
                   <input
                     className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
+                    id="title"
                     name="title"
                     type="text"
                     placeholder="Title"
@@ -138,12 +138,11 @@ class AddTripForm extends React.Component {
                 </div>
                 <div className="flex mb-4">
                   <div className="w-1/2 mr-4">
-                    <label className="block text-gray-700 text-xl font-bold mb-2">
-                      Budget
-                    </label>
+                    <Label for="budget">Budget</Label>
                     {/* TODO number format */}
                     <input
                       className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
+                      id="budget"
                       name="budget"
                       type="number"
                       step="any"
@@ -155,14 +154,12 @@ class AddTripForm extends React.Component {
                     <ErrorField error={error} field="budget" />
                   </div>
                   <div className="w-1/2 ml-4">
-                    <label className="block text-gray-700 text-xl font-bold mb-2">
-                      Currency
-                    </label>
+                    <Label>Currency</Label>
                     <Select
                       value={this.state.currency}
                       onChange={this.handleChangeCurrency}
                       options={currencies}
-                      instanceId="select-currency-add-expense"
+                      instanceId="select-currency-add-trip"
                       className="react-select"
                       classNamePrefix="react-select"
                       isSearchable
@@ -173,9 +170,7 @@ class AddTripForm extends React.Component {
                 <div className="flex">
                   <div className="flex mb-4 w-1/2">
                     <div className="w-1/2 mr-4">
-                      <label className="block text-gray-700 text-xl font-bold mb-2">
-                        Start Date
-                      </label>
+                      <Label>Start Date</Label>
                       {/* TODO locale */}
                       <DatePicker
                         customInput={<DatePickerCustomInput />}
@@ -196,9 +191,7 @@ class AddTripForm extends React.Component {
                       <ErrorField error={error} field="start_date" />
                     </div>
                     <div className="w-1/2">
-                      <label className="block text-gray-700 text-xl font-bold mb-2">
-                        End Date
-                      </label>
+                      <Label>End Date</Label>
                       {/* TODO locale */}
                       <DatePicker
                         customInput={<DatePickerCustomInput />}
@@ -222,9 +215,7 @@ class AddTripForm extends React.Component {
                     </div>
                   </div>
                   <div className="w-1/2 ml-8">
-                    <label className="block text-gray-700 text-xl font-bold mb-2">
-                      Countries
-                    </label>
+                    <Label>Countries</Label>
                     <Select
                       value={this.state.countries}
                       onChange={this.handleChangeCountries}
@@ -238,16 +229,10 @@ class AddTripForm extends React.Component {
                     <ErrorField error={error} field="countries" />
                   </div>
                 </div>
-                <div className="flex items-center justify-end">
-                  <button
-                    className={classNames(
-                      "rounded-lg bg-green-500 hover:bg-green-600 text-center text-white mt-5 py-2 px-6",
-                      { spinner: loading }
-                    )}
-                    type="submit"
-                  >
+                <div className="flex items-center justify-end mt-5">
+                  <Button loading={loading} type="submit">
                     Save
-                  </button>
+                  </Button>
                 </div>
               </form>
             )}

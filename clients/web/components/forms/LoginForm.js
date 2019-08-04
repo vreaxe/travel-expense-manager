@@ -3,8 +3,9 @@ import classNames from "classnames";
 import { Mutation } from "react-apollo";
 import { setCookie } from "nookies";
 import { Link, Router } from "../../routes";
+import Button from "../elements/Button";
 import { redirectIfLoggedIn } from "../../lib/utils";
-import ErrorMessage from "../errors/ErrorMessage";
+import ErrorMessage from "./errors/ErrorMessage";
 import { TOKEN_AUTH_MUTATION } from "../../graphql/mutations";
 
 class LoginForm extends React.Component {
@@ -37,31 +38,31 @@ class LoginForm extends React.Component {
               }}
             >
               <ErrorMessage error={error} />
-              <input
-                type="email"
-                name="email"
-                className="w-full rounded-lg border border-gray-400 p-3"
-                placeholder="Email"
-                value={this.state.email}
-                onChange={this.handleChange}
-              />
-              <input
-                type="password"
-                name="password"
-                className="w-full rounded-lg mt-2 border border-gray-400 p-3"
-                placeholder="Password"
-                value={this.state.password}
-                onChange={this.handleChange}
-              />
-              <button
-                className={classNames(
-                  "rounded-lg bg-green-500 hover:bg-green-600 text-center w-full text-white mt-5 py-2",
-                  { spinner: loading }
-                )}
-                type="submit"
-              >
-                Login
-              </button>
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
+                  placeholder="Email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="mt-2">
+                <input
+                  type="password"
+                  name="password"
+                  className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="mt-5">
+                <Button loading={loading} type="submit" fullWidth>
+                  Login
+                </Button>
+              </div>
             </form>
           )}
         </Mutation>

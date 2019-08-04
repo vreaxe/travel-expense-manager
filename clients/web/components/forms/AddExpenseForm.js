@@ -7,9 +7,11 @@ import uniqBy from "lodash/uniqBy";
 import classNames from "classnames";
 import { Link, Router } from "../../routes";
 import { redirect } from "../../lib/utils";
-import ErrorMessage from "../errors/ErrorMessage";
-import ErrorField from "../errors/ErrorField";
-import DatePickerCustomInput from "../elements/DatePickerCustomInput";
+import Button from "../elements/Button";
+import ErrorMessage from "./errors/ErrorMessage";
+import ErrorField from "./errors/ErrorField";
+import Label from "./elements/Label";
+import DatePickerCustomInput from "./elements/DatePickerCustomInput";
 import { CREATE_EXPENSE_MUTATION } from "../../graphql/mutations";
 import { TRIP_EXPENSES_QUERY } from "../../graphql/queries";
 
@@ -87,12 +89,11 @@ class AddExpenseForm extends React.Component {
               >
                 <ErrorMessage error={error} />
                 <div className="mb-4">
-                  <label className="block text-gray-700 text-xl font-bold mb-2">
-                    Title
-                  </label>
+                  <Label for="title">Title</Label>
                   <input
                     className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
                     name="title"
+                    id="title"
                     type="text"
                     placeholder="Title"
                     required
@@ -103,13 +104,12 @@ class AddExpenseForm extends React.Component {
                 </div>
                 <div className="flex mb-4">
                   <div className="w-1/2 mr-4">
-                    <label className="block text-gray-700 text-xl font-bold mb-2">
-                      Amount
-                    </label>
+                    <Label for="amount">Amount</Label>
                     {/* TODO number format */}
                     <input
                       className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
                       name="amount"
+                      id="amount"
                       type="number"
                       step="any"
                       placeholder="Amount"
@@ -120,9 +120,7 @@ class AddExpenseForm extends React.Component {
                     <ErrorField error={error} field="amount" />
                   </div>
                   <div className="w-1/2 ml-4">
-                    <label className="block text-gray-700 text-xl font-bold mb-2">
-                      Currency
-                    </label>
+                    <Label for="select-currency-add-expense">Currency</Label>
                     <Select
                       value={this.state.currency}
                       onChange={this.handleChangeCurrency}
@@ -135,9 +133,7 @@ class AddExpenseForm extends React.Component {
                   </div>
                 </div>
                 <div className="mb-4">
-                  <label className="block text-gray-700 text-xl font-bold mb-2">
-                    Date
-                  </label>
+                  <Label>Date</Label>
                   {/* TODO locale */}
                   <DatePicker
                     customInput={<DatePickerCustomInput />}
@@ -157,16 +153,10 @@ class AddExpenseForm extends React.Component {
                   />
                   <ErrorField error={error} field="date" />
                 </div>
-                <div className="flex items-center justify-end">
-                  <button
-                    className={classNames(
-                      "rounded-lg bg-green-500 hover:bg-green-600 text-center text-white mt-5 py-2 px-6",
-                      { spinner: loading }
-                    )}
-                    type="submit"
-                  >
+                <div className="flex items-center justify-end mt-5">
+                  <Button loading={loading} type="submit">
                     Save
-                  </button>
+                  </Button>
                 </div>
               </form>
             )}
