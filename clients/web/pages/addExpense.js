@@ -1,12 +1,12 @@
-import React from "react";
-import { Query } from "react-apollo";
-import { Router } from "../routes";
-import withAuth from "../lib/withAuth";
-import Meta from "../components/layouts/Meta";
-import { TRIP_QUERY } from "../graphql/queries";
 import AddExpenseForm from "../components/forms/AddExpenseForm";
-import BackButton from "../components/elements/BackButton";
 import AddExpenseLoader from "../components/loaders/AddExpenseLoader";
+import BackButton from "../components/elements/BackButton";
+import Meta from "../components/layouts/Meta";
+import { Query } from "react-apollo";
+import React from "react";
+import { Router } from "../routes";
+import { TRIP_QUERY } from "../graphql/queries";
+import withAuth from "../lib/withAuth";
 
 class AddExpense extends React.Component {
   static async getInitialProps({ query }) {

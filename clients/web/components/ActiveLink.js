@@ -1,6 +1,7 @@
-import { withRouter } from "next/router";
-import Link from "next/link";
 import React, { Children } from "react";
+
+import Link from "next/link";
+import { withRouter } from "next/router";
 
 // https://gist.github.com/remy/0dde38897d6d660f0b63867c2344fb59
 const ActiveLink = ({ router, children, ...props }) => {

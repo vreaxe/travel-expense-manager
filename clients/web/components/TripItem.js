@@ -1,16 +1,17 @@
-import React from "react";
+import { TRIP_EXPENSES_QUERY, TRIP_QUERY } from "../graphql/queries";
+
+import BackButton from "./elements/BackButton";
+import ExpensesList from "./ExpensesList";
+import FAB from "./elements/FAB";
+import Meta from "./layouts/Meta";
+import NoItems from "./NoItems";
 import { Query } from "react-apollo";
+import React from "react";
+import { Router } from "../routes";
+import TripInfo from "./TripInfo";
+import TripItemLoader from "./loaders/TripItemLoader";
 import { adopt } from "react-adopt";
 import moment from "moment";
-import Meta from "./layouts/Meta";
-import ExpensesList from "./ExpensesList";
-import TripInfo from "./TripInfo";
-import BackButton from "./elements/BackButton";
-import NoItems from "./NoItems";
-import FAB from "./elements/FAB";
-import { Router } from "../routes";
-import { TRIP_QUERY, TRIP_EXPENSES_QUERY } from "../graphql/queries";
-import TripItemLoader from "./loaders/TripItemLoader";
 
 const TripItem = props => {
   const Queries = adopt({

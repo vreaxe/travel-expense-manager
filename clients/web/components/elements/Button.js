@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import classNames from "classnames";
 
 const Button = ({ loading, type, fullWidth, children, ...rest }) => {

@@ -1,10 +1,10 @@
-import React from "react";
-import { Query } from "react-apollo";
-import TripCard from "./TripCard";
 import FAB from "./elements/FAB";
-import { Router } from "../routes";
 import Meta from "../components/layouts/Meta";
+import { Query } from "react-apollo";
+import React from "react";
+import { Router } from "../routes";
 import { TRIPS_QUERY } from "../graphql/queries";
+import TripCard from "./TripCard";
 import TripsListLoader from "./loaders/TripsListLoader";
 
 const TripsList = props => {

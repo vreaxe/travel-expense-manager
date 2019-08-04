@@ -1,8 +1,8 @@
-import React from "react";
-import moment from "moment";
-import NoItems from "./NoItems";
-import groupBy from "lodash/groupBy";
 import ExpenseCard from "./ExpenseCard";
+import NoItems from "./NoItems";
+import React from "react";
+import groupBy from "lodash/groupBy";
+import moment from "moment";
 
 const ExpensesList = props => {
   const expenses = groupBy(props.expenses.expenses, item => {

@@ -1,10 +1,11 @@
-import withApollo from "next-with-apollo";
+import { ApolloLink, Observable } from "apollo-link";
+import { destroyCookie, parseCookies } from "nookies";
+
 import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
 import { onError } from "apollo-link-error";
-import { ApolloLink, Observable } from "apollo-link";
-import { parseCookies, destroyCookie } from "nookies";
+import withApollo from "next-with-apollo";
 
 export default withApollo(({ ctx, headers, initialState }) => {
   const ssrMode = !process.browser;

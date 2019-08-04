@@ -1,6 +1,6 @@
+import Menu from "../Menu";
 import React from "react";
 import UserInfo from "../UserInfo";
-import Menu from "../Menu";
 
 const Sidebar = props => {
   return (

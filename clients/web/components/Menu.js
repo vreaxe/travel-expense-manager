@@ -1,5 +1,5 @@
-import React from "react";
 import ActiveLink from "./ActiveLink";
+import React from "react";
 
 const Menu = props => {
   return (

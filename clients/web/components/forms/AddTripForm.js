@@ -1,21 +1,22 @@
-import React from "react";
-import { Mutation } from "react-apollo";
-import DatePicker from "react-datepicker";
-import Select from "react-select";
-import { subDays, addDays, parse } from "date-fns";
 import { Link, Router } from "../../routes";
-import { redirect } from "../../lib/utils";
-import ErrorMessage from "./errors/ErrorMessage";
-import ErrorField from "./errors/ErrorField";
-import Button from "../elements/Button";
-import Label from "./elements/Label";
-import DatePickerCustomInput from "./elements/DatePickerCustomInput";
-import { CREATE_TRIP_MUTATION } from "../../graphql/mutations";
 import {
-  TRIP_QUERY,
+  TRIPS_QUERY,
   TRIP_EXPENSES_QUERY,
-  TRIPS_QUERY
+  TRIP_QUERY
 } from "../../graphql/queries";
+import { addDays, parse, subDays } from "date-fns";
+
+import Button from "../elements/Button";
+import { CREATE_TRIP_MUTATION } from "../../graphql/mutations";
+import DatePicker from "react-datepicker";
+import DatePickerCustomInput from "./elements/DatePickerCustomInput";
+import ErrorField from "./errors/ErrorField";
+import ErrorMessage from "./errors/ErrorMessage";
+import Label from "./elements/Label";
+import { Mutation } from "react-apollo";
+import React from "react";
+import Select from "react-select";
+import { redirect } from "../../lib/utils";
 
 class AddTripForm extends React.Component {
   state = {

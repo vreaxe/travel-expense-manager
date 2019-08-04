@@ -1,12 +1,13 @@
-import React from "react";
-import classNames from "classnames";
-import { Mutation } from "react-apollo";
-import { setCookie } from "nookies";
 import { Link, Router } from "../../routes";
+
 import Button from "../elements/Button";
-import { redirectIfLoggedIn } from "../../lib/utils";
 import ErrorMessage from "./errors/ErrorMessage";
+import { Mutation } from "react-apollo";
+import React from "react";
 import { TOKEN_AUTH_MUTATION } from "../../graphql/mutations";
+import classNames from "classnames";
+import { redirectIfLoggedIn } from "../../lib/utils";
+import { setCookie } from "nookies";
 
 class LoginForm extends React.Component {
   state = {

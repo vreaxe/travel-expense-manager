@@ -1,6 +1,7 @@
-import React from "react";
-import Meta from "./Meta";
 import "../../styles/styles.scss";
+
+import Meta from "./Meta";
+import React from "react";
 
 const Page = props => {
   return (

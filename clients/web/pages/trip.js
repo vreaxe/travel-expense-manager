@@ -1,6 +1,6 @@
 import { Link } from "../routes";
-import withAuth from "../lib/withAuth";
 import TripItem from "../components/TripItem";
+import withAuth from "../lib/withAuth";
 
 class Trip extends React.Component {
   static async getInitialProps({ query }) {

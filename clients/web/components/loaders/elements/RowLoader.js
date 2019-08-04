@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 
 const RowLoader = props => {
   const { height, width, marginBottom, bgColor, number } = props;

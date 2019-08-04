@@ -1,9 +1,9 @@
-import React from "react";
-import Trash from "./elements/Trash";
-import { Mutation } from "react-apollo";
-import { TRIP_EXPENSES_QUERY } from "../graphql/queries";
 import CurrencyNumber from "./elements/CurrencyNumber";
 import { DELETE_EXPENSE_MUTATION } from "../graphql/mutations";
+import { Mutation } from "react-apollo";
+import React from "react";
+import { TRIP_EXPENSES_QUERY } from "../graphql/queries";
+import Trash from "./elements/Trash";
 
 const ExpenseCard = props => {
   return (

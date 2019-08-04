@@ -1,6 +1,6 @@
-import withAuth from "../lib/withAuth";
-import TripsList from "../components/TripsList";
 import Meta from "../components/layouts/Meta";
+import TripsList from "../components/TripsList";
+import withAuth from "../lib/withAuth";
 
 class Trips extends React.Component {
   render() {

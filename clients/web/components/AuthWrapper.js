@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Sidebar from "./layouts/Sidebar";
 import Content from "./layouts/Content";
+import PropTypes from "prop-types";
+import React from "react";
+import Sidebar from "./layouts/Sidebar";
 
 const AuthWrapper = props => {
   return (

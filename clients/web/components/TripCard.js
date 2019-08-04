@@ -1,11 +1,11 @@
-import React from "react";
-import moment from "moment";
-import { Link } from "../routes";
-import Trash from "./elements/Trash";
-import { Mutation } from "react-apollo";
 import CountryFlag from "./elements/CountryFlag";
-import { TRIPS_QUERY } from "../graphql/queries";
 import { DELETE_TRIP_MUTATION } from "../graphql/mutations";
+import { Link } from "../routes";
+import { Mutation } from "react-apollo";
+import React from "react";
+import { TRIPS_QUERY } from "../graphql/queries";
+import Trash from "./elements/Trash";
+import moment from "moment";
 
 const TripCard = props => {
   return (

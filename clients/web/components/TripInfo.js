@@ -1,6 +1,6 @@
-import React from "react";
 import CountryFlag from "./elements/CountryFlag";
 import CurrencyNumber from "./elements/CurrencyNumber";
+import React from "react";
 
 const TripInfo = props => {
   return (

@@ -1,12 +1,13 @@
-import React from "react";
+import { COUNTRIES_QUERY, CURRENCIES_QUERY } from "../graphql/queries";
+
+import AddTripForm from "../components/forms/AddTripForm";
+import AddTripLoader from "../components/loaders/AddTripLoader";
+import BackButton from "../components/elements/BackButton";
+import Meta from "../components/layouts/Meta";
 import { Query } from "react-apollo";
+import React from "react";
 import { adopt } from "react-adopt";
 import withAuth from "../lib/withAuth";
-import Meta from "../components/layouts/Meta";
-import { COUNTRIES_QUERY, CURRENCIES_QUERY } from "../graphql/queries";
-import AddTripForm from "../components/forms/AddTripForm";
-import BackButton from "../components/elements/BackButton";
-import AddTripLoader from "../components/loaders/AddTripLoader";
 
 class AddTrip extends React.Component {
   render() {
