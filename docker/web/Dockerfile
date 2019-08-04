@@ -7,10 +7,10 @@ WORKDIR /data/web
 # Copy code
 COPY ./clients/web /data/web
 
-# Install dependencies
-RUN npm install
-
 # Copy environment variables
 COPY ./clients/.env /data/web/.env
 
 EXPOSE 3000
+
+# Install dependencies and run server
+CMD ["sh", "-c", "npm install && npm rebuild node-sass && npm run dev"]
