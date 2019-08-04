@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "../routes";
 import withAuth from "../lib/withAuth";
-import { redirect } from "../lib/utils";
+import { redirectIfLoggedIn } from "../lib/utils";
 
 class Index extends React.Component {
   static async getInitialProps(ctx) {
-    redirect(ctx, "/dashboard");
+    redirectIfLoggedIn(ctx);
   }
   render() {
     return <div />;

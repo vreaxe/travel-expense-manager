@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { Mutation } from "react-apollo";
 import { setCookie } from "nookies";
 import { Link, Router } from "../../routes";
+import { redirectIfLoggedIn } from "../../lib/utils";
 import ErrorMessage from "../errors/ErrorMessage";
 import { TOKEN_AUTH_MUTATION } from "../../graphql/mutations";
 
@@ -32,7 +33,7 @@ class LoginForm extends React.Component {
                   maxAge: 30 * 24 * 60 * 60,
                   path: "/"
                 });
-                Router.pushRoute("dashboard");
+                redirectIfLoggedIn();
               }}
             >
               <ErrorMessage error={error} />

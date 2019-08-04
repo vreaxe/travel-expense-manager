@@ -1,12 +1,12 @@
 import React from "react";
 import Meta from "../components/layouts/Meta";
 import LoginForm from "../components/forms/LoginForm";
-import { checkIfLoggedIn, redirect } from "../lib/utils";
+import { checkIfLoggedIn, redirectIfLoggedIn } from "../lib/utils";
 
 class Login extends React.Component {
   static async getInitialProps(ctx) {
     if (checkIfLoggedIn(ctx)) {
-      return redirect(ctx, "/dashboard");
+      redirectIfLoggedIn(ctx);
     }
     return {};
   }
