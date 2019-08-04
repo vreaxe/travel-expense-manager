@@ -422,7 +422,16 @@ module.exports = {
       "0": "0",
       auto: "auto"
     },
-    container: {}
+    container: {},
+
+    spinner: theme => ({
+      default: {
+        color: "#fff",
+        size: "1em",
+        border: "2px",
+        speed: "500ms"
+      }
+    })
   },
   variants: {
     appearance: ["responsive"],
@@ -488,15 +497,10 @@ module.exports = {
     whitespace: ["responsive"],
     wordBreak: ["responsive"],
     width: ["responsive"],
-    zIndex: ["responsive"]
+    zIndex: ["responsive"],
+
+    spinner: ["responsive"]
   },
   corePlugins: {},
-  plugins: [
-    require("tailwindcss-spinner")({
-      name: "spinner",
-      color: "#dae1e7",
-      size: "1em",
-      border: "2px"
-    })
-  ]
+  plugins: [require("tailwindcss-spinner")()]
 };
