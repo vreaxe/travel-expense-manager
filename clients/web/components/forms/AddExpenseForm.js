@@ -65,7 +65,7 @@ class AddExpenseForm extends React.Component {
     });
     currencies = uniqBy(currencies, "value");
     return (
-      <div className="">
+      <>
         <div className="w-full">
           <Mutation
             mutation={CREATE_EXPENSE_MUTATION}
@@ -163,7 +163,7 @@ class AddExpenseForm extends React.Component {
             )}
           </Mutation>
         </div>
-      </div>
+      </>
     );
   }
 }

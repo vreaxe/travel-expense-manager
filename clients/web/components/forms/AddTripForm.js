@@ -82,7 +82,7 @@ class AddTripForm extends React.Component {
       .flat();
 
     return (
-      <div className="">
+      <>
         <div className="w-full">
           <Mutation
             mutation={CREATE_TRIP_MUTATION}
@@ -239,7 +239,7 @@ class AddTripForm extends React.Component {
             )}
           </Mutation>
         </div>
-      </div>
+      </>
     );
   }
 }
