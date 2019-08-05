@@ -1,6 +1,7 @@
 import AddExpenseForm from "../components/forms/AddExpenseForm";
 import AddExpenseLoader from "../components/loaders/AddExpenseLoader";
 import BackButton from "../components/elements/BackButton";
+import Header from "../components/elements/Header";
 import Meta from "../components/layouts/Meta";
 import { Query } from "react-apollo";
 import React from "react";
@@ -24,10 +25,10 @@ class AddExpense extends React.Component {
             return (
               <>
                 <Meta title={`Add Expense to ${trip.title}`} />
-                <h1 className="flex items-center font-bold text-2xl mb-4 border-b-2 pb-2 border-green-500 uppercase">
+                <Header>
                   <BackButton routeName="trip" routeParams={{ id: trip.id }} />
                   ADD EXPENSE TO {trip.title}
-                </h1>
+                </Header>
                 <AddExpenseForm trip={trip} />
               </>
             );

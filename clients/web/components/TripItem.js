@@ -3,6 +3,7 @@ import { TRIP_EXPENSES_QUERY, TRIP_QUERY } from "../graphql/queries";
 import BackButton from "./elements/BackButton";
 import ExpensesList from "./ExpensesList";
 import FAB from "./elements/FAB";
+import Header from "./elements/Header";
 import Meta from "./layouts/Meta";
 import NoItems from "./NoItems";
 import { Query } from "react-apollo";
@@ -45,7 +46,7 @@ const TripItem = props => {
         return (
           <>
             <Meta title={trip.data.trip.title} />
-            <h1 className="flex items-center font-bold text-2xl mb-4 border-b-2 pb-2 border-green-500 uppercase">
+            <Header>
               <BackButton routeName="trips" />
               {trip.data.trip.title}
               <span className="ml-auto text-sm text-gray-600 text-right">
@@ -53,7 +54,7 @@ const TripItem = props => {
                 {" ➡ "}
                 {moment(trip.data.trip.endDate).format("DD-MM-YYYY")}
               </span>
-            </h1>
+            </Header>
             <TripInfo trip={trip.data.trip} />
             <ExpensesList expenses={expenses.data} />
             <FAB

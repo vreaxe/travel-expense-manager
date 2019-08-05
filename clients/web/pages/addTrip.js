@@ -3,6 +3,7 @@ import { COUNTRIES_QUERY, CURRENCIES_QUERY } from "../graphql/queries";
 import AddTripForm from "../components/forms/AddTripForm";
 import AddTripLoader from "../components/loaders/AddTripLoader";
 import BackButton from "../components/elements/BackButton";
+import Header from "../components/elements/Header";
 import Meta from "../components/layouts/Meta";
 import { Query } from "react-apollo";
 import React from "react";
@@ -26,10 +27,10 @@ class AddTrip extends React.Component {
           return (
             <>
               <Meta title={`Add trip`} />
-              <h1 className="flex items-center font-bold text-2xl mb-4 border-b-2 pb-2 border-green-500 uppercase">
+              <Header>
                 <BackButton routeName="trips" />
                 ADD TRIP
-              </h1>
+              </Header>
               <AddTripForm countries={countries} currencies={currencies} />
             </>
           );

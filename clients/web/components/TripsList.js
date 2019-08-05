@@ -1,4 +1,5 @@
 import FAB from "./elements/FAB";
+import Header from "./elements/Header";
 import Meta from "../components/layouts/Meta";
 import { Query } from "react-apollo";
 import React from "react";
@@ -15,9 +16,7 @@ const TripsList = props => {
         return (
           <>
             <Meta title={`Trips`} />
-            <h1 className="font-bold text-2xl mb-4 border-b-2 pb-2 border-green-500 uppercase">
-              TRIPS
-            </h1>
+            <Header>TRIPS</Header>
             <div className="flex flex-wrap -mx-2">
               {trips.map(trip => (
                 <TripCard key={trip.id} trip={trip} />
