@@ -47,16 +47,18 @@ class AddExpenseForm extends React.Component {
   };
 
   render() {
-    let currencies = this.props.trip.countries
-      .map(country => {
-        return country.currencies.map(currency => {
-          return {
-            value: currency.id,
-            label: `${currency.symbol} (${currency.name})`
-          };
-        });
-      })
-      .flat();
+    // Commented out until the currency exchange is implemented
+    // let currencies = this.props.trip.countries
+    //   .map(country => {
+    //     return country.currencies.map(currency => {
+    //       return {
+    //         value: currency.id,
+    //         label: `${currency.symbol} (${currency.name})`
+    //       };
+    //     });
+    //   })
+    //   .flat();
+    let currencies = [];
     currencies.push({
       value: this.props.trip.baseCurrency.id,
       label: `${this.props.trip.baseCurrency.symbol} (${
