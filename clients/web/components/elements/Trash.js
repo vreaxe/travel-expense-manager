@@ -5,7 +5,9 @@ import classNames from "classnames";
 const Trash = props => {
   return (
     <span
-      className={classNames(props.className, { spinner: props.loading })}
+      className={classNames(props.className, "cursor-pointer emoji", {
+        spinner: props.loading
+      })}
       onClick={props.onClick}
     >
       🗑️

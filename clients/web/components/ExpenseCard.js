@@ -38,7 +38,6 @@ const ExpenseCard = props => {
           <div className="text-center w-1/12">
             <div className="">
               <Trash
-                className="cursor-pointer"
                 loading={loading}
                 onClick={e => {
                   e.preventDefault();

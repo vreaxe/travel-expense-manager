@@ -13,7 +13,7 @@ const CountryFlag = props => {
         offset: [0, 2]
       }}
     >
-      <span key={props.country.id} className="mr-1">
+      <span key={props.country.id} className="emoji mr-1">
         {props.country.flagEmoji}
       </span>
     </Tooltip>
