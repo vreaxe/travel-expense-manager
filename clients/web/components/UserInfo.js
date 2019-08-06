@@ -9,10 +9,7 @@ const UserInfo = props => {
   };
   return (
     <div className="my-6">
-      <img
-        className="rounded-full mx-auto my-6"
-        src={"https://via.placeholder.com/150?text=User"}
-      />
+      <img className="mx-auto my-6" src={"/static/default-avatar.png"} />
       <div className="text-center">
         {props.loggedUser.email}
         <span onClick={handleLogout} className="cursor-pointer ml-2">
