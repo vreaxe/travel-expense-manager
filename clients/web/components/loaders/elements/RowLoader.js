@@ -27,7 +27,7 @@ RowLoader.propTypes = {
   width: PropTypes.string,
   marginBottom: PropTypes.string,
   bgColor: PropTypes.string.isRequired,
-  number: PropTypes.string
+  number: PropTypes.number
 };
 
 export default RowLoader;
