@@ -2,18 +2,16 @@ import { Link } from "../routes";
 import TripItem from "../components/TripItem";
 import withAuth from "../lib/withAuth";
 
-class Trip extends React.Component {
-  static async getInitialProps({ query }) {
-    return { tripId: query.id };
-  }
+const Trip = props => {
+  return (
+    <div>
+      <TripItem tripId={props.tripId} />
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div>
-        <TripItem tripId={this.props.tripId} />
-      </div>
-    );
-  }
-}
+Trip.getInitialProps = ({ query }) => {
+  return { tripId: query.id };
+};
 
 export default withAuth(Trip);

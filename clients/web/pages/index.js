@@ -3,13 +3,12 @@ import React from "react";
 import { redirectIfLoggedIn } from "../lib/utils";
 import withAuth from "../lib/withAuth";
 
-class Index extends React.Component {
-  static async getInitialProps(ctx) {
-    redirectIfLoggedIn(ctx);
-  }
-  render() {
-    return <div />;
-  }
-}
+const Index = () => {
+  return <div />;
+};
+
+Index.getInitialProps = ctx => {
+  redirectIfLoggedIn(ctx);
+};
 
 export default withAuth(Index);

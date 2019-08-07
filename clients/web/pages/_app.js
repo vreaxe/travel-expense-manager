@@ -1,6 +1,6 @@
 import App, { Container } from "next/app";
 
-import { ApolloProvider } from "react-apollo";
+import { ApolloProvider } from "@apollo/react-hooks";
 import NProgress from "nprogress";
 import Page from "../components/layouts/Page";
 import Router from "next/router";

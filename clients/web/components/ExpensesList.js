@@ -5,13 +5,13 @@ import groupBy from "lodash/groupBy";
 import moment from "moment";
 
 const ExpensesList = props => {
-  const expenses = groupBy(props.expenses.expenses, item => {
+  const expenses = groupBy(props.expenses, item => {
     return moment(item.date).format("DD-MM-YYYY");
   });
 
   return (
     <>
-      <NoItems itemName="expenses" items={props.expenses.expenses} />
+      <NoItems itemName="expenses" items={props.expenses} />
       {expenses &&
         Object.keys(expenses).map(expensesDate => {
           return [

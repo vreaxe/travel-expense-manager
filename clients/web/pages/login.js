@@ -4,22 +4,20 @@ import LoginForm from "../components/forms/LoginForm";
 import Meta from "../components/layouts/Meta";
 import React from "react";
 
-class Login extends React.Component {
-  static async getInitialProps(ctx) {
-    if (checkIfLoggedIn(ctx)) {
-      redirectIfLoggedIn(ctx);
-    }
-    return {};
-  }
+const Login = () => {
+  return (
+    <>
+      <Meta title="Login" />
+      <LoginForm />
+    </>
+  );
+};
 
-  render() {
-    return (
-      <>
-        <Meta title="Login" />
-        <LoginForm />
-      </>
-    );
+Login.getInitialProps = ctx => {
+  if (checkIfLoggedIn(ctx)) {
+    redirectIfLoggedIn(ctx);
   }
-}
+  return {};
+};
 
 export default Login;
