@@ -126,6 +126,8 @@ GRAPHQL_JWT = {
     'JWT_REFRESH_EXPIRATION_DELTA': timedelta(days=30),
 }
 
+GRAPHIQL = env.bool('GRAPHIQL', True)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
