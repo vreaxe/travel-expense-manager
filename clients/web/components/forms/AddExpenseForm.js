@@ -9,6 +9,7 @@ import DatePicker from "react-datepicker";
 import DatePickerCustomInput from "./elements/DatePickerCustomInput";
 import ErrorField from "./errors/ErrorField";
 import ErrorMessage from "./errors/ErrorMessage";
+import Input from "./elements/Input";
 import Label from "./elements/Label";
 import Select from "react-select";
 import classNames from "classnames";
@@ -100,8 +101,7 @@ const AddExpenseForm = props => {
           <ErrorMessage error={error} />
           <div className="mb-4">
             <Label for="title">Title</Label>
-            <input
-              className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
+            <Input
               name="title"
               id="title"
               type="text"
@@ -116,8 +116,7 @@ const AddExpenseForm = props => {
             <div className="w-1/2 mr-4">
               <Label for="amount">Amount</Label>
               {/* TODO number format */}
-              <input
-                className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
+              <Input
                 name="amount"
                 id="amount"
                 type="number"

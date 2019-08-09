@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 import Button from "../elements/Button";
 import ErrorMessage from "./errors/ErrorMessage";
+import Input from "./elements/Input";
 import { TOKEN_AUTH_MUTATION } from "../../graphql/mutations";
 import classNames from "classnames";
 import { redirectIfLoggedIn } from "../../lib/utils";
@@ -44,20 +45,18 @@ const LoginForm = () => {
       >
         <ErrorMessage error={error} />
         <div>
-          <input
+          <Input
             type="email"
             name="email"
-            className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
             placeholder="Email"
             value={user.email}
             onChange={handleChange}
           />
         </div>
         <div className="mt-2">
-          <input
+          <Input
             type="password"
             name="password"
-            className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
             placeholder="Password"
             value={user.password}
             onChange={handleChange}

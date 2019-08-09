@@ -14,6 +14,7 @@ import DatePicker from "react-datepicker";
 import DatePickerCustomInput from "./elements/DatePickerCustomInput";
 import ErrorField from "./errors/ErrorField";
 import ErrorMessage from "./errors/ErrorMessage";
+import Input from "./elements/Input";
 import Label from "./elements/Label";
 import Select from "react-select";
 import { redirect } from "../../lib/utils";
@@ -135,8 +136,7 @@ const AddTripForm = props => {
           <ErrorMessage error={error} />
           <div className="mb-4">
             <Label for="title">Title</Label>
-            <input
-              className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
+            <Input
               id="title"
               name="title"
               type="text"
@@ -151,8 +151,7 @@ const AddTripForm = props => {
             <div className="w-1/2 mr-4">
               <Label for="budget">Budget</Label>
               {/* TODO number format */}
-              <input
-                className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
+              <Input
                 id="budget"
                 name="budget"
                 type="number"
