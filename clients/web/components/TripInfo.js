@@ -35,9 +35,12 @@ const TripInfo = props => {
             currency={props.trip.baseCurrency}
           />
         </p>
-        <div style={{ height: "3px" }} className="w-full mt-1 bg-gray-400">
+        <div
+          style={{ height: "3px" }}
+          className="w-full mt-1 bg-gray-400 rounded"
+        >
           <span
-            className={"block h-full " + progressColorSpent}
+            className={"block h-full rounded " + progressColorSpent}
             style={{
               width: percentageSpent > 100 ? "100%" : percentageSpent + "%"
             }}
