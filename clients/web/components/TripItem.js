@@ -39,13 +39,19 @@ const TripItem = props => {
     <>
       <Meta title={trip.title} />
       <Header>
-        <BackButton routeName="trips" />
-        {trip.title}
-        <span className="ml-auto text-sm text-gray-600 text-right">
-          {moment(trip.startDate).format("DD-MM-YYYY")}
-          {" ➡ "}
-          {moment(trip.endDate).format("DD-MM-YYYY")}
-        </span>
+        <div className="w-3/4 flex items-center">
+          <BackButton routeName="trips" />
+          <span style={{ width: "80%" }} className="truncate">
+            {trip.title}
+          </span>
+        </div>
+        <div className="w-1/4">
+          <span className="block w-full text-sm text-gray-600 text-right">
+            {moment(trip.startDate).format("DD-MM-YYYY")}
+            {" ➡ "}
+            {moment(trip.endDate).format("DD-MM-YYYY")}
+          </span>
+        </div>
       </Header>
       <TripInfo trip={trip} />
       <ExpensesList expenses={expenses} />
