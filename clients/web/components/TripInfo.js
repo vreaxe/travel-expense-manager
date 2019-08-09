@@ -12,8 +12,8 @@ const TripInfo = props => {
   }
 
   return (
-    <div className="flex mb-8">
-      <div className="flex items-center justify-center flex-col flex-no-wrap bg-white shadow p-4 mr-3 lg:mr-5 w-1/3 text-center">
+    <div className="lg:flex mb-8">
+      <div className="flex items-center justify-center flex-col flex-no-wrap bg-white shadow p-4 mr-0 mt-3 lg:mt-0 lg:mr-5 lg:w-1/3 w-full text-center">
         <h3 className="block font-bold text-md mb-1">Daily Avg.</h3>
         <p>
           <CurrencyNumber
@@ -22,7 +22,7 @@ const TripInfo = props => {
           />
         </p>
       </div>
-      <div className="flex items-center justify-center flex-col flex-no-wrap bg-white shadow p-4 mx-3 lg:mx-5 w-1/3 text-center">
+      <div className="flex items-center justify-center flex-col flex-no-wrap bg-white shadow p-4 mx-0 mt-3 lg:mt-0 lg:mx-5 lg:w-1/3 w-full text-center">
         <h3 className="block font-bold text-md mb-1">Budget</h3>
         <p>
           <CurrencyNumber
@@ -49,7 +49,7 @@ const TripInfo = props => {
           </span>
         </div>
       </div>
-      <div className="flex items-center justify-center flex-col flex-no-wrap bg-white shadow p-4 ml-3 lg:ml-5 w-1/3 text-center">
+      <div className="flex items-center justify-center flex-col flex-no-wrap bg-white shadow p-4 ml-0 mt-3 lg:mt-0 lg:ml-5 lg:w-1/3 w-full text-center">
         <h3 className="block font-bold text-md mb-1">
           {props.trip.countries.length == 1 ? "Country" : "Countries"}
         </h3>
