@@ -1,5 +1,6 @@
 import { Link, Router } from "../../routes";
 import React, { useState } from "react";
+import { TRIP_EXPENSES_QUERY, TRIP_QUERY } from "../../graphql/queries";
 import { addDays, parse, subDays } from "date-fns";
 
 import Button from "../elements/Button";
@@ -10,7 +11,6 @@ import ErrorField from "./errors/ErrorField";
 import ErrorMessage from "./errors/ErrorMessage";
 import Label from "./elements/Label";
 import Select from "react-select";
-import { TRIP_EXPENSES_QUERY } from "../../graphql/queries";
 import classNames from "classnames";
 import { redirect } from "../../lib/utils";
 import uniqBy from "lodash/uniqBy";
@@ -56,6 +56,10 @@ const AddExpenseForm = props => {
         input: { ...expense, currency: expense.currency.value }
       },
       refetchQueries: [
+        {
+          query: TRIP_QUERY,
+          variables: { id: props.trip.id }
+        },
         {
           query: TRIP_EXPENSES_QUERY,
           variables: { tripId: props.trip.id }

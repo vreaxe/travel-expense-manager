@@ -1,7 +1,8 @@
+import { TRIP_EXPENSES_QUERY, TRIP_QUERY } from "../graphql/queries";
+
 import CurrencyNumber from "./elements/CurrencyNumber";
 import { DELETE_EXPENSE_MUTATION } from "../graphql/mutations";
 import React from "react";
-import { TRIP_EXPENSES_QUERY } from "../graphql/queries";
 import Trash from "./elements/Trash";
 import { useMutation } from "@apollo/react-hooks";
 
@@ -14,6 +15,10 @@ const ExpenseCard = props => {
         tripId: props.expense.trip.id
       },
       refetchQueries: [
+        {
+          query: TRIP_QUERY,
+          variables: { id: props.expense.trip.id }
+        },
         {
           query: TRIP_EXPENSES_QUERY,
           variables: { tripId: props.expense.trip.id }
