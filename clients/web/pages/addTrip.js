@@ -11,13 +11,13 @@ import withAuth from "../lib/withAuth";
 
 const AddTrip = props => {
   const {
-    loadingCountries,
-    errorCountries,
+    loading: loadingCountries,
+    error: errorCountries,
     data: { countries }
   } = useQuery(COUNTRIES_QUERY);
   const {
-    loadingCurrencies,
-    errorCurrencies,
+    loading: loadingCurrencies,
+    error: errorCurrencies,
     data: { currencies }
   } = useQuery(CURRENCIES_QUERY);
 

@@ -15,13 +15,15 @@ import { useQuery } from "@apollo/react-hooks";
 
 const TripItem = props => {
   const {
-    loadingTrip,
-    errorTrip,
+    loading: loadingTrip,
+    error: errorTrip,
     data: { trip }
-  } = useQuery(TRIP_QUERY, { variables: { id: props.tripId } });
+  } = useQuery(TRIP_QUERY, {
+    variables: { id: props.tripId }
+  });
   const {
-    loadingExpenses,
-    errorExpenses,
+    loading: loadingExpenses,
+    error: errorExpenses,
     data: { expenses }
   } = useQuery(TRIP_EXPENSES_QUERY, { variables: { tripId: props.tripId } });
 
