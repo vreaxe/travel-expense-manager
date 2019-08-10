@@ -5,6 +5,7 @@
 @import "./components/select";
 @import "./components/input";
 @import "./components/loader";
+@import "./components/sidebar";
 
 #nprogress .bar {
   background: #48bb78 !important;
@@ -34,17 +35,4 @@ input {
 
 .emoji {
   @apply font-emoji;
-}
-
-.sidebar {
-  a {
-    &.active {
-      @apply font-bold;
-    }
-  }
-  ul {
-    li {
-      @apply my-5;
-    }
-  }
 }

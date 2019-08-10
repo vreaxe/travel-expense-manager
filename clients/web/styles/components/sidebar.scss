@@ -1,0 +1,30 @@
+.sidebar-container {
+  box-shadow: 2px 0 4px lightgray;
+  .sidebar {
+    .cross {
+      top: -15px;
+      right: -5px;
+    }
+    a {
+      &.active {
+        @apply font-bold;
+      }
+    }
+    ul {
+      li {
+        @apply my-5;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .sidebar-container {
+    width: 16rem;
+    left: -16rem;
+    transition: all 0.5s ease;
+    &.active {
+      left: 0;
+    }
+  }
+}
