@@ -8,7 +8,7 @@ const BackButton = props => {
       className="text-gray-600 hover:text-gray-700 text-sm mr-2 pr-2 border-r border-gray-600 cursor-pointer"
       onClick={() => Router.pushRoute(props.routeName, props.routeParams)}
     >
-      ← Back
+      ⬅ <span className="hidden sm:inline">Back</span>
     </span>
   );
 };
