@@ -7,7 +7,7 @@ const Sidebar = props => {
   return (
     <div className="sidebar relative">
       <Cross
-        className="cross lg:hidden absolute mb-2 text-xl"
+        className="lg:hidden absolute mb-2 text-xl"
         onClick={props.toggleSidebar}
       />
       <UserInfo {...props} />

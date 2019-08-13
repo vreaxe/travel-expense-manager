@@ -4,7 +4,7 @@ import React from "react";
 const Cross = props => {
   return (
     <span
-      className={"cursor-pointer " + props.className || ""}
+      className={"cross cursor-pointer " + props.className || ""}
       onClick={props.onClick}
     >
       ✖
