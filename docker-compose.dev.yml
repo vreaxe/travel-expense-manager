@@ -31,7 +31,7 @@ services:
       - dbdata:/var/lib/mysql
       - ./docker/database/my.cnf:/etc/mysql/conf.d/my.cnf
     environment:
-      - "MYSQL_DATABASE=travel_expenses_manager"
+      - "MYSQL_DATABASE=travel_expense_manager"
       - "MYSQL_USER=user"
       - "MYSQL_PASSWORD=secret"
       - "MYSQL_ROOT_PASSWORD=secret"
