@@ -1,58 +1,12 @@
-import { TRIP_EXPENSES_QUERY, TRIP_QUERY } from "../graphql/queries";
-
-import BackButton from "./elements/BackButton";
 import ExpensesList from "./ExpensesList";
 import FAB from "./elements/FAB";
-import Header from "./elements/Header";
-import Meta from "./layouts/Meta";
-import NoItems from "./NoItems";
 import React from "react";
 import { Router } from "../routes";
 import TripInfo from "./TripInfo";
-import TripItemLoader from "./loaders/TripItemLoader";
-import moment from "moment";
-import { useQuery } from "@apollo/react-hooks";
 
-const TripItem = props => {
-  const {
-    loading: loadingTrip,
-    error: errorTrip,
-    data: { trip }
-  } = useQuery(TRIP_QUERY, {
-    variables: { id: props.tripId }
-  });
-  const {
-    loading: loadingExpenses,
-    error: errorExpenses,
-    data: { expenses }
-  } = useQuery(TRIP_EXPENSES_QUERY, { variables: { tripId: props.tripId } });
-
-  if (loadingTrip || loadingExpenses) {
-    return <TripItemLoader />;
-  }
-
-  if (typeof expenses === "undefined" || typeof trip === "undefined") {
-    return <NoItems itemName="trip" />;
-  }
-
+const TripItem = ({ trip, expenses }) => {
   return (
     <>
-      <Meta title={trip.title} />
-      <Header>
-        <div className="w-3/4 flex items-center">
-          <BackButton routeName="trips" />
-          <span style={{ width: "80%" }} className="truncate">
-            {trip.title}
-          </span>
-        </div>
-        <div className="w-1/4">
-          <span className="block w-full text-sm text-gray-600 text-right">
-            {moment(trip.startDate).format("DD-MM-YYYY")}
-            {" ➡ "}
-            {moment(trip.endDate).format("DD-MM-YYYY")}
-          </span>
-        </div>
-      </Header>
       <TripInfo trip={trip} />
       <ExpensesList expenses={expenses} />
       <FAB
