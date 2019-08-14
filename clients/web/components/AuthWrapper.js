@@ -13,7 +13,7 @@ const AuthWrapper = props => {
       <ThreeLines onClick={toggle} />
       <div
         className={classNames(
-          "sidebar-container px-6 absolute z-50 h-screen bg-gray-200 lg:w-1/5 lg:px-6 lg:static lg:z-auto lg:h-auto lg:bg-transparent lg:shadow-none",
+          "sidebar-container px-6 fixed overflow-y-scroll z-50 h-screen bg-gray-200 lg:w-1/5 lg:px-6 lg:static lg:overflow-auto lg:z-auto lg:h-auto lg:bg-transparent lg:shadow-none",
           { active: isShowing }
         )}
       >
