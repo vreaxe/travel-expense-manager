@@ -33,11 +33,15 @@ ALLOWED_HOSTS = ['*']
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST = (
-    '127.0.0.1',
-    'localhost',
+CORS_ORIGIN_WHITELIST = tuple(
+    env.list(
+        'CORS_ORIGIN_WHITELIST',
+        default=[
+            'http://127.0.0.1',
+            'http://localhost',
+        ]
+    )
 )
-
 
 # Application definition
 
