@@ -58,8 +58,8 @@ export default withApollo(({ ctx, headers, initialState }) => {
       requestLink,
       new createHttpLink({
         uri: process.browser
-          ? process.env.GRAPHQL_URL_FOR_CLIENT
-          : process.env.GRAPHQL_URL_FOR_BACKEND,
+          ? process.env.GRAPHQL_URL_CLIENT_SIDE
+          : process.env.GRAPHQL_URL_SERVER_SIDE,
         fetchOptions: {
           credentials: "same-origin"
         }
