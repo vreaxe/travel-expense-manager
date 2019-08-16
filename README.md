@@ -12,7 +12,7 @@
 
 > **:warning: Warning**: WIP. Do not use in a production environment.
 
-## Installation
+## Development environment installation
 
 ### :whale: With Docker
 
