@@ -4,6 +4,7 @@ import { redirect } from "../lib/utils";
 
 const UserInfo = props => {
   const handleLogout = () => {
+    props.apollo.cache.reset();
     destroyCookie(null, "token");
     redirect(null, "/login");
   };
