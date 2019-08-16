@@ -3,8 +3,9 @@
 <p align="center">A travel expense manager made with Django, GraphQL, Next.js and Tailwind CSS</p>
 
 <p align="center">
-    <a href="https://github.com/vreaxe/travel-expense-manager/releases"><img src="https://img.shields.io/github/release/vreaxe/travel-expense-manager?style=for-the-badge" alt="Last Release"></a>
+    <a href="https://github.com/vreaxe/travel-expense-manager/releases"><img src="https://img.shields.io/github/release-pre/vreaxe/travel-expense-manager?style=for-the-badge" alt="Last Release"></a>
     <a href="https://github.com/vreaxe/travel-expense-manager/blob/master/TODO.md"><img src="https://img.shields.io/badge/📝TODO-List-%2348bb78?style=for-the-badge" alt="TODO List"></a>
+    <a href="https://github.com/vreaxe/travel-expense-manager/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/vreaxe/travel-expense-manager?style=for-the-badge" alt="License"></a>
 </p>
 
 &nbsp;
