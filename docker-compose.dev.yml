@@ -2,10 +2,10 @@ version: "3"
 
 services:
   backend:
-    container_name: tem-backend
+    container_name: tem-dev-backend
     build:
       context: .
-      dockerfile: ./docker/backend/Dockerfile
+      dockerfile: ./docker/backend/Dockerfile.dev
     ports:
       - 8000:8000
     volumes:
@@ -13,11 +13,11 @@ services:
     command: gunicorn --bind :8000 backend.wsgi:application --reload
 
   web:
-    container_name: tem-web
+    container_name: tem-dev-web
     tty: true
     build:
       context: .
-      dockerfile: ./docker/web/Dockerfile
+      dockerfile: ./docker/web/Dockerfile.dev
     ports:
       - 3000:3000
     volumes:
@@ -25,7 +25,7 @@ services:
       - ./clients/.env:/data/web/.env
 
   database:
-    container_name: tem-database
+    container_name: tem-dev-database
     image: mysql:5.7
     volumes:
       - dbdata:/var/lib/mysql
@@ -39,7 +39,7 @@ services:
       - "33061:3306"
 
   adminer:
-    container_name: tem-adminer
+    container_name: tem-dev-adminer
     image: adminer
     ports:
       - 8080:8080
