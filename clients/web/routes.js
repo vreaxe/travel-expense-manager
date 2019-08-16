@@ -8,4 +8,5 @@ module.exports = routes()
   .add("addTrip", "/trips/add", "addTrip")
   .add("addExpense", "/trips/:id/add-expense", "addExpense")
   .add("trip", "/trips/:id", "trip")
+  .add("register")
   .add("login");
