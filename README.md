@@ -67,7 +67,7 @@ python manage.py createsuperuser
 
 **5. Now you can access the backend at http://localhost:8000 and the frontend at http://localhost:3000**
 
-**6. Sync currencies and countries (optional, you can create them manually through the Django admin panel)**
+**6. Sync currencies and countries (optional - you can create them manually through the Django admin panel)**
 
 ```
 docker exec -it tem-backend /bin/bash
