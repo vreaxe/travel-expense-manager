@@ -5,7 +5,7 @@ name = "pypi"
 
 
 [packages]
-Django = ">=2.2"
+Django = ">=2.2.4"
 django-filter = ">=2.1.0"
 graphene-django = ">=2.2"
 graphene-django-optimizer = ">=0.3.6"
