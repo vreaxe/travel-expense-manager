@@ -2,7 +2,6 @@ import { checkIfLoggedIn, redirect } from "./utils";
 
 import AuthWrapper from "../components/AuthWrapper";
 import { ME_QUERY } from "../graphql/queries";
-import { Query } from "react-apollo";
 import React from "react";
 
 export default function withAuth(WrappedComponent, to = "/login") {
