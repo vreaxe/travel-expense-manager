@@ -16,7 +16,7 @@
 
 ### User
 
-- [ ] Register
+- [X] Register ([#1](https://github.com/vreaxe/travel-expense-manager/pull/1))
 
 - [ ] Edit user settings
 
