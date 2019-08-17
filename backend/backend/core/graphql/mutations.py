@@ -28,10 +28,13 @@ class RegisterUser(BaseMutation):
     def perform_mutation(self, info, input):
         user_exists = User.objects.filter(email=input['email']).exists()
         if not user_exists:
-            user = User.objects.create_user(input['email'], input['password'])
-            token = get_token(user)
-            update_last_login(None, user)
-            return RegisterUser(token=token, user=user)
+            if len(input['password']) >= 8:
+                user = User.objects.create_user(input['email'], input['password'])
+                token = get_token(user)
+                update_last_login(None, user)
+                return RegisterUser(token=token, user=user)
+            else:
+                raise ValidationError(form_errors={'password': 'The password must have at least 8 characters'})
         else:
             raise ValidationError(form_errors={'email': 'This email is already taken.'})
 
