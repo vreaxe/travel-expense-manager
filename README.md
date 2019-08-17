@@ -1,4 +1,4 @@
-# <p align="center"> :airplane: Travel Expense Manager :money_with_wings:</p>
+<h1 align="center">:airplane: Travel Expense Manager :money_with_wings:</h1>
 
 <p align="center">A travel expense manager made with Django, GraphQL, Next.js and Tailwind CSS</p>
 
