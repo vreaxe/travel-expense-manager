@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "prod": "NODE_ENV=production node server.js"
+    "prod": "NODE_ENV=production node server.js",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.0.0",
@@ -43,6 +44,7 @@
     "tailwindcss-spinner": "^1.0.0"
   },
   "devDependencies": {
+    "cypress": "^3.4.1",
     "dotenv-webpack": "^1.7.0"
   }
 }
