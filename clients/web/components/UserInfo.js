@@ -13,7 +13,11 @@ const UserInfo = props => {
       <img className="mx-auto my-6" src={"/static/default-avatar.png"} />
       <div className="text-center">
         {props.loggedUser.email}
-        <span onClick={handleLogout} className="cursor-pointer ml-2">
+        <span
+          id="logout"
+          onClick={handleLogout}
+          className="cursor-pointer ml-2"
+        >
           🔴
         </span>
       </div>
