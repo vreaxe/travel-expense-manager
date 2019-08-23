@@ -1,4 +1,5 @@
 Cypress.Commands.add("login", () => {
+  cy.visit("http://localhost:3000/login");
   cy.fixture("user").then(user => {
     cy.get('input[name="email"]')
       .type(user.email)
@@ -7,6 +8,7 @@ Cypress.Commands.add("login", () => {
       .type(user.password)
       .should("have.value", user.password);
     cy.get("form").submit();
+    cy.location("pathname").should("eq", "/trips");
   });
 });
 

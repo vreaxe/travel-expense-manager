@@ -18,7 +18,6 @@ context("Login", () => {
 
   it("Login success", function() {
     cy.login();
-    cy.location("pathname").should("eq", "/trips");
     cy.logout();
   });
 });
