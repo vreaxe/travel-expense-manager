@@ -14,6 +14,14 @@ Cypress.Commands.add("login", () => {
 
 Cypress.Commands.add("logout", () => {
   cy.get("#logout").click();
-
   cy.location("pathname").should("eq", "/login");
+});
+
+Cypress.Commands.add("chooseReactSelectOption", (selector, text, option) => {
+  cy.get(`${selector}`)
+    .click({ force: true })
+    .type(text, { force: true })
+    .get(".react-select__menu")
+    .contains(option)
+    .click();
 });
