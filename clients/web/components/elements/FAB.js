@@ -4,7 +4,7 @@ import Tooltip from "rc-tooltip";
 
 const FAB = props => {
   return (
-    <div className="fixed" style={props.position}>
+    <div id="fab" className="fixed" style={props.position}>
       <Tooltip
         placement="top"
         trigger={["hover"]}
