@@ -1,5 +1,5 @@
 Cypress.Commands.add("login", () => {
-  cy.visit("http://localhost:3000/login");
+  cy.visit("login");
   cy.fixture("user").then(user => {
     cy.get('input[name="email"]')
       .type(user.email)

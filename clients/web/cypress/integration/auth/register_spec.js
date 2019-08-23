@@ -1,10 +1,10 @@
 describe("Register", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000/register");
+    cy.visit("register");
     cy.fixture("user").as("user");
   });
 
-  it("Not an email", function() {
+  it("can't register a user with a wrong email", function() {
     cy.get('input[name="email"]')
       .type(this.user.wrong_email)
       .should("have.value", this.user.wrong_email);
@@ -16,7 +16,7 @@ describe("Register", () => {
     cy.get("form").contains("Enter a valid email address.");
   });
 
-  it("A password with less than 8 characters", function() {
+  it("can't register a user with a password with less than 8 characters", function() {
     cy.get('input[name="email"]')
       .type(this.user.email)
       .should("have.value", this.user.email);
@@ -28,7 +28,7 @@ describe("Register", () => {
     cy.get("form").contains("The password must have at least 8 characters");
   });
 
-  it("Register success", function() {
+  it("can register a user", function() {
     cy.get('input[name="email"]')
       .type(this.user.email)
       .should("have.value", this.user.email);

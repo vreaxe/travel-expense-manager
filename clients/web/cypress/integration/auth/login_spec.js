@@ -1,10 +1,10 @@
 context("Login", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3000/login");
+    cy.visit("login");
     cy.fixture("user").as("user");
   });
 
-  it("Wrong password", function() {
+  it("can't login with a wrong password", function() {
     cy.get('input[name="email"]')
       .type(this.user.email)
       .should("have.value", this.user.email);
@@ -16,7 +16,7 @@ context("Login", () => {
     cy.get("form").contains("Please, enter valid credentials");
   });
 
-  it("Login success", function() {
+  it("can login and logout", function() {
     cy.login();
     cy.logout();
   });
