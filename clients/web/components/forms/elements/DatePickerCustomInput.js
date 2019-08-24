@@ -1,6 +1,6 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-const DatePickerCustomInput = props => {
+const DatePickerCustomInput = (props, _ref) => {
   return (
     <input
       className="w-full rounded-lg border border-gray-400 p-3 hover:border-gray-500 focus:border-green-500 input-color-shadow"
@@ -11,4 +11,4 @@ const DatePickerCustomInput = props => {
   );
 };
 
-export default DatePickerCustomInput;
+export default forwardRef(DatePickerCustomInput);

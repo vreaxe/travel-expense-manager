@@ -1,17 +1,22 @@
+import { Action, Fab } from "react-tiny-fab";
 import { TRIP_EXPENSES_QUERY, TRIP_QUERY } from "../graphql/queries";
+import { useEffect, useState } from "react";
 
 import BackButton from "../components/elements/BackButton";
 import Header from "../components/elements/Header";
 import { Link } from "../routes";
 import Meta from "../components/layouts/Meta";
 import NoItems from "../components/NoItems";
+import { Router } from "../routes";
 import TripItem from "../components/TripItem";
 import TripItemLoader from "../components/loaders/TripItemLoader";
+import { isMobileOrTablet as isMobileOrTabletFn } from "../lib/utils";
 import moment from "moment";
 import { useQuery } from "@apollo/react-hooks";
 import withAuth from "../lib/withAuth";
 
 const Trip = props => {
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
   const {
     loading: loadingTrip,
     error: errorTrip,
@@ -24,6 +29,10 @@ const Trip = props => {
     error: errorExpenses,
     data: { expenses }
   } = useQuery(TRIP_EXPENSES_QUERY, { variables: { tripId: props.tripId } });
+
+  useEffect(() => {
+    setIsMobileOrTablet(isMobileOrTabletFn());
+  });
 
   if (loadingTrip || loadingExpenses) {
     return <TripItemLoader />;
@@ -52,6 +61,20 @@ const Trip = props => {
         </div>
       </Header>
       <TripItem trip={trip} expenses={expenses} />
+      <Fab
+        icon={<span>＋</span>}
+        position={{ bottom: 10, right: 10 }}
+        mainButtonStyles={{ backgroundColor: "#48bb78" }}
+        event={isMobileOrTablet ? "click" : "hover"}
+      >
+        <Action
+          text="Add Expense"
+          style={{ backgroundColor: "#fff" }}
+          onClick={() => Router.pushRoute("addExpense", { id: trip.id })}
+        >
+          <span className="emoji">💸</span>
+        </Action>
+      </Fab>
     </>
   );
 };
