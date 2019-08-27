@@ -5,7 +5,8 @@ describe("Trips", () => {
   });
 
   it("can't create a trip with a wrong budget", function() {
-    cy.get("#fab").click();
+    cy.get(".rtf button.rtf--mb").trigger("mouseover");
+    cy.get("button[text='Add Trip']").click();
     cy.location("pathname").should("eq", "/trips/add");
 
     cy.get('input[name="title"]')
@@ -35,7 +36,8 @@ describe("Trips", () => {
   });
 
   it("creates a trip", function() {
-    cy.get("#fab").click();
+    cy.get(".rtf button.rtf--mb").trigger("mouseover");
+    cy.get("button[text='Add Trip']").click();
     cy.location("pathname").should("eq", "/trips/add");
 
     cy.get('input[name="title"]')
