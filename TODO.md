@@ -8,7 +8,7 @@
 
 ### Expenses
 
-- [ ] Edit expense
+- [ ] Edit expense ([#2](https://github.com/vreaxe/travel-expense-manager/pull/2))
 
 - [ ] Add expense categories
 
