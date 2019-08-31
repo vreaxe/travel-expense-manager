@@ -2,6 +2,8 @@ import { TRIP_EXPENSES_QUERY, TRIP_QUERY } from "../graphql/queries";
 
 import CurrencyNumber from "./elements/CurrencyNumber";
 import { DELETE_EXPENSE_MUTATION } from "../graphql/mutations";
+import { Link } from "../routes";
+import Pencil from "./elements/Pencil";
 import React from "react";
 import Trash from "./elements/Trash";
 import { useMutation } from "@apollo/react-hooks";
@@ -44,13 +46,28 @@ const ExpenseCard = props => {
       </div>
       <div className="text-center w-1/12">
         <div className="">
-          <Trash
-            loading={loading}
-            onClick={e => {
-              e.preventDefault();
-              deleteExpense();
-            }}
-          />
+          <div className="mb-1">
+            <Link
+              route="editExpense"
+              params={{
+                tripId: props.expense.trip.id,
+                expenseId: props.expense.id
+              }}
+            >
+              <a className="block">
+                <Pencil />
+              </a>
+            </Link>
+          </div>
+          <div>
+            <Trash
+              loading={loading}
+              onClick={e => {
+                e.preventDefault();
+                deleteExpense();
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>
