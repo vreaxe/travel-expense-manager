@@ -39,6 +39,28 @@ export const TRIP_QUERY = gql`
   }
 `;
 
+export const TRIP_EXPENSE_QUERY = gql`
+  query expense($tripId: ID!, $expenseId: ID!) {
+    expense(tripId: $tripId, expenseId: $expenseId) {
+      id
+      title
+      amount
+      date
+      currency {
+        id
+        code
+        name
+        symbol
+      }
+      trip {
+        id
+        startDate
+        endDate
+      }
+    }
+  }
+`;
+
 export const TRIP_EXPENSES_QUERY = gql`
   query expenses($tripId: ID!) {
     expenses(tripId: $tripId) {
@@ -101,6 +123,7 @@ export default {
   ME_QUERY,
   TRIPS_QUERY,
   TRIP_QUERY,
+  TRIP_EXPENSE_QUERY,
   TRIP_EXPENSES_QUERY,
   CURRENCIES_QUERY,
   COUNTRIES_QUERY
