@@ -131,19 +131,28 @@ class UpdateExpense(BaseMutation):
     expense = graphene.Field(ExpenseType)
 
     class Arguments:
-        id = graphene.ID(required=True)
+        expense_id = graphene.ID(required=True)
+        trip_id = graphene.ID(required=True)
         input = UpdateExpenseInput(required=True)
 
     class Meta:
         description = 'Update expense'
+        editable_fields = (
+            'title',
+            'amount',
+            'date',
+        )
 
     @login_required
     @permission_classes([UserIsInTripPermission,])
-    def perform_mutation(cls, info, id, input):
+    def perform_mutation(cls, info, expense_id, trip_id, input):
+        expense = get_expense_in_trip(expense_id, trip_id)
+
         with transaction.atomic():
-            expense = Expense.objects.get(id=id)
+            expense = Expense.objects.get(id=expense_id)
             for key, value in input.items():
-                setattr(expense, key, value)
+                if key in UpdateExpense._meta.editable_fields:
+                    setattr(expense, key, value)
             expense.full_clean()
             expense.save()
 

@@ -13,7 +13,7 @@ class Query(ObjectType):
     trips = graphene.List(TripType)
     trip = graphene.Field(TripType, id=graphene.Argument(graphene.ID))
     expenses = graphene.List(ExpenseType, trip_id=graphene.Argument(graphene.ID))
-    expense = graphene.Field(ExpenseType, id=graphene.Argument(graphene.ID))
+    expense = graphene.Field(ExpenseType, trip_id=graphene.Argument(graphene.ID), expense_id=graphene.Argument(graphene.ID))
 
     @login_required
     def resolve_trips(self, info, **kwargs):
@@ -25,13 +25,13 @@ class Query(ObjectType):
 
     @login_required
     @permission_classes([UserIsInTripPermission,])
-    def resolve_expense(self, info, id):
-        return resolve_expense(info, id)
+    def resolve_expenses(self, info, trip_id):
+        return resolve_expenses(info, trip_id)
 
     @login_required
     @permission_classes([UserIsInTripPermission,])
-    def resolve_expenses(self, info, trip_id):
-        return resolve_expenses(info, trip_id)
+    def resolve_expense(self, info, trip_id, expense_id):
+        return resolve_expense(info, trip_id, expense_id)
 
 class Mutation(ObjectType):
     create_trip = CreateTrip.Field()

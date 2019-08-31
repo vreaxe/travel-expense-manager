@@ -18,7 +18,7 @@ const Trash = props => {
 Trash.propTypes = {
   loading: PropTypes.bool,
   className: PropTypes.string,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func
 };
 
 export default Trash;

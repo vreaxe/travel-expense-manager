@@ -7,6 +7,7 @@ from backend.core.mixins import TimestampsMixins
 from backend.core.models import Currency, Country, User
 from backend.trip.constants import TripUserRoles
 from backend.core.validators import validate_date_range
+from backend.trip.validators import validate_expense_created_by
 
 
 class Trip(TimestampsMixins):
@@ -51,4 +52,5 @@ class Expense(TimestampsMixins):
 
     def clean(self, *args, **kwargs):
         validate_date_range(self.trip.start_date, self.trip.end_date, self.date, 'date')
+        validate_expense_created_by(self.trip.id, self.created_by)
         super(Expense, self).clean(*args, **kwargs)
