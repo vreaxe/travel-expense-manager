@@ -28,7 +28,7 @@ git clone https://github.com/vreaxe/travel-expense-manager.git
 docker-compose -f docker-compose.dev.yml up -d --build
 ```
 
-**3. Create the .env files inside the backend and frontend directories and change environment variables**
+**3. Create the .env files inside the backend and clients directories and change environment variables**
 
 Backend:
 
