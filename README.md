@@ -59,16 +59,23 @@ GRAPHQL_URL_SERVER_SIDE=http://backend:8000/graphql/
 APP_NAME=Travel Expense Manager
 ```
 
-**4. Create a superuser**
+**4. Migrate**
+
+```
+docker exec -it tem-backend /bin/bash
+python manage.py migrate
+```
+
+**5. Create a superuser**
 
 ```
 docker exec -it tem-backend /bin/bash
 python manage.py createsuperuser
 ```
 
-**5. Now you can access the backend at http://localhost:8000 and the frontend at http://localhost:3000**
+**6. Now you can access the backend at http://localhost:8000 and the frontend at http://localhost:3000**
 
-**6. Sync currencies and countries (optional - you can create them manually through the Django admin panel)**
+**7. Sync currencies and countries (optional - you can create them manually through the Django admin panel)**
 
 ```
 docker exec -it tem-backend /bin/bash
