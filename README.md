@@ -62,14 +62,14 @@ APP_NAME=Travel Expense Manager
 **4. Migrate**
 
 ```
-docker exec -it tem-backend /bin/bash
+docker exec -it tem-dev-backend /bin/bash
 python manage.py migrate
 ```
 
 **5. Create a superuser**
 
 ```
-docker exec -it tem-backend /bin/bash
+docker exec -it tem-dev-backend /bin/bash
 python manage.py createsuperuser
 ```
 
@@ -78,7 +78,7 @@ python manage.py createsuperuser
 **7. Sync currencies and countries (optional - you can create them manually through the Django admin panel)**
 
 ```
-docker exec -it tem-backend /bin/bash
+docker exec -it tem-dev-backend /bin/bash
 python manage.py sync_countries
 python manage.py sync_currencies
 ```
