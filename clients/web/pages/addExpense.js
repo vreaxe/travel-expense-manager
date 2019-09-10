@@ -10,11 +10,9 @@ import { useQuery } from "@apollo/react-hooks";
 import withAuth from "../lib/withAuth";
 
 const AddExpense = props => {
-  const {
-    loading,
-    error,
-    data: { trip }
-  } = useQuery(TRIP_QUERY, { variables: { id: props.tripId } });
+  const { loading, error, data: dataTrip } = useQuery(TRIP_QUERY, {
+    variables: { id: props.tripId }
+  });
 
   if (loading) {
     return <AddExpenseLoader />;
@@ -22,12 +20,12 @@ const AddExpense = props => {
 
   return (
     <>
-      <Meta title={`Add Expense to ${trip.title}`} />
+      <Meta title={`Add Expense to ${dataTrip.trip.title}`} />
       <Header>
-        <BackButton routeName="trip" routeParams={{ id: trip.id }} />
-        ADD EXPENSE TO {trip.title}
+        <BackButton routeName="trip" routeParams={{ id: dataTrip.trip.id }} />
+        ADD EXPENSE TO {dataTrip.trip.title}
       </Header>
-      <AddExpenseForm trip={trip} />
+      <AddExpenseForm trip={dataTrip.trip} />
     </>
   );
 };

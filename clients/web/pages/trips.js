@@ -13,11 +13,7 @@ import withAuth from "../lib/withAuth";
 
 const Trips = () => {
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
-  const {
-    loading,
-    error,
-    data: { trips }
-  } = useQuery(TRIPS_QUERY);
+  const { loading, error, data } = useQuery(TRIPS_QUERY);
 
   useEffect(() => {
     setIsMobileOrTablet(isMobileOrTabletFn());
@@ -28,7 +24,7 @@ const Trips = () => {
     <>
       <Meta title={`Trips`} />
       <Header>TRIPS</Header>
-      <TripsList trips={trips} />
+      <TripsList trips={data.trips} />
       <Fab
         icon={<span>＋</span>}
         position={{ bottom: 10, right: 10 }}

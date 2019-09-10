@@ -13,12 +13,12 @@ const AddTrip = props => {
   const {
     loading: loadingCountries,
     error: errorCountries,
-    data: { countries }
+    data: dataCountries
   } = useQuery(COUNTRIES_QUERY);
   const {
     loading: loadingCurrencies,
     error: errorCurrencies,
-    data: { currencies }
+    data: dataCurrencies
   } = useQuery(CURRENCIES_QUERY);
 
   if (loadingCountries || loadingCurrencies) return <AddTripLoader />;
@@ -30,7 +30,10 @@ const AddTrip = props => {
         <BackButton routeName="trips" />
         ADD TRIP
       </Header>
-      <AddTripForm countries={countries} currencies={currencies} />
+      <AddTripForm
+        countries={dataCountries.countries}
+        currencies={dataCurrencies.currencies}
+      />
     </>
   );
 };

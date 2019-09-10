@@ -10,11 +10,7 @@ import { useQuery } from "@apollo/react-hooks";
 import withAuth from "../lib/withAuth";
 
 const EditExpense = props => {
-  const {
-    loading,
-    error,
-    data: { expense }
-  } = useQuery(TRIP_EXPENSE_QUERY, {
+  const { loading, error, data } = useQuery(TRIP_EXPENSE_QUERY, {
     variables: { tripId: props.tripId, expenseId: props.expenseId }
   });
 
@@ -24,12 +20,15 @@ const EditExpense = props => {
 
   return (
     <>
-      <Meta title={`Edit Expense: ${expense.title}`} />
+      <Meta title={`Edit Expense: ${data.expense.title}`} />
       <Header>
-        <BackButton routeName="trip" routeParams={{ id: expense.trip.id }} />
-        Edit Expense: {expense.title}
+        <BackButton
+          routeName="trip"
+          routeParams={{ id: data.expense.trip.id }}
+        />
+        Edit Expense: {data.expense.title}
       </Header>
-      <EditExpenseForm expense={expense} />
+      <EditExpenseForm expense={data.expense} />
     </>
   );
 };
