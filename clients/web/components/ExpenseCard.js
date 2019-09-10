@@ -54,7 +54,7 @@ const ExpenseCard = props => {
                 expenseId: props.expense.id
               }}
             >
-              <a className="block">
+              <a className="block outline-none">
                 <Pencil />
               </a>
             </Link>
