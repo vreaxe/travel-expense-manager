@@ -4,6 +4,10 @@ const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const withCSS = require("@zeit/next-css");
 
+if (typeof require !== "undefined") {
+  require.extensions[".css"] = file => {};
+}
+
 module.exports = withCSS({
   webpack: config => {
     config.plugins = config.plugins || [];

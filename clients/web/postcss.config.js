@@ -13,7 +13,12 @@ module.exports = {
     require("postcss-nested"),
     tailwindcss("./tailwind.config.js"),
     purgecss({
-      content: ["./components/**/*.js", "./components/*.js", "./pages/*.js"],
+      content: [
+        "./components/**/*.js",
+        "./components/*.js",
+        "./pages/*.js",
+        "./hooks/*.js"
+      ],
       extractors: [
         {
           extractor: TailwindExtractor,
@@ -23,6 +28,7 @@ module.exports = {
       whitelist: [
         "html",
         "body",
+        "__next",
 
         // react-tiny-fab
         "open",
@@ -34,6 +40,7 @@ module.exports = {
         /react-datepicker/,
         /react-select/,
         /rc-tooltip/,
+        /modali/,
         /spinner/
       ]
     }),

@@ -1,5 +1,7 @@
+import Modali, { useModali } from "modali";
 import { TRIP_EXPENSES_QUERY, TRIP_QUERY } from "../graphql/queries";
 
+import Button from "./elements/Button";
 import CurrencyNumber from "./elements/CurrencyNumber";
 import { DELETE_EXPENSE_MUTATION } from "../graphql/mutations";
 import { Link } from "../routes";
@@ -28,6 +30,32 @@ const ExpenseCard = props => {
       ]
     }
   );
+  const [confirmDelete, confirmDeleteModal] = useModali({
+    animated: true,
+    centered: true,
+    title: "Are you sure?",
+    message: `Deleting expense named ${props.expense.title} permanently.`,
+    buttons: [
+      <Button
+        style="transparent"
+        size="small"
+        onClick={() => confirmDeleteModal()}
+      >
+        Cancel
+      </Button>,
+      <Button
+        loading={loading}
+        style="danger"
+        size="small"
+        onClick={() => {
+          deleteExpense();
+          confirmDeleteModal();
+        }}
+      >
+        Delete
+      </Button>
+    ]
+  });
 
   return (
     <div className="flex mb-5">
@@ -61,15 +89,15 @@ const ExpenseCard = props => {
           </div>
           <div>
             <Trash
-              loading={loading}
               onClick={e => {
                 e.preventDefault();
-                deleteExpense();
+                confirmDeleteModal();
               }}
             />
           </div>
         </div>
       </div>
+      <Modali.Modal {...confirmDelete} />
     </div>
   );
 };
