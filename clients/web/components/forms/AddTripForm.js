@@ -98,29 +98,19 @@ const AddTripForm = props => {
     }
   });
 
-  let countries =
-    typeof props.countries !== "undefined"
-      ? props.countries
-          .map(country => {
-            return {
-              value: country.id,
-              label: `${country.flagEmoji} ${country.name}`
-            };
-          })
-          .flat()
-      : [];
+  let countries = formatSelectOptions(props.countries, country => {
+    return {
+      value: country.id,
+      label: `${country.flagEmoji} ${country.name}`
+    };
+  });
 
-  let currencies =
-    typeof props.currencies !== "undefined"
-      ? props.currencies
-          .map(currency => {
-            return {
-              value: currency.id,
-              label: `${currency.symbol} (${currency.name})`
-            };
-          })
-          .flat()
-      : [];
+  let currencies = formatSelectOptions(props.currencies, country => {
+    return {
+      value: currency.id,
+      label: `${currency.symbol} (${currency.name})`
+    };
+  });
 
   return (
     <>
@@ -230,7 +220,7 @@ const AddTripForm = props => {
                 value={trip.countries}
                 onChange={handleChangeCountries}
                 options={countries}
-                instanceId="select-currency-add-expense"
+                instanceId="select-countries-add-trip"
                 className="react-select"
                 classNamePrefix="react-select"
                 isMulti
