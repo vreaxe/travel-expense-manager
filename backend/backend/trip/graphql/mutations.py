@@ -58,6 +58,13 @@ class UpdateTrip(BaseMutation):
 
     class Meta:
         description = 'Update trip'
+        editable_fields = (
+            'title',
+            'budget',
+            'start_date',
+            'end_date',
+            'countries',
+        )
 
     @login_required
     @permission_classes([UserIsInTripPermission,])
@@ -69,12 +76,13 @@ class UpdateTrip(BaseMutation):
         with transaction.atomic():
             trip = Trip.objects.get(id=id)
             for key, value in input.items():
-                setattr(trip, key, value)
+                if key in UpdateTrip._meta.editable_fields and key is not 'countries':
+                    setattr(trip, key, value)
             trip.full_clean()
             trip.save()
 
-            if countries:
-                trip.countries.add(*countries)
+            if 'countries' in UpdateTrip._meta.editable_fields and countries:
+                trip.countries.set(countries)
         return UpdateTrip(trip=trip)
 
 
