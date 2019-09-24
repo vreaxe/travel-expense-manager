@@ -2,13 +2,13 @@
 
 ### Trips
 
-- [ ] Edit trips
+- [x] Edit trips ([#22](https://github.com/vreaxe/travel-expense-manager/pull/22))
 
 - [ ] Add/invite another user to a trip
 
 ### Expenses
 
-- [X] Edit expense ([#2](https://github.com/vreaxe/travel-expense-manager/pull/2))
+- [x] Edit expense ([#2](https://github.com/vreaxe/travel-expense-manager/pull/2))
 
 - [ ] Add expense categories
 
@@ -16,7 +16,7 @@
 
 ### User
 
-- [X] Register ([#1](https://github.com/vreaxe/travel-expense-manager/pull/1))
+- [x] Register ([#1](https://github.com/vreaxe/travel-expense-manager/pull/1))
 
 - [ ] Edit user settings
 
