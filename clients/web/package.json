@@ -27,7 +27,7 @@
     "lodash": "^4.17.15",
     "modali": "^1.2.0",
     "moment": "^2.24.0",
-    "next": "^9.0.5",
+    "next": "^9.0.6",
     "next-routes": "^1.4.2",
     "next-with-apollo": "^4.2.0",
     "nookies": "^2.0.8",
