@@ -10,7 +10,6 @@ import ErrorField from "./errors/ErrorField";
 import ErrorMessage from "./errors/ErrorMessage";
 import Input from "./elements/Input";
 import Label from "./elements/Label";
-import Select from "react-select";
 import { UPDATE_EXPENSE_MUTATION } from "../../graphql/mutations";
 import classNames from "classnames";
 import { redirect } from "../../lib/utils";

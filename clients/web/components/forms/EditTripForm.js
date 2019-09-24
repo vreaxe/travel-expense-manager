@@ -6,10 +6,9 @@ import {
   TRIP_QUERY
 } from "../../graphql/queries";
 import { addDays, parse, subDays } from "date-fns";
+import { formatSelectOptions, redirect } from "../../lib/utils";
 
-import AddTripLoader from "../loaders/AddTripLoader";
 import Button from "../elements/Button";
-import { CREATE_TRIP_MUTATION } from "../../graphql/mutations";
 import DatePicker from "react-datepicker";
 import DatePickerCustomInput from "./elements/DatePickerCustomInput";
 import ErrorField from "./errors/ErrorField";
@@ -17,20 +16,23 @@ import ErrorMessage from "./errors/ErrorMessage";
 import Input from "./elements/Input";
 import Label from "./elements/Label";
 import Select from "react-select";
-import { redirect } from "../../lib/utils";
+import { UPDATE_TRIP_MUTATION } from "../../graphql/mutations";
+import classNames from "classnames";
+import uniqBy from "lodash/uniqBy";
 import { useMutation } from "@apollo/react-hooks";
 
-const AddTripForm = props => {
+const EditTripForm = props => {
   const [trip, setTrip] = useState({
-    title: "",
-    budget: 0,
-    startDate: new Date(),
-    endDate: new Date(new Date().setDate(new Date().getDate() + 7)),
-    baseCurrency: {
-      value: null,
-      label: null
-    },
-    countries: null
+    title: props.trip.title,
+    budget: props.trip.budget,
+    startDate: new Date(props.trip.startDate),
+    endDate: new Date(props.trip.endDate),
+    countries: formatSelectOptions(props.trip.countries, country => {
+      return {
+        value: country.id,
+        label: `${country.flagEmoji} ${country.name}`
+      };
+    })
   });
 
   const handleChange = event => {
@@ -55,13 +57,6 @@ const AddTripForm = props => {
     });
   };
 
-  const handleChangeCurrency = baseCurrency => {
-    setTrip({
-      ...trip,
-      baseCurrency
-    });
-  };
-
   const handleChangeCountries = countries => {
     setTrip({
       ...trip,
@@ -69,11 +64,11 @@ const AddTripForm = props => {
     });
   };
 
-  const [createTrip, { loading, error }] = useMutation(CREATE_TRIP_MUTATION, {
+  const [updateTrip, { loading, error }] = useMutation(UPDATE_TRIP_MUTATION, {
     variables: {
+      id: props.trip.id,
       input: {
         ...trip,
-        baseCurrency: trip.baseCurrency.value,
         countries: trip.countries
           ? trip.countries.map(country => {
               return country.value;
@@ -85,11 +80,11 @@ const AddTripForm = props => {
       return [
         {
           query: TRIP_QUERY,
-          variables: { id: data.createTrip.trip.id }
+          variables: { id: data.updateTrip.trip.id }
         },
         {
           query: TRIP_EXPENSES_QUERY,
-          variables: { tripId: data.createTrip.trip.id }
+          variables: { tripId: data.updateTrip.trip.id }
         },
         {
           query: TRIPS_QUERY
@@ -105,13 +100,6 @@ const AddTripForm = props => {
     };
   });
 
-  let currencies = formatSelectOptions(props.currencies, country => {
-    return {
-      value: currency.id,
-      label: `${currency.symbol} (${currency.name})`
-    };
-  });
-
   return (
     <>
       <div className="w-full">
@@ -119,8 +107,8 @@ const AddTripForm = props => {
           className="pt-4 pb-8 mb-4"
           onSubmit={async e => {
             e.preventDefault();
-            const res = await createTrip();
-            Router.pushRoute("trip", { id: res.data.createTrip.trip.id });
+            const res = await updateTrip();
+            Router.pushRoute("trip", { id: res.data.updateTrip.trip.id });
           }}
         >
           <ErrorMessage error={error} />
@@ -155,16 +143,10 @@ const AddTripForm = props => {
             </div>
             <div className="w-1/2 ml-4">
               <Label>Currency</Label>
-              <Select
-                value={trip.currency}
-                onChange={handleChangeCurrency}
-                options={currencies}
-                instanceId="select-currency-add-trip"
-                className="react-select"
-                classNamePrefix="react-select"
-                isSearchable
-              />
-              <ErrorField error={error} field="base_currency" />
+              <p className="text-xl mt-4 text-gray-800">
+                {props.trip.baseCurrency.symbol} ({props.trip.baseCurrency.name}
+                )
+              </p>
             </div>
           </div>
           <div className="flex">
@@ -220,7 +202,7 @@ const AddTripForm = props => {
                 value={trip.countries}
                 onChange={handleChangeCountries}
                 options={countries}
-                instanceId="select-countries-add-trip"
+                instanceId="select-country-edit-trip"
                 className="react-select"
                 classNamePrefix="react-select"
                 isMulti
@@ -240,4 +222,4 @@ const AddTripForm = props => {
   );
 };
 
-export default AddTripForm;
+export default EditTripForm;

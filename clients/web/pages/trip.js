@@ -78,6 +78,13 @@ const Trip = props => {
         >
           <span className="emoji">💸</span>
         </Action>
+        <Action
+          text="Edit Trip"
+          style={{ backgroundColor: "#fff" }}
+          onClick={() => Router.pushRoute("editTrip", { id: dataTrip.trip.id })}
+        >
+          <span className="emoji">✏️</span>
+        </Action>
       </Fab>
     </>
   );
