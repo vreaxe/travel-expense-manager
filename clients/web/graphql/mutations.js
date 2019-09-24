@@ -26,6 +26,16 @@ export const CREATE_TRIP_MUTATION = gql`
   }
 `;
 
+export const UPDATE_TRIP_MUTATION = gql`
+  mutation updateTrip($id: ID!, $input: UpdateTripInput!) {
+    updateTrip(id: $id, input: $input) {
+      trip {
+        id
+      }
+    }
+  }
+`;
+
 export const DELETE_TRIP_MUTATION = gql`
   mutation deleteTrip($id: ID!) {
     deleteTrip(id: $id) {
