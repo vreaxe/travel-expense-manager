@@ -20,7 +20,7 @@
     "apollo-link-http": "^1.5.16",
     "apollo-link-state": "^0.4.2",
     "classnames": "^2.2.6",
-    "date-fns": "^2.2.1",
+    "date-fns": "^2.3.0",
     "dotenv": "^8.1.0",
     "graphql": "^14.5.7",
     "graphql-tag": "^2.10.1",
