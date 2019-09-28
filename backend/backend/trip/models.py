@@ -37,6 +37,22 @@ class TripUser(TimestampsMixins):
         verbose_name = _('trip user')
         verbose_name_plural = _('trips users')
 
+    def __str__(self):
+        return self.user.email + ' - ' + self.trip.title
+
+
+class TripCategory(TimestampsMixins):
+    name = models.CharField(_('name'), max_length=255)
+    trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='trip_category')
+
+    class Meta:
+        db_table = 'trip_trip_category'
+        verbose_name = _('trip category')
+        verbose_name_plural = _('trips categories')
+
+    def __str__(self):
+        return self.name
+
 
 class Expense(TimestampsMixins):
     title = models.CharField(_('title'), max_length=255)
@@ -45,10 +61,14 @@ class Expense(TimestampsMixins):
     created_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name='expenses')
     currency = models.ForeignKey(Currency, on_delete=models.PROTECT, related_name='expenses')
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='expenses')
+    category = models.ForeignKey(TripCategory, on_delete=models.CASCADE, related_name='expenses', null=True)
 
     class Meta:
         verbose_name = _('expense')
         verbose_name_plural = _('expenses')
+
+    def __str__(self):
+        return self.title
 
     def clean(self, *args, **kwargs):
         validate_date_range(self.trip.start_date, self.trip.end_date, self.date, 'date')
