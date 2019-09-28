@@ -175,3 +175,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, "static"),
 # ]
+
+
+DEFAULT_TRIP_CATEGORIES = tuple(
+    env.list(
+        'DEFAULT_TRIP_CATEGORIES',
+        default=[
+            'Accomodation',
+            'Transport',
+            'Food',
+            'Entertaiment',
+            'Miscellaneous',
+        ]
+    )
+)
