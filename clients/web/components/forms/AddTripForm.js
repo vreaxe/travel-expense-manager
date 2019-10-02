@@ -6,6 +6,7 @@ import {
   TRIP_QUERY
 } from "../../graphql/queries";
 import { addDays, parse, subDays } from "date-fns";
+import { formatSelectOptions, redirect } from "../../lib/utils";
 
 import AddTripLoader from "../loaders/AddTripLoader";
 import Button from "../elements/Button";
@@ -17,7 +18,6 @@ import ErrorMessage from "./errors/ErrorMessage";
 import Input from "./elements/Input";
 import Label from "./elements/Label";
 import Select from "react-select";
-import { redirect } from "../../lib/utils";
 import { useMutation } from "@apollo/react-hooks";
 
 const AddTripForm = props => {
@@ -105,7 +105,7 @@ const AddTripForm = props => {
     };
   });
 
-  let currencies = formatSelectOptions(props.currencies, country => {
+  let currencies = formatSelectOptions(props.currencies, currency => {
     return {
       value: currency.id,
       label: `${currency.symbol} (${currency.name})`
