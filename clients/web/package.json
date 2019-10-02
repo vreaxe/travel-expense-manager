@@ -35,7 +35,7 @@
     "rc-tooltip": "^3.7.3",
     "react": "^16.10.1",
     "react-datepicker": "^2.9.6",
-    "react-dom": "^16.9.0",
+    "react-dom": "^16.10.1",
     "react-select": "^3.0.8",
     "react-tiny-fab": "^3.0.3"
   },
