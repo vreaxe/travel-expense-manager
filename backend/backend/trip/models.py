@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 from django.core.validators import MinValueValidator
+from colorfield.fields import ColorField
 
 from backend.core.mixins import TimestampsMixins
 from backend.core.models import Currency, Country, User
@@ -43,6 +44,7 @@ class TripUser(TimestampsMixins):
 
 class TripCategory(TimestampsMixins):
     name = models.CharField(_('name'), max_length=255)
+    color = ColorField(_('color'), max_length=255, null=True)
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='trip_category')
 
     class Meta:

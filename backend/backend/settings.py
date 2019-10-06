@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'django_filters',
     'graphene_django',
     'corsheaders',
+    'colorfield',
     # My apps
     'backend.core',
     'backend.trip',
