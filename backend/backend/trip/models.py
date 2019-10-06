@@ -45,7 +45,7 @@ class TripUser(TimestampsMixins):
 class TripCategory(TimestampsMixins):
     name = models.CharField(_('name'), max_length=255)
     color = ColorField(_('color'), max_length=255, null=True)
-    trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='trip_category')
+    trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='categories')
 
     class Meta:
         db_table = 'trip_trip_category'

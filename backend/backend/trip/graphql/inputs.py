@@ -8,6 +8,7 @@ class CreateTripInput(graphene.InputObjectType):
     start_date = graphene.DateTime(required=True)
     end_date = graphene.DateTime(required=True)
     base_currency = graphene.ID(required=True)
+    category = graphene.ID(required=True)
     countries = graphene.List(graphene.ID, required=True)
 
 
