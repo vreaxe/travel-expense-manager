@@ -9,7 +9,7 @@ from backend.trip.models import Trip, TripUser, Expense
 from backend.core.models import Currency
 from backend.trip.constants import TripUserRoles
 from backend.core.services import get_countries, get_currency
-from backend.trip.services import get_trip, get_expense_in_trip
+from backend.trip.services import get_trip, get_expense_in_trip, get_category_in_trip
 from backend.trip.permissions import UserIsInTripPermission
 from backend.graphql.mutations import BaseMutation
 from backend.graphql.decorators import permission_classes
@@ -120,6 +120,7 @@ class CreateExpense(BaseMutation):
     def perform_mutation(cls, info, input):
         currency = get_currency(input['currency'])
         trip = get_trip(input['trip'])
+        category = get_category_in_trip(input['category'], input['trip'])
 
         with transaction.atomic():
             expense = Expense(
@@ -128,6 +129,7 @@ class CreateExpense(BaseMutation):
                 date = input['date'],
                 created_by = info.context.user,
                 currency = currency,
+                category = category,
                 trip = trip,
             )
             expense.full_clean()
