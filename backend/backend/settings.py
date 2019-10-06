@@ -181,10 +181,10 @@ DEFAULT_TRIP_CATEGORIES = tuple(
     env.list(
         'DEFAULT_TRIP_CATEGORIES',
         default=[
-            'Accomodation',
+            'Accommodation',
             'Transport',
             'Food',
-            'Entertaiment',
+            'Entertainment',
             'Miscellaneous',
         ]
     )
