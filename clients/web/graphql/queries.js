@@ -22,6 +22,10 @@ export const TRIPS_QUERY = gql`
         name
         flagEmoji
       }
+      categories {
+        name
+        color
+      }
     }
   }
 `;
@@ -45,6 +49,10 @@ export const TRIP_QUERY = gql`
           name
           symbol
         }
+      }
+      categories {
+        name
+        color
       }
       baseCurrency {
         id
@@ -74,6 +82,10 @@ export const TRIP_EXPENSE_QUERY = gql`
         startDate
         endDate
       }
+      category {
+        name
+        color
+      }
     }
   }
 `;
@@ -93,6 +105,10 @@ export const TRIP_EXPENSES_QUERY = gql`
       }
       trip {
         id
+      }
+      category {
+        name
+        color
       }
     }
   }
