@@ -9,6 +9,23 @@ export const ME_QUERY = gql`
   }
 `;
 
+export const TRIPS_QUERY = gql`
+  query {
+    trips {
+      id
+      title
+      budget
+      startDate
+      endDate
+      countries {
+        id
+        name
+        flagEmoji
+      }
+    }
+  }
+`;
+
 export const TRIP_QUERY = gql`
   query trip($id: ID!) {
     trip(id: $id) {
@@ -81,23 +98,6 @@ export const TRIP_EXPENSES_QUERY = gql`
   }
 `;
 
-export const TRIPS_QUERY = gql`
-  query {
-    trips {
-      id
-      title
-      budget
-      startDate
-      endDate
-      countries {
-        id
-        name
-        flagEmoji
-      }
-    }
-  }
-`;
-
 export const CURRENCIES_QUERY = gql`
   query {
     currencies {
@@ -123,8 +123,8 @@ export default {
   ME_QUERY,
   TRIPS_QUERY,
   TRIP_QUERY,
-  TRIP_EXPENSE_QUERY,
   TRIP_EXPENSES_QUERY,
+  TRIP_EXPENSE_QUERY,
   CURRENCIES_QUERY,
   COUNTRIES_QUERY
 };
