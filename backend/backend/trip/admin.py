@@ -1,5 +1,4 @@
 from django.contrib import admin
-from admin_auto_filters.filters import AutocompleteFilter
 
 from backend.trip.models import Trip, TripUser, TripCategory, Expense
 
