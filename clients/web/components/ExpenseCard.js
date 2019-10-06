@@ -59,12 +59,16 @@ const ExpenseCard = props => {
 
   return (
     <div className="flex mb-5">
-      <div className="flex w-11/12 bg-white shadow p-4">
+      <div
+        className="flex w-11/12 bg-white shadow p-3"
+        style={{ borderLeft: `4px solid ${props.expense.category.color}` }}
+      >
         <div className="w-1/2">
           <h2 className="text-md font-bold">{props.expense.title}</h2>
+          <span className="text-sm">{props.expense.category.name}</span>
         </div>
         <div className="w-1/2">
-          <p className="text-right">
+          <p className="flex justify-end items-center h-full">
             <CurrencyNumber
               number={props.expense.amount}
               currency={props.expense.currency}
@@ -73,8 +77,8 @@ const ExpenseCard = props => {
         </div>
       </div>
       <div className="text-center w-1/12">
-        <div className="">
-          <div className="mb-1">
+        <div className="h-full">
+          <div className="flex items-center justify-center h-half">
             <Link
               route="editExpense"
               params={{
@@ -87,7 +91,7 @@ const ExpenseCard = props => {
               </a>
             </Link>
           </div>
-          <div>
+          <div className="flex items-center justify-center h-half">
             <Trash
               onClick={e => {
                 e.preventDefault();
