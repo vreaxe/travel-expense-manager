@@ -50,6 +50,11 @@ admin.site.register(TripCategory, TripCategoryAdmin)
 class ExpenseAdmin(admin.ModelAdmin):
     list_display = ('title', 'amount', 'currency', 'trip', 'category', 'created_by', 'date',)
     search_fields = ('title',)
-    autocomplete_fields = ('currency', 'trip', 'category', 'created_by',)
+    autocomplete_fields = ('currency', 'trip', 'created_by',)
+
+    def get_form(self, request, obj=None, **kwargs):
+        form = super().get_form(request, obj, **kwargs)
+        form.base_fields['category'].queryset = TripCategory.objects.filter(trip_id=obj.trip_id)
+        return form
 
 admin.site.register(Expense, ExpenseAdmin)
