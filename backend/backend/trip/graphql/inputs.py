@@ -8,7 +8,6 @@ class CreateTripInput(graphene.InputObjectType):
     start_date = graphene.DateTime(required=True)
     end_date = graphene.DateTime(required=True)
     base_currency = graphene.ID(required=True)
-    category = graphene.ID(required=True)
     countries = graphene.List(graphene.ID, required=True)
 
 
@@ -25,6 +24,7 @@ class CreateExpenseInput(graphene.InputObjectType):
     amount = Decimal(required=True)
     date = graphene.DateTime(required=True)
     currency = graphene.ID(required=True)
+    category = graphene.ID(required=True)
     trip = graphene.ID(required=True)
 
 
