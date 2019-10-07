@@ -151,18 +151,23 @@ class UpdateExpense(BaseMutation):
             'title',
             'amount',
             'date',
+            'category',
         )
 
     @login_required
     @permission_classes([UserIsInTripPermission,])
     def perform_mutation(cls, info, expense_id, trip_id, input):
         expense = get_expense_in_trip(expense_id, trip_id)
+        category = get_category_in_trip(input['category'], trip_id)
 
         with transaction.atomic():
             expense = Expense.objects.get(id=expense_id)
             for key, value in input.items():
                 if key in UpdateExpense._meta.editable_fields:
-                    setattr(expense, key, value)
+                    if key is 'category':
+                        setattr(expense, key, category)
+                    else:
+                        setattr(expense, key, value)
             expense.full_clean()
             expense.save()
 

@@ -32,3 +32,4 @@ class UpdateExpenseInput(graphene.InputObjectType):
     title = graphene.String()
     amount = Decimal()
     date = graphene.DateTime()
+    category = graphene.ID()
