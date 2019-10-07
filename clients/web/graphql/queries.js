@@ -23,6 +23,7 @@ export const TRIPS_QUERY = gql`
         flagEmoji
       }
       categories {
+        id
         name
         color
       }
@@ -51,6 +52,7 @@ export const TRIP_QUERY = gql`
         }
       }
       categories {
+        id
         name
         color
       }
@@ -81,8 +83,14 @@ export const TRIP_EXPENSE_QUERY = gql`
         id
         startDate
         endDate
+        categories {
+          id
+          name
+          color
+        }
       }
       category {
+        id
         name
         color
       }
@@ -107,6 +115,7 @@ export const TRIP_EXPENSES_QUERY = gql`
         id
       }
       category {
+        id
         name
         color
       }
