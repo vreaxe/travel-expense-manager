@@ -65,7 +65,9 @@ const ExpenseCard = props => {
       >
         <div className="w-1/2">
           <h2 className="text-md font-bold">{props.expense.title}</h2>
-          <span className="text-sm">{props.expense.category.name}</span>
+          <span className="text-sm text-gray-600">
+            {props.expense.category.name}
+          </span>
         </div>
         <div className="w-1/2">
           <p className="flex justify-end items-center h-full">
