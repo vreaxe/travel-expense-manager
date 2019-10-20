@@ -2,6 +2,7 @@ import graphene
 
 from backend.core.graphql.scalars import Decimal
 
+
 class CreateTripInput(graphene.InputObjectType):
     title = graphene.String(required=True)
     budget = Decimal(required=True)
