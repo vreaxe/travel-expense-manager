@@ -20,6 +20,12 @@ class UpdateTripInput(graphene.InputObjectType):
     countries = graphene.List(graphene.ID)
 
 
+class CreateOrUpdateTripCategoryInput(graphene.InputObjectType):
+    id = graphene.ID()
+    name = graphene.String(required=True)
+    color = graphene.String(required=True)
+
+
 class CreateExpenseInput(graphene.InputObjectType):
     title = graphene.String(required=True)
     amount = Decimal(required=True)

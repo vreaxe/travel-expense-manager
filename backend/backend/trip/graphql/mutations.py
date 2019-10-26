@@ -4,8 +4,8 @@ from graphql_jwt.decorators import login_required
 
 from backend.graphql.exceptions import ValidationError
 from backend.trip.graphql.types import TripType, ExpenseType
-from backend.trip.graphql.inputs import CreateTripInput, UpdateTripInput, CreateExpenseInput, UpdateExpenseInput
-from backend.trip.models import Trip, TripUser, Expense
+from backend.trip.graphql.inputs import CreateTripInput, UpdateTripInput, CreateOrUpdateTripCategoryInput, CreateExpenseInput, UpdateExpenseInput
+from backend.trip.models import Trip, TripUser, TripCategory, Expense
 from backend.core.models import Currency
 from backend.trip.constants import TripUserRoles
 from backend.core.services import get_countries, get_currency
@@ -36,7 +36,6 @@ class CreateTrip(BaseMutation):
                 end_date=input['end_date'],
                 base_currency=base_currency,
             )
-            trip.full_clean()
             trip.save()
 
             trip.countries.add(*countries)
@@ -78,7 +77,6 @@ class UpdateTrip(BaseMutation):
             for key, value in input.items():
                 if key in UpdateTrip._meta.editable_fields and key is not 'countries':
                     setattr(trip, key, value)
-            trip.full_clean()
             trip.save()
 
             if 'countries' in UpdateTrip._meta.editable_fields and countries:
@@ -104,6 +102,71 @@ class DeleteTrip(BaseMutation):
             trip.delete()
 
         return DeleteTrip(id=id)
+
+
+class CreateOrUpdateTripCategory(BaseMutation):
+    trip = graphene.Field(TripType)
+
+    class Arguments:
+        trip_id = graphene.ID(required=True)
+        categories = graphene.List(CreateOrUpdateTripCategoryInput, required=True)
+
+    class Meta:
+        description = 'Create or update trip category'
+        editable_fields = (
+            'id',
+            'name',
+            'color',
+        )
+
+    @login_required
+    @permission_classes([UserIsInTripPermission,])
+    def perform_mutation(cls, info, trip_id, categories):
+        trip = get_trip(trip_id)
+
+        with transaction.atomic():
+            for category in categories:
+                category_generated = {'id': None, 'name': None, 'color': None}
+
+                for key, value in category.items():
+                    if key in CreateOrUpdateTripCategory._meta.editable_fields:
+                        category_generated[key] = value
+
+                if category_generated.get('id'):
+                    # Check if the id field exists. If exists, validate that this category belongs to the trip
+                    get_category_in_trip(category_generated['id'], trip.id)
+                    category_generated['trip'] = trip
+                else:
+                    category_generated['trip'] = trip
+
+                TripCategory.objects.update_or_create(
+                    id=category_generated['id'],
+                    defaults=category_generated
+                )
+            trip.refresh_from_db()
+
+        return CreateOrUpdateTripCategory(trip=trip)
+
+
+class DeleteTripCategory(BaseMutation):
+    id = graphene.ID()
+
+    class Arguments:
+        category_id= graphene.ID(required=True)
+        trip_id = graphene.ID(required=True)
+
+    class Meta:
+        description = 'Delete category trip'
+
+    @login_required
+    @permission_classes([UserIsInTripPermission,])
+    def perform_mutation(cls, info, category_id, trip_id):
+        category = get_category_in_trip(category_id, trip_id)
+
+        with transaction.atomic():
+            category.delete()
+
+        return DeleteTripCategory(id=category_id)
 
 
 class CreateExpense(BaseMutation):
@@ -132,7 +195,6 @@ class CreateExpense(BaseMutation):
                 category = category,
                 trip = trip,
             )
-            expense.full_clean()
             expense.save()
         return CreateExpense(expense=expense)
 
@@ -168,7 +230,6 @@ class UpdateExpense(BaseMutation):
                         setattr(expense, key, category)
                     else:
                         setattr(expense, key, value)
-            expense.full_clean()
             expense.save()
 
         return UpdateExpense(expense=expense)

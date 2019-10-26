@@ -4,7 +4,7 @@ from graphql_jwt.decorators import login_required
 
 from backend.trip.graphql.types import TripType, TripCategoryType, ExpenseType
 from backend.trip.graphql.resolvers import resolve_trips, resolve_trip, resolve_trip_categories, resolve_expense, resolve_expenses
-from backend.trip.graphql.mutations import CreateTrip, UpdateTrip, DeleteTrip, CreateExpense, UpdateExpense, DeleteExpense
+from backend.trip.graphql.mutations import CreateTrip, UpdateTrip, DeleteTrip, CreateOrUpdateTripCategory, DeleteTripCategory, CreateExpense, UpdateExpense, DeleteExpense
 from backend.trip.permissions import UserIsInTripPermission
 from backend.graphql.decorators import permission_classes
 
@@ -44,6 +44,8 @@ class Mutation(ObjectType):
     create_trip = CreateTrip.Field()
     update_trip = UpdateTrip.Field()
     delete_trip = DeleteTrip.Field()
+    create_or_update_trip_category = CreateOrUpdateTripCategory.Field()
+    delete_trip_category = DeleteTripCategory.Field()
     create_expense = CreateExpense.Field()
     update_expense = UpdateExpense.Field()
     delete_expense = DeleteExpense.Field()

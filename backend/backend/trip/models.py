@@ -27,6 +27,10 @@ class Trip(TimestampsMixins):
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        return super().save(*args, **kwargs)
+
 
 class TripUser(TimestampsMixins):
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='trip_user')
@@ -41,6 +45,10 @@ class TripUser(TimestampsMixins):
     def __str__(self):
         return self.user.email + ' - ' + self.trip.title
 
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        return super().save(*args, **kwargs)
+
 
 class TripCategory(TimestampsMixins):
     name = models.CharField(_('name'), max_length=255)
@@ -54,6 +62,10 @@ class TripCategory(TimestampsMixins):
 
     def __str__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        return super().save(*args, **kwargs)
 
 
 class Expense(TimestampsMixins):
@@ -76,4 +88,8 @@ class Expense(TimestampsMixins):
         validate_date_range(self.trip.start_date, self.trip.end_date, self.date, 'date')
         validate_expense_created_by(self.trip.id, self.created_by)
         validate_expense_category_belongs_to_trip(self.trip.id, self.category.id)
-        super(Expense, self).clean(*args, **kwargs)
+        super().clean(*args, **kwargs)
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        return super().save(*args, **kwargs)
