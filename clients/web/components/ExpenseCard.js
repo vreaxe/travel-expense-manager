@@ -2,6 +2,7 @@ import Modali, { useModali } from "modali";
 import { TRIP_EXPENSES_QUERY, TRIP_QUERY } from "../graphql/queries";
 
 import Button from "./elements/Button";
+import Color from "color";
 import CurrencyNumber from "./elements/CurrencyNumber";
 import { DELETE_EXPENSE_MUTATION } from "../graphql/mutations";
 import { Link } from "../routes";
@@ -57,6 +58,15 @@ const ExpenseCard = props => {
     ]
   });
 
+  const backgroundColorCategory =
+    Color(props.expense.category.color).luminosity() > 0.7
+      ? Color(props.expense.category.color)
+          .alpha(0.5)
+          .darken(0.5)
+      : Color(props.expense.category.color)
+          .alpha(0.5)
+          .lighten(0.5);
+
   return (
     <div className="flex mb-5">
       <div
@@ -65,7 +75,15 @@ const ExpenseCard = props => {
       >
         <div className="w-1/2">
           <h2 className="text-md font-bold">{props.expense.title}</h2>
-          <span className="text-sm text-gray-600">
+          <span
+            className="text-sm font-bold"
+            style={{
+              borderRadius: "4px",
+              padding: "2px 5px",
+              color: props.expense.category.color,
+              backgroundColor: backgroundColorCategory
+            }}
+          >
             {props.expense.category.name}
           </span>
         </div>
@@ -94,12 +112,7 @@ const ExpenseCard = props => {
             </Link>
           </div>
           <div className="flex items-center justify-center h-half">
-            <Trash
-              onClick={e => {
-                e.preventDefault();
-                confirmDeleteModal();
-              }}
-            />
+            <Trash onClick={() => confirmDeleteModal()} />
           </div>
         </div>
       </div>

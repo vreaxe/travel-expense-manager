@@ -9,6 +9,7 @@ module.exports = routes()
   .add("editTrip", "/trips/:id/edit", "editTrip")
   .add("editExpense", "/trips/:tripId/expense/:expenseId", "editExpense")
   .add("addExpense", "/trips/:id/add-expense", "addExpense")
+  .add("tripCategories", "/trips/:id/categories", "tripCategories")
   .add("trip", "/trips/:id", "trip")
   .add("register")
   .add("login");

@@ -70,6 +70,15 @@ const Trip = props => {
         event={isMobileOrTablet ? "click" : "hover"}
       >
         <Action
+          text="Add/Edit Categories"
+          style={{ backgroundColor: "#fff" }}
+          onClick={() =>
+            Router.pushRoute("tripCategories", { id: dataTrip.trip.id })
+          }
+        >
+          <span className="emoji">🗂</span>
+        </Action>
+        <Action
           text="Add Expense"
           style={{ backgroundColor: "#fff" }}
           onClick={() =>
