@@ -83,10 +83,6 @@ python manage.py sync_countries
 python manage.py sync_currencies
 ```
 
-### :computer: Manual
-
-:construction: Under construction
-
 &nbsp;
 
 ## Screenshots
