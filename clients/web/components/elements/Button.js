@@ -17,6 +17,7 @@ const Button = ({
         spinner: loading,
         "w-full": fullWidth,
         "bg-green-500 hover:bg-green-600 text-white": style == "default",
+        "bg-orange-500 hover:bg-orange-600 text-white": style == "info",
         "bg-red-500 hover:bg-red-600 text-white": style == "danger",
         "bg-transparent text-black": style == "transparent",
         "rounded-lg py-2 px-6": size == "default",
@@ -33,7 +34,7 @@ const Button = ({
 Button.propTypes = {
   loading: PropTypes.bool,
   type: PropTypes.string,
-  style: PropTypes.oneOf(["default", "danger", "transparent"]),
+  style: PropTypes.oneOf(["default", "danger", "transparent", "info"]),
   size: PropTypes.oneOf(["default", "small"]),
   fullWidth: PropTypes.bool
 };

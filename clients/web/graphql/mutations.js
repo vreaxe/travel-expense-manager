@@ -44,6 +44,32 @@ export const DELETE_TRIP_MUTATION = gql`
   }
 `;
 
+export const CREATE_OR_UPDATE_TRIP_CATEGORY_MUTATION = gql`
+  mutation createOrUpdateTripCategory(
+    $tripId: ID!
+    $categories: [CreateOrUpdateTripCategoryInput]!
+  ) {
+    createOrUpdateTripCategory(tripId: $tripId, categories: $categories) {
+      trip {
+        id
+        categories {
+          id
+          name
+          color
+        }
+      }
+    }
+  }
+`;
+
+export const DELETE_TRIP_CATEGORY_MUTATION = gql`
+  mutation deleteTripCategory($categoryId: ID!, $tripId: ID!) {
+    deleteTripCategory(categoryId: $categoryId, tripId: $tripId) {
+      id
+    }
+  }
+`;
+
 export const CREATE_EXPENSE_MUTATION = gql`
   mutation createExpense($input: CreateExpenseInput!) {
     createExpense(input: $input) {
@@ -95,8 +121,11 @@ export const DELETE_EXPENSE_MUTATION = gql`
 export default {
   TOKEN_AUTH_MUTATION,
   REGISTER_USER_MUTATION,
+  CREATE_TRIP_MUTATION,
+  UPDATE_TRIP_MUTATION,
+  DELETE_TRIP_MUTATION,
+  CREATE_OR_UPDATE_TRIP_CATEGORY_MUTATION,
   CREATE_EXPENSE_MUTATION,
   UPDATE_EXPENSE_MUTATION,
-  CREATE_TRIP_MUTATION,
-  DELETE_TRIP_MUTATION
+  DELETE_EXPENSE_MUTATION
 };

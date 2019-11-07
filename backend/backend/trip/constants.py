@@ -1,5 +1,5 @@
 
-class TripUserRoles():
+class TripUserRoles:
     OWNER = 'owner'
     COLLABORATOR = 'collaborator'
 
