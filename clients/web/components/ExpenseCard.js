@@ -2,6 +2,7 @@ import Modali, { useModali } from "modali";
 import { TRIP_EXPENSES_QUERY, TRIP_QUERY } from "../graphql/queries";
 
 import Button from "./elements/Button";
+import Color from "color";
 import CurrencyNumber from "./elements/CurrencyNumber";
 import { DELETE_EXPENSE_MUTATION } from "../graphql/mutations";
 import { Link } from "../routes";
@@ -57,14 +58,37 @@ const ExpenseCard = props => {
     ]
   });
 
+  const backgroundColorCategory =
+    Color(props.expense.category.color).luminosity() > 0.7
+      ? Color(props.expense.category.color)
+          .alpha(0.5)
+          .darken(0.5)
+      : Color(props.expense.category.color)
+          .alpha(0.5)
+          .lighten(0.5);
+
   return (
     <div className="flex mb-5">
-      <div className="flex w-11/12 bg-white shadow p-4">
+      <div
+        className="flex w-11/12 bg-white shadow p-3"
+        style={{ borderLeft: `4px solid ${props.expense.category.color}` }}
+      >
         <div className="w-1/2">
           <h2 className="text-md font-bold">{props.expense.title}</h2>
+          <span
+            className="text-sm font-bold"
+            style={{
+              borderRadius: "4px",
+              padding: "2px 5px",
+              color: props.expense.category.color,
+              backgroundColor: backgroundColorCategory
+            }}
+          >
+            {props.expense.category.name}
+          </span>
         </div>
         <div className="w-1/2">
-          <p className="text-right">
+          <p className="flex justify-end items-center h-full">
             <CurrencyNumber
               number={props.expense.amount}
               currency={props.expense.currency}
@@ -73,8 +97,8 @@ const ExpenseCard = props => {
         </div>
       </div>
       <div className="text-center w-1/12">
-        <div className="">
-          <div className="mb-1">
+        <div className="h-full">
+          <div className="flex items-center justify-center h-half">
             <Link
               route="editExpense"
               params={{
@@ -87,13 +111,8 @@ const ExpenseCard = props => {
               </a>
             </Link>
           </div>
-          <div>
-            <Trash
-              onClick={e => {
-                e.preventDefault();
-                confirmDeleteModal();
-              }}
-            />
+          <div className="flex items-center justify-center h-half">
+            <Trash onClick={() => confirmDeleteModal()} />
           </div>
         </div>
       </div>

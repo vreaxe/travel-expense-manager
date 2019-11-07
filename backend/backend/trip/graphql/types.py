@@ -1,7 +1,7 @@
 import graphene
 from graphene_django.types import DjangoObjectType
 
-from backend.trip.models import Trip, TripUser, Expense
+from backend.trip.models import Trip, TripUser, TripCategory, Expense
 
 
 class ExpenseType(DjangoObjectType):
@@ -12,6 +12,11 @@ class ExpenseType(DjangoObjectType):
 class TripUserType(DjangoObjectType):
     class Meta:
         model = TripUser
+
+
+class TripCategoryType(DjangoObjectType):
+    class Meta:
+        model = TripCategory
 
 
 class TripType(DjangoObjectType):

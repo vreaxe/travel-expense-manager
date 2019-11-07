@@ -2,12 +2,13 @@ from django.db import models
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 from django.core.validators import MinValueValidator
+from colorfield.fields import ColorField
 
 from backend.core.mixins import TimestampsMixins
 from backend.core.models import Currency, Country, User
 from backend.trip.constants import TripUserRoles
 from backend.core.validators import validate_date_range
-from backend.trip.validators import validate_expense_created_by
+from backend.trip.validators import validate_expense_created_by, validate_expense_category_belongs_to_trip
 
 
 class Trip(TimestampsMixins):
@@ -26,6 +27,10 @@ class Trip(TimestampsMixins):
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        return super().save(*args, **kwargs)
+
 
 class TripUser(TimestampsMixins):
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='trip_user')
@@ -37,6 +42,31 @@ class TripUser(TimestampsMixins):
         verbose_name = _('trip user')
         verbose_name_plural = _('trips users')
 
+    def __str__(self):
+        return self.user.email + ' - ' + self.trip.title
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        return super().save(*args, **kwargs)
+
+
+class TripCategory(TimestampsMixins):
+    name = models.CharField(_('name'), max_length=255)
+    color = ColorField(_('color'), max_length=255, null=True)
+    trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='categories')
+
+    class Meta:
+        db_table = 'trip_trip_category'
+        verbose_name = _('trip category')
+        verbose_name_plural = _('trips categories')
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        return super().save(*args, **kwargs)
+
 
 class Expense(TimestampsMixins):
     title = models.CharField(_('title'), max_length=255)
@@ -45,12 +75,21 @@ class Expense(TimestampsMixins):
     created_by = models.ForeignKey(User, on_delete=models.PROTECT, related_name='expenses')
     currency = models.ForeignKey(Currency, on_delete=models.PROTECT, related_name='expenses')
     trip = models.ForeignKey(Trip, on_delete=models.CASCADE, related_name='expenses')
+    category = models.ForeignKey(TripCategory, on_delete=models.CASCADE, related_name='expenses', null=True)
 
     class Meta:
         verbose_name = _('expense')
         verbose_name_plural = _('expenses')
 
+    def __str__(self):
+        return self.title
+
     def clean(self, *args, **kwargs):
         validate_date_range(self.trip.start_date, self.trip.end_date, self.date, 'date')
         validate_expense_created_by(self.trip.id, self.created_by)
-        super(Expense, self).clean(*args, **kwargs)
+        validate_expense_category_belongs_to_trip(self.trip.id, self.category.id)
+        super().clean(*args, **kwargs)
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        return super().save(*args, **kwargs)

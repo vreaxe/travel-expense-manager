@@ -301,6 +301,7 @@ module.exports = {
     height: theme => ({
       auto: "auto",
       ...theme("spacing"),
+      half: "50%",
       full: "100%",
       screen: "100vh"
     }),

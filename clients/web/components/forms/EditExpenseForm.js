@@ -2,6 +2,7 @@ import { Link, Router } from "../../routes";
 import React, { useState } from "react";
 import { TRIP_EXPENSES_QUERY, TRIP_QUERY } from "../../graphql/queries";
 import { addDays, parse, subDays } from "date-fns";
+import { formatSelectOptions, redirect } from "../../lib/utils";
 
 import Button from "../elements/Button";
 import DatePicker from "react-datepicker";
@@ -10,9 +11,9 @@ import ErrorField from "./errors/ErrorField";
 import ErrorMessage from "./errors/ErrorMessage";
 import Input from "./elements/Input";
 import Label from "./elements/Label";
+import Select from "react-select";
 import { UPDATE_EXPENSE_MUTATION } from "../../graphql/mutations";
 import classNames from "classnames";
-import { redirect } from "../../lib/utils";
 import uniqBy from "lodash/uniqBy";
 import { useMutation } from "@apollo/react-hooks";
 
@@ -20,7 +21,12 @@ const EditExpenseForm = props => {
   const [expense, setExpense] = useState({
     title: props.expense.title,
     amount: props.expense.amount,
-    date: new Date(props.expense.date)
+    date: new Date(props.expense.date),
+    category: {
+      value: props.expense.category.id,
+      label: props.expense.category.name,
+      color: props.expense.category.color
+    }
   });
 
   const handleChange = event => {
@@ -37,13 +43,20 @@ const EditExpenseForm = props => {
     });
   };
 
+  const handleChangeCategory = category => {
+    setExpense({
+      ...expense,
+      category
+    });
+  };
+
   const [updateExpense, { loading, error }] = useMutation(
     UPDATE_EXPENSE_MUTATION,
     {
       variables: {
         tripId: props.expense.trip.id,
         expenseId: props.expense.id,
-        input: { ...expense }
+        input: { ...expense, category: expense.category.value }
       },
       refetchQueries: [
         {
@@ -55,6 +68,33 @@ const EditExpenseForm = props => {
           variables: { tripId: props.expense.trip.id }
         }
       ]
+    }
+  );
+
+  const formatCategoryOptionLabel = ({ value, label, color }) => (
+    <div style={{ display: "flex" }}>
+      <div
+        style={{
+          marginRight: "10px",
+          marginTop: "4px",
+          backgroundColor: color,
+          height: "15px",
+          width: "15px",
+          borderRadius: "50%"
+        }}
+      ></div>
+      <div>{label}</div>
+    </div>
+  );
+
+  let categories = formatSelectOptions(
+    props.expense.trip.categories,
+    category => {
+      return {
+        value: category.id,
+        label: category.name,
+        color: category.color
+      };
     }
   );
 
@@ -85,6 +125,42 @@ const EditExpenseForm = props => {
           </div>
           <div className="flex mb-4">
             <div className="w-1/2 mr-4">
+              <Label for="select-category-edit-expense">Category</Label>
+              <Select
+                value={expense.category}
+                onChange={handleChangeCategory}
+                options={categories}
+                formatOptionLabel={formatCategoryOptionLabel}
+                instanceId="select-category-edit-expense"
+                className="react-select"
+                classNamePrefix="react-select"
+              />
+              <ErrorField error={error} field="category" />
+            </div>
+            <div className="w-1/2 ml-4">
+              <Label>Date</Label>
+              {/* TODO locale */}
+              <DatePicker
+                customInput={<DatePickerCustomInput />}
+                selected={expense.date}
+                onChange={handleChangeDate}
+                minDate={new Date(props.expense.trip.startDate)}
+                maxDate={new Date(props.expense.trip.endDate)}
+                showTimeSelect
+                timeFormat="HH:mm"
+                timeIntervals={15}
+                dateFormat="d MMMM yyyy H:mm"
+                timeCaption="Time"
+                peekNextMonth
+                showMonthDropdown
+                showYearDropdown
+                shouldCloseOnSelect={true}
+              />
+              <ErrorField error={error} field="date" />
+            </div>
+          </div>
+          <div className="flex mb-4">
+            <div className="w-1/2 mr-4">
               <Label for="amount">Amount</Label>
               {/* TODO number format */}
               <Input
@@ -105,27 +181,6 @@ const EditExpenseForm = props => {
                 {props.expense.currency.symbol} ({props.expense.currency.name})
               </p>
             </div>
-          </div>
-          <div className="mb-4">
-            <Label>Date</Label>
-            {/* TODO locale */}
-            <DatePicker
-              customInput={<DatePickerCustomInput />}
-              selected={expense.date}
-              onChange={handleChangeDate}
-              minDate={new Date(props.expense.trip.startDate)}
-              maxDate={new Date(props.expense.trip.endDate)}
-              showTimeSelect
-              timeFormat="HH:mm"
-              timeIntervals={15}
-              dateFormat="d MMMM yyyy H:mm"
-              timeCaption="Time"
-              peekNextMonth
-              showMonthDropdown
-              showYearDropdown
-              shouldCloseOnSelect={true}
-            />
-            <ErrorField error={error} field="date" />
           </div>
           <div className="flex items-center justify-end mt-5">
             <Button loading={loading} type="submit">

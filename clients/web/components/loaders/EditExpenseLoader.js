@@ -6,8 +6,9 @@ const EditExpenseLoader = props => {
   return (
     <div className="loader-animation">
       <RowLoader marginBottom={"30px"} />
-      <RowLoader number={2} height={"90px"} marginBottom={"15px"} />
-      <RowLoader width={"50%"} height={"90px"} marginBottom={"15px"} />
+      <RowLoader height={"90px"} marginBottom={"15px"} />
+      <RowLoader width={"80%"} height={"90px"} marginBottom={"15px"} />
+      <RowLoader height={"90px"} marginBottom={"15px"} />
     </div>
   );
 };
