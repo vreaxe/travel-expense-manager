@@ -53,10 +53,15 @@ export function isMobileOrTablet() {
   return check;
 }
 
+export function formatSelectOptions(object, mapCallback) {
+  return typeof object !== "undefined" ? object.map(mapCallback).flat() : [];
+}
+
 export default {
   redirect,
   checkIfLoggedIn,
   redirectIfLoggedIn,
   isMobile,
-  isMobileOrTablet
+  isMobileOrTablet,
+  formatSelectOptions
 };

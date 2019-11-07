@@ -17,3 +17,4 @@ local_settings.py
 db.sqlite3
 pip-log.txt
 backend/static/admin
+backend/static/graphene_django

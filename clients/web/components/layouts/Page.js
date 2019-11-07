@@ -1,4 +1,4 @@
-import "../../styles/styles.scss";
+import "../../styles/styles.css";
 
 import Meta from "./Meta";
 import React from "react";

@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'django_filters',
     'graphene_django',
     'corsheaders',
+    'colorfield',
     # My apps
     'backend.core',
     'backend.trip',
@@ -175,3 +176,17 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, "static"),
 # ]
+
+
+DEFAULT_TRIP_CATEGORIES = tuple(
+    env.list(
+        'DEFAULT_TRIP_CATEGORIES',
+        default=[
+            'Accommodation',
+            'Transport',
+            'Food',
+            'Entertainment',
+            'Miscellaneous',
+        ]
+    )
+)

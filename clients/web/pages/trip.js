@@ -17,17 +17,16 @@ import withAuth from "../lib/withAuth";
 
 const Trip = props => {
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
-  const {
-    loading: loadingTrip,
-    error: errorTrip,
-    data: { trip }
-  } = useQuery(TRIP_QUERY, {
-    variables: { id: props.tripId }
-  });
+  const { loading: loadingTrip, error: errorTrip, data: dataTrip } = useQuery(
+    TRIP_QUERY,
+    {
+      variables: { id: props.tripId }
+    }
+  );
   const {
     loading: loadingExpenses,
     error: errorExpenses,
-    data: { expenses }
+    data: dataExpenses
   } = useQuery(TRIP_EXPENSES_QUERY, { variables: { tripId: props.tripId } });
 
   useEffect(() => {
@@ -38,29 +37,32 @@ const Trip = props => {
     return <TripItemLoader />;
   }
 
-  if (typeof expenses === "undefined" || typeof trip === "undefined") {
+  if (
+    typeof dataExpenses.expenses === "undefined" ||
+    typeof dataTrip.trip === "undefined"
+  ) {
     return <NoItems itemName="trip" />;
   }
 
   return (
     <>
-      <Meta title={trip.title} />
+      <Meta title={dataTrip.trip.title} />
       <Header>
         <div className="w-3/4 flex items-center">
           <BackButton routeName="trips" />
           <span style={{ width: "80%" }} className="truncate">
-            {trip.title}
+            {dataTrip.trip.title}
           </span>
         </div>
         <div className="w-1/4">
           <span className="block w-full text-sm text-gray-600 text-right">
-            {moment(trip.startDate).format("DD-MM-YYYY")}
+            {moment(dataTrip.trip.startDate).format("DD-MM-YYYY")}
             {" ➡ "}
-            {moment(trip.endDate).format("DD-MM-YYYY")}
+            {moment(dataTrip.trip.endDate).format("DD-MM-YYYY")}
           </span>
         </div>
       </Header>
-      <TripItem trip={trip} expenses={expenses} />
+      <TripItem trip={dataTrip.trip} expenses={dataExpenses.expenses} />
       <Fab
         icon={<span>＋</span>}
         position={{ bottom: 10, right: 10 }}
@@ -68,11 +70,29 @@ const Trip = props => {
         event={isMobileOrTablet ? "click" : "hover"}
       >
         <Action
+          text="Add/Edit Categories"
+          style={{ backgroundColor: "#fff" }}
+          onClick={() =>
+            Router.pushRoute("tripCategories", { id: dataTrip.trip.id })
+          }
+        >
+          <span className="emoji">🗂</span>
+        </Action>
+        <Action
           text="Add Expense"
           style={{ backgroundColor: "#fff" }}
-          onClick={() => Router.pushRoute("addExpense", { id: trip.id })}
+          onClick={() =>
+            Router.pushRoute("addExpense", { id: dataTrip.trip.id })
+          }
         >
           <span className="emoji">💸</span>
+        </Action>
+        <Action
+          text="Edit Trip"
+          style={{ backgroundColor: "#fff" }}
+          onClick={() => Router.pushRoute("editTrip", { id: dataTrip.trip.id })}
+        >
+          <span className="emoji">✏️</span>
         </Action>
       </Fab>
     </>

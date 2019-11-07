@@ -7,6 +7,7 @@
 @import "./components/input";
 @import "./components/loader";
 @import "./components/sidebar";
+@import "./components/modal";
 
 #nprogress .bar {
   background: #48bb78 !important;

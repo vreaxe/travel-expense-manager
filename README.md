@@ -28,7 +28,7 @@ git clone https://github.com/vreaxe/travel-expense-manager.git
 docker-compose -f docker-compose.dev.yml up -d --build
 ```
 
-**3. Create the .env files inside the backend and frontend directories and change environment variables**
+**3. Create the .env files inside the backend and clients directories and change environment variables**
 
 Backend:
 
@@ -59,26 +59,26 @@ GRAPHQL_URL_SERVER_SIDE=http://backend:8000/graphql/
 APP_NAME=Travel Expense Manager
 ```
 
-**4. Create a superuser**
+**4. Migrate**
 
 ```
-docker exec -it tem-backend /bin/bash
-python manage.py createsuperuser
+docker exec tem-dev-backend python manage.py migrate --noinput
 ```
 
-**5. Now you can access the backend at http://localhost:8000 and the frontend at http://localhost:3000**
-
-**6. Sync currencies and countries (optional - you can create them manually through the Django admin panel)**
+**5. Create a superuser**
 
 ```
-docker exec -it tem-backend /bin/bash
-python manage.py sync_countries
-python manage.py sync_currencies
+docker exec -it tem-dev-backend python manage.py createsuperuser
 ```
 
-### :computer: Manual
+**6. Now you can access the backend at http://localhost:8000 and the frontend at http://localhost:3000**
 
-:construction: Under construction
+**7. Sync currencies and countries (optional - you can create them manually through the Django admin panel)**
+
+```
+docker exec tem-dev-backend python manage.py sync_countries
+docker exec tem-dev-backend python manage.py sync_currencies
+```
 
 &nbsp;
 

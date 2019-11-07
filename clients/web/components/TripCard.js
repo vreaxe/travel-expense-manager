@@ -1,3 +1,6 @@
+import Modali, { useModali } from "modali";
+
+import Button from "./elements/Button";
 import CountryFlag from "./elements/CountryFlag";
 import { DELETE_TRIP_MUTATION } from "../graphql/mutations";
 import { Link } from "../routes";
@@ -13,6 +16,32 @@ const TripCard = props => {
       id: props.trip.id
     },
     refetchQueries: [{ query: TRIPS_QUERY }]
+  });
+  const [confirmDelete, confirmDeleteModal] = useModali({
+    animated: true,
+    centered: true,
+    title: "Are you sure?",
+    message: `Deleting trip named ${props.trip.title} permanently.`,
+    buttons: [
+      <Button
+        style="transparent"
+        size="small"
+        onClick={() => confirmDeleteModal()}
+      >
+        Cancel
+      </Button>,
+      <Button
+        loading={loading}
+        style="danger"
+        size="small"
+        onClick={() => {
+          deleteTrip();
+          confirmDeleteModal();
+        }}
+      >
+        Delete
+      </Button>
+    ]
   });
 
   return (
@@ -34,16 +63,16 @@ const TripCard = props => {
               </span>
               <Trash
                 className="float-right"
-                loading={loading}
                 onClick={e => {
                   e.preventDefault();
-                  deleteTrip();
+                  confirmDeleteModal();
                 }}
               />
             </p>
           </a>
         </Link>
       </div>
+      <Modali.Modal {...confirmDelete} />
     </div>
   );
 };

@@ -5,7 +5,6 @@ import { addDays, parse, subDays } from "date-fns";
 import { formatSelectOptions, redirect } from "../../lib/utils";
 
 import Button from "../elements/Button";
-import { CREATE_EXPENSE_MUTATION } from "../../graphql/mutations";
 import DatePicker from "react-datepicker";
 import DatePickerCustomInput from "./elements/DatePickerCustomInput";
 import ErrorField from "./errors/ErrorField";
@@ -13,25 +12,21 @@ import ErrorMessage from "./errors/ErrorMessage";
 import Input from "./elements/Input";
 import Label from "./elements/Label";
 import Select from "react-select";
+import { UPDATE_EXPENSE_MUTATION } from "../../graphql/mutations";
 import classNames from "classnames";
 import uniqBy from "lodash/uniqBy";
 import { useMutation } from "@apollo/react-hooks";
 
-const AddExpenseForm = props => {
+const EditExpenseForm = props => {
   const [expense, setExpense] = useState({
-    title: "",
-    amount: 0,
-    date: new Date(),
-    currency: {
-      value: null,
-      label: null
-    },
+    title: props.expense.title,
+    amount: props.expense.amount,
+    date: new Date(props.expense.date),
     category: {
-      value: null,
-      label: null,
-      color: null
-    },
-    trip: props.trip.id
+      value: props.expense.category.id,
+      label: props.expense.category.name,
+      color: props.expense.category.color
+    }
   });
 
   const handleChange = event => {
@@ -48,13 +43,6 @@ const AddExpenseForm = props => {
     });
   };
 
-  const handleChangeCurrency = currency => {
-    setExpense({
-      ...expense,
-      currency
-    });
-  };
-
   const handleChangeCategory = category => {
     setExpense({
       ...expense,
@@ -62,24 +50,22 @@ const AddExpenseForm = props => {
     });
   };
 
-  const [createExpense, { loading, error }] = useMutation(
-    CREATE_EXPENSE_MUTATION,
+  const [updateExpense, { loading, error }] = useMutation(
+    UPDATE_EXPENSE_MUTATION,
     {
       variables: {
-        input: {
-          ...expense,
-          currency: expense.currency.value,
-          category: expense.category.value
-        }
+        tripId: props.expense.trip.id,
+        expenseId: props.expense.id,
+        input: { ...expense, category: expense.category.value }
       },
       refetchQueries: [
         {
           query: TRIP_QUERY,
-          variables: { id: props.trip.id }
+          variables: { id: props.expense.trip.id }
         },
         {
           query: TRIP_EXPENSES_QUERY,
-          variables: { tripId: props.trip.id }
+          variables: { tripId: props.expense.trip.id }
         }
       ]
     }
@@ -101,31 +87,16 @@ const AddExpenseForm = props => {
     </div>
   );
 
-  // Commented out until the currency exchange is implemented
-  // let currencies = props.trip.countries
-  //   .map(country => {
-  //     return country.currencies.map(currency => {
-  //       return {
-  //         value: currency.id,
-  //         label: `${currency.symbol} (${currency.name})`
-  //       };
-  //     });
-  //   })
-  //   .flat();
-  let currencies = [];
-  currencies.push({
-    value: props.trip.baseCurrency.id,
-    label: `${props.trip.baseCurrency.symbol} (${props.trip.baseCurrency.name})`
-  });
-  currencies = uniqBy(currencies, "value");
-
-  let categories = formatSelectOptions(props.trip.categories, category => {
-    return {
-      value: category.id,
-      label: category.name,
-      color: category.color
-    };
-  });
+  let categories = formatSelectOptions(
+    props.expense.trip.categories,
+    category => {
+      return {
+        value: category.id,
+        label: category.name,
+        color: category.color
+      };
+    }
+  );
 
   return (
     <>
@@ -134,8 +105,8 @@ const AddExpenseForm = props => {
           className="pt-4 pb-8 mb-4"
           onSubmit={async e => {
             e.preventDefault();
-            const res = await createExpense();
-            Router.pushRoute("trip", { id: props.trip.id });
+            const res = await updateExpense();
+            Router.pushRoute("trip", { id: props.expense.trip.id });
           }}
         >
           <ErrorMessage error={error} />
@@ -160,21 +131,21 @@ const AddExpenseForm = props => {
                 onChange={handleChangeCategory}
                 options={categories}
                 formatOptionLabel={formatCategoryOptionLabel}
-                instanceId="select-category-add-expense"
+                instanceId="select-category-edit-expense"
                 className="react-select"
                 classNamePrefix="react-select"
               />
               <ErrorField error={error} field="category" />
             </div>
-            <div className="w-1/2 mb-4">
+            <div className="w-1/2 ml-4">
               <Label>Date</Label>
               {/* TODO locale */}
               <DatePicker
                 customInput={<DatePickerCustomInput />}
                 selected={expense.date}
                 onChange={handleChangeDate}
-                minDate={new Date(props.trip.startDate)}
-                maxDate={new Date(props.trip.endDate)}
+                minDate={new Date(props.expense.trip.startDate)}
+                maxDate={new Date(props.expense.trip.endDate)}
                 showTimeSelect
                 timeFormat="HH:mm"
                 timeIntervals={15}
@@ -205,16 +176,10 @@ const AddExpenseForm = props => {
               <ErrorField error={error} field="amount" />
             </div>
             <div className="w-1/2 ml-4">
-              <Label for="select-currency-add-expense">Currency</Label>
-              <Select
-                value={expense.currency}
-                onChange={handleChangeCurrency}
-                options={currencies}
-                instanceId="select-currency-add-expense"
-                className="react-select"
-                classNamePrefix="react-select"
-              />
-              <ErrorField error={error} field="currency" />
+              <Label>Currency</Label>
+              <p className="text-xl mt-4 text-gray-800">
+                {props.expense.currency.symbol} ({props.expense.currency.name})
+              </p>
             </div>
           </div>
           <div className="flex items-center justify-end mt-5">
@@ -228,4 +193,4 @@ const AddExpenseForm = props => {
   );
 };
 
-export default AddExpenseForm;
+export default EditExpenseForm;
