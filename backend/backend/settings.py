@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 from datetime import timedelta
 import environ
+from django.core.exceptions import ImproperlyConfigured
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
@@ -24,7 +25,14 @@ env = environ.Env()
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+try:
+    SECRET_KEY = env('SECRET_KEY')
+except ImproperlyConfigured:
+    try:
+        with open(os.path.join(BASE_DIR, 'secretkey.txt')) as f:
+            SECRET_KEY = f.read().strip()
+    except:
+        raise ImproperlyConfigured
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', default=False)
@@ -57,6 +65,7 @@ INSTALLED_APPS = [
     'graphene_django',
     'corsheaders',
     'colorfield',
+    'django_extensions',
     # My apps
     'backend.core',
     'backend.trip',
