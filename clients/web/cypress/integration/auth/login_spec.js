@@ -1,5 +1,6 @@
 context("Login", () => {
   beforeEach(() => {
+    cy.cleanDb();
     cy.visit("login");
     cy.fixture("user").as("user");
   });

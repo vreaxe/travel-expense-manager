@@ -1,6 +1,8 @@
 {
-  "email": "test@test.com",
+  "email": "admin@admin.com",
   "password": "12345678",
+  "register_email": "test@test.com",
+  "register_password": "12345678",
   "wrong_email": "user",
   "wrong_password": "123456"
 }

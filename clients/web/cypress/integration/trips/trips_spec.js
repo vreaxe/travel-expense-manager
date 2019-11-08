@@ -1,5 +1,6 @@
 describe("Trips", () => {
   beforeEach(() => {
+    cy.cleanDb();
     cy.login();
     cy.fixture("trip").as("trip");
   });
@@ -23,7 +24,7 @@ describe("Trips", () => {
     );
     for (let country of this.trip.countries) {
       cy.chooseReactSelectOption(
-        "#react-select-select-currency-add-expense-input",
+        "#react-select-select-countries-add-trip-input",
         country,
         country
       );
@@ -36,44 +37,24 @@ describe("Trips", () => {
   });
 
   it("creates a trip", function() {
-    cy.get(".rtf button.rtf--mb").trigger("mouseover");
-    cy.get("button[text='Add Trip']").click();
-    cy.location("pathname").should("eq", "/trips/add");
-
-    cy.get('input[name="title"]')
-      .type(this.trip.title)
-      .should("have.value", this.trip.title);
-    cy.get('input[name="budget"]')
-      .clear()
-      .type(this.trip.budget)
-      .should("have.value", this.trip.budget);
-    cy.chooseReactSelectOption(
-      "#react-select-select-currency-add-trip-input",
-      this.trip.currency,
-      this.trip.currency
-    );
-    for (let country of this.trip.countries) {
-      cy.chooseReactSelectOption(
-        "#react-select-select-currency-add-expense-input",
-        country,
-        country
-      );
-    }
-    cy.get("form").submit();
-
+    cy.createTrip();
     cy.get("h1").should("contain", this.trip.title);
   });
 
   it("goes to trip details and back to the list", function() {
+    cy.createTrip();
     cy.contains(this.trip.title)
       .first()
       .click();
     cy.get("h1").should("contain", this.trip.title);
-    cy.contains("Back").click();
+    cy.get("[data-cy=back-button]").click();
     cy.location("pathname").should("eq", "/trips");
   });
 
   it("deletes a trip", function() {
+    cy.createTrip();
+    cy.get("[data-cy=back-button]").click();
+    cy.location("pathname").should("eq", "/trips");
     cy.get(".trip-card")
       .its("length")
       .then(size => {
@@ -81,7 +62,7 @@ describe("Trips", () => {
           .first()
           .find(".trash")
           .click();
-
+        cy.get("[data-cy=trip-delete]").click();
         cy.get(".trip-card").should("have.length", size - 1);
       });
   });

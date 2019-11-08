@@ -31,6 +31,7 @@ const TripCard = props => {
         Cancel
       </Button>,
       <Button
+        data-cy="trip-delete"
         loading={loading}
         style="danger"
         size="small"

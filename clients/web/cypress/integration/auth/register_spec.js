@@ -1,5 +1,6 @@
 describe("Register", () => {
   beforeEach(() => {
+    cy.cleanDb();
     cy.visit("register");
     cy.fixture("user").as("user");
   });
@@ -9,8 +10,8 @@ describe("Register", () => {
       .type(this.user.wrong_email)
       .should("have.value", this.user.wrong_email);
     cy.get('input[name="password"]')
-      .type(this.user.password)
-      .should("have.value", this.user.password);
+      .type(this.user.register_password)
+      .should("have.value", this.user.register_password);
     cy.get("form").submit();
 
     cy.get("form").contains("Enter a valid email address.");
@@ -18,8 +19,8 @@ describe("Register", () => {
 
   it("can't register a user with a password with less than 8 characters", function() {
     cy.get('input[name="email"]')
-      .type(this.user.email)
-      .should("have.value", this.user.email);
+      .type(this.user.register_email)
+      .should("have.value", this.user.register_email);
     cy.get('input[name="password"]')
       .type(this.user.wrong_password)
       .should("have.value", this.user.wrong_password);
@@ -30,11 +31,11 @@ describe("Register", () => {
 
   it("can register a user", function() {
     cy.get('input[name="email"]')
-      .type(this.user.email)
-      .should("have.value", this.user.email);
+      .type(this.user.register_email)
+      .should("have.value", this.user.register_email);
     cy.get('input[name="password"]')
-      .type(this.user.password)
-      .should("have.value", this.user.password);
+      .type(this.user.register_password)
+      .should("have.value", this.user.register_password);
     cy.get("form").submit();
 
     cy.location("pathname").should("eq", "/trips");
