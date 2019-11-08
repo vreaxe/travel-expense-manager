@@ -11,6 +11,3 @@ COPY ./clients/web /data/web
 COPY ./clients/.env /data/web/.env
 
 EXPOSE 3000
-
-# Install dependencies and run server
-CMD ["sh", "-c", "npm install && npm run dev"]

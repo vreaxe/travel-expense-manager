@@ -2,7 +2,7 @@ version: "3"
 
 services:
   backend:
-    container_name: tem-dev-backend
+    container_name: tem-testing-backend
     build:
       context: .
       dockerfile: ./docker/backend/Dockerfile
@@ -10,10 +10,10 @@ services:
       - 8000:8000
     volumes:
       - ./backend:/data/backend
-    command: gunicorn --bind :8000 backend.wsgi:application --reload
+    command: gunicorn --bind :8000 backend.wsgi:application
 
   web:
-    container_name: tem-dev-web
+    container_name: tem-testing-web
     tty: true
     build:
       context: .
@@ -23,13 +23,13 @@ services:
     volumes:
       - ./clients/web:/data/web
       - ./clients/.env:/data/web/.env
-    command: sh -c "npm install && npm run dev"
+    command: sh -c "npm install && npm run build && npm run prod"
 
   database:
-    container_name: tem-dev-database
+    container_name: tem-testing-database
     image: mysql:5.7
     volumes:
-      - dbdata:/var/lib/mysql
+      - dbtestingdata:/var/lib/mysql
       - ./docker/database/my.cnf:/etc/mysql/conf.d/my.cnf
     environment:
       - "MYSQL_DATABASE=travel_expense_manager"
@@ -38,10 +38,10 @@ services:
       - "MYSQL_ROOT_PASSWORD=secret"
 
   adminer:
-    container_name: tem-dev-adminer
+    container_name: tem-testing-adminer
     image: adminer
     ports:
       - 8080:8080
 
 volumes:
-  dbdata:
+  dbtestingdata:
