@@ -43,6 +43,36 @@ describe("Trips", () => {
     cy.location("pathname").should("eq", "/trips");
   });
 
+  it("edits a trip", function() {
+    cy.createTrip(
+      this.trip.title,
+      this.trip.budget,
+      this.trip.currency,
+      this.trip.countries
+    );
+    cy.contains(this.trip.title)
+      .first()
+      .click();
+    cy.get("h1").should("contain", this.trip.title);
+
+    cy.get(".rtf button.rtf--mb").trigger("mouseover");
+    cy.get("button[text='Edit Trip']").click();
+    cy.get("h1").should("contain", `Edit Trip: ${this.trip.title}`);
+
+    cy.get('input[name="title"]')
+      .clear()
+      .type(this.trip.edit_title)
+      .should("have.value", this.trip.edit_title);
+    cy.get(".react-select__clear-indicator").click();
+    cy.chooseReactSelectOption(
+      "#react-select-select-countries-edit-trip-input",
+      this.trip.edit_country,
+      this.trip.edit_country
+    );
+    cy.get("form").submit();
+    cy.get("h1").should("contain", this.trip.edit_title);
+  });
+
   it("deletes a trip", function() {
     cy.createTrip(
       this.trip.title,
