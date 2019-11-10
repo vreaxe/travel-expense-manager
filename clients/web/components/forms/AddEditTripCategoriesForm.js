@@ -88,10 +88,16 @@ const AddEditTripCategoriesForm = props => {
   return (
     <>
       <div className="mb-5 flex justify-between">
-        <Button size="small" style="info" onClick={() => addCategory()}>
+        <Button
+          data-cy="add-category"
+          size="small"
+          style="info"
+          onClick={() => addCategory()}
+        >
           ➕ Add Category
         </Button>
         <Button
+          data-cy="save-categories"
           onClick={async () => {
             const res = await createEditTripCategories();
             setCategories([

@@ -7,7 +7,7 @@ const ErrorMessageContainer = props => {
   return (
     <div
       className={classNames(
-        "bg-red-500 text-white font-bold p-3 border border-red-700 rounded-lg my-5 relative",
+        "error-message bg-red-500 text-white font-bold p-3 border border-red-700 rounded-lg my-5 relative",
         { hidden: !show }
       )}
     >

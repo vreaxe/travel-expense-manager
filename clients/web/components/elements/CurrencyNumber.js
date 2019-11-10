@@ -1,14 +1,14 @@
 import React from "react";
 
-const CurrencyNumber = props => {
+const CurrencyNumber = ({ currency, number, ...rest }) => {
   return (
-    <span>
+    <span {...rest}>
       {/* TODO get language from user selected */}
       {new Intl.NumberFormat("en", {
         style: "currency",
-        currency: props.currency.code,
-        maximumSignificantDigits: props.currency.decimal
-      }).format(props.number)}
+        currency: currency.code,
+        maximumSignificantDigits: currency.decimal
+      }).format(number)}
     </span>
   );
 };
