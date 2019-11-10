@@ -25,10 +25,10 @@ const AddTrip = props => {
 
   return (
     <>
-      <Meta title={`Add trip`} />
+      <Meta title={`Add Trip`} />
       <Header>
         <BackButton routeName="trips" />
-        ADD TRIP
+        Add Trip
       </Header>
       <AddTripForm
         countries={dataCountries.countries}

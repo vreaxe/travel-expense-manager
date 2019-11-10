@@ -30,32 +30,31 @@ Cypress.Commands.add("chooseReactSelectOption", (selector, text, option) => {
     .click();
 });
 
-Cypress.Commands.add("createTrip", () => {
+Cypress.Commands.add("createTrip", (title, budget, currency, countries) => {
   cy.visit("trips");
   cy.get(".rtf button.rtf--mb").trigger("mouseover");
   cy.get("button[text='Add Trip']").click();
+  cy.get("h1").should("contain", "Add Trip");
   cy.location("pathname").should("eq", "/trips/add");
 
-  cy.fixture("trip").then(trip => {
-    cy.get('input[name="title"]')
-      .type(trip.title)
-      .should("have.value", trip.title);
-    cy.get('input[name="budget"]')
-      .clear()
-      .type(trip.budget)
-      .should("have.value", trip.budget);
+  cy.get('input[name="title"]')
+    .type(title)
+    .should("have.value", title);
+  cy.get('input[name="budget"]')
+    .clear()
+    .type(budget)
+    .should("have.value", budget);
+  cy.chooseReactSelectOption(
+    "#react-select-select-currency-add-trip-input",
+    currency,
+    currency
+  );
+  for (let country of countries) {
     cy.chooseReactSelectOption(
-      "#react-select-select-currency-add-trip-input",
-      trip.currency,
-      trip.currency
+      "#react-select-select-countries-add-trip-input",
+      country,
+      country
     );
-    for (let country of trip.countries) {
-      cy.chooseReactSelectOption(
-        "#react-select-select-countries-add-trip-input",
-        country,
-        country
-      );
-    }
-  });
+  }
   cy.get("form").submit();
 });

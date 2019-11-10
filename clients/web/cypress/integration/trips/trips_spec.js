@@ -6,30 +6,12 @@ describe("Trips", () => {
   });
 
   it("can't create a trip with a wrong budget", function() {
-    cy.get(".rtf button.rtf--mb").trigger("mouseover");
-    cy.get("button[text='Add Trip']").click();
-    cy.location("pathname").should("eq", "/trips/add");
-
-    cy.get('input[name="title"]')
-      .type(this.trip.title)
-      .should("have.value", this.trip.title);
-    cy.get('input[name="budget"]')
-      .clear()
-      .type(this.trip.wrong_budget)
-      .should("have.value", this.trip.wrong_budget);
-    cy.chooseReactSelectOption(
-      "#react-select-select-currency-add-trip-input",
+    cy.createTrip(
+      this.trip.title,
+      this.trip.wrong_budget,
       this.trip.currency,
-      this.trip.currency
+      this.trip.countries
     );
-    for (let country of this.trip.countries) {
-      cy.chooseReactSelectOption(
-        "#react-select-select-countries-add-trip-input",
-        country,
-        country
-      );
-    }
-    cy.get("form").submit();
 
     cy.get("form").contains(
       "Ensure this value is greater than or equal to 0.01."
@@ -37,12 +19,22 @@ describe("Trips", () => {
   });
 
   it("creates a trip", function() {
-    cy.createTrip();
+    cy.createTrip(
+      this.trip.title,
+      this.trip.budget,
+      this.trip.currency,
+      this.trip.countries
+    );
     cy.get("h1").should("contain", this.trip.title);
   });
 
   it("goes to trip details and back to the list", function() {
-    cy.createTrip();
+    cy.createTrip(
+      this.trip.title,
+      this.trip.budget,
+      this.trip.currency,
+      this.trip.countries
+    );
     cy.contains(this.trip.title)
       .first()
       .click();
@@ -52,7 +44,12 @@ describe("Trips", () => {
   });
 
   it("deletes a trip", function() {
-    cy.createTrip();
+    cy.createTrip(
+      this.trip.title,
+      this.trip.budget,
+      this.trip.currency,
+      this.trip.countries
+    );
     cy.get("[data-cy=back-button]").click();
     cy.location("pathname").should("eq", "/trips");
     cy.get(".trip-card")
