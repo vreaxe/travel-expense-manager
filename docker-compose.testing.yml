@@ -37,11 +37,5 @@ services:
       - "MYSQL_PASSWORD=secret"
       - "MYSQL_ROOT_PASSWORD=secret"
 
-  adminer:
-    container_name: tem-testing-adminer
-    image: adminer
-    ports:
-      - 8080:8080
-
 volumes:
   dbtestingdata:
