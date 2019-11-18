@@ -42,6 +42,7 @@ describe("Expenses", () => {
     );
 
     cy.get("[data-cy=header-h1]").should("contain", this.trip.title);
+    cy.location("pathname").should("eq", "/trips/1");
 
     cy.get(".expense-card")
       .first()
@@ -73,6 +74,7 @@ describe("Expenses", () => {
     );
 
     cy.get("[data-cy=header-h1]").should("contain", this.trip.title);
+    cy.location("pathname").should("eq", "/trips/1");
 
     cy.get(".expense-card")
       .first()
@@ -82,6 +84,7 @@ describe("Expenses", () => {
       "contain",
       `Edit Expense: ${this.expense.title}`
     );
+    cy.location("pathname").should("eq", "/trips/1/expense/1");
 
     cy.get("input[name=title]")
       .clear()
@@ -115,6 +118,7 @@ describe("Expenses", () => {
     );
 
     cy.get("[data-cy=header-h1]").should("contain", this.trip.title);
+    cy.location("pathname").should("eq", "/trips/1");
 
     cy.get(".expense-card")
       .its("length")

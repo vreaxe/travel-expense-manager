@@ -25,6 +25,7 @@ describe("Trips", () => {
       this.trip.currency,
       this.trip.countries
     );
+
     cy.get("[data-cy=header-h1]").should("contain", this.trip.title);
   });
 
@@ -35,10 +36,13 @@ describe("Trips", () => {
       this.trip.currency,
       this.trip.countries
     );
+
     cy.contains(this.trip.title)
       .first()
       .click();
     cy.get("[data-cy=header-h1]").should("contain", this.trip.title);
+    cy.location("pathname").should("eq", "/trips/1");
+
     cy.get("[data-cy=back-button]").click();
     cy.location("pathname").should("eq", "/trips");
   });
@@ -50,10 +54,12 @@ describe("Trips", () => {
       this.trip.currency,
       this.trip.countries
     );
+
     cy.contains(this.trip.title)
       .first()
       .click();
     cy.get("[data-cy=header-h1]").should("contain", this.trip.title);
+    cy.location("pathname").should("eq", "/trips/1");
 
     cy.get(".rtf button.rtf--mb").trigger("mouseover");
     cy.get("button[text='Edit Trip']").click();
@@ -61,6 +67,7 @@ describe("Trips", () => {
       "contain",
       `Edit Trip: ${this.trip.title}`
     );
+    cy.location("pathname").should("eq", "/trips/1/edit");
 
     cy.get('input[name="title"]')
       .clear()
@@ -73,7 +80,9 @@ describe("Trips", () => {
       this.trip.edit_country
     );
     cy.get("form").submit();
+
     cy.get("[data-cy=header-h1]").should("contain", this.trip.edit_title);
+    cy.location("pathname").should("eq", "/trips/1");
   });
 
   it("deletes a trip", function() {
@@ -83,8 +92,11 @@ describe("Trips", () => {
       this.trip.currency,
       this.trip.countries
     );
+
+    cy.wait(500);
     cy.get("[data-cy=back-button]").click();
     cy.location("pathname").should("eq", "/trips");
+
     cy.get(".trip-card")
       .its("length")
       .then(size => {
