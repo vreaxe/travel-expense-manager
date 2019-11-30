@@ -202,7 +202,7 @@ const EditTripForm = props => {
                 value={trip.countries}
                 onChange={handleChangeCountries}
                 options={countries}
-                instanceId="select-country-edit-trip"
+                instanceId="select-countries-edit-trip"
                 className="react-select"
                 classNamePrefix="react-select"
                 isMulti

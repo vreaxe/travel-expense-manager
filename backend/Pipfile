@@ -3,7 +3,6 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [packages]
 Django = ">=2.2.7"
 django-colorfield = ">=0.1.15"
@@ -16,7 +15,8 @@ django-environ = ">=0.4.5"
 requests = ">=2.21.0"
 mysqlclient = ">=1.4.5"
 django-cors-headers = ">=3.0.0"
-
+django-extensions = ">=2.2.5"
+whitenoise = ">=4.1.4"
 
 [requires]
 python_version = "3.6"

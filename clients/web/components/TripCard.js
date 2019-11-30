@@ -31,6 +31,7 @@ const TripCard = props => {
         Cancel
       </Button>,
       <Button
+        data-cy="trip-delete"
         loading={loading}
         style="danger"
         size="small"
@@ -45,7 +46,7 @@ const TripCard = props => {
   });
 
   return (
-    <div className="w-full md:w-1/2 xl:w-1/3 px-2">
+    <div className="trip-card w-full md:w-1/2 xl:w-1/3 px-2">
       <div className="mb-5 shadow bg-white overflow-hidden">
         <Link route="trip" params={{ id: props.trip.id }}>
           <a className="p-6 block">

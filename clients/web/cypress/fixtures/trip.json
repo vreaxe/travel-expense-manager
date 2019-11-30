@@ -1,0 +1,9 @@
+{
+    "title": "Europe Road Trip",
+    "edit_title": "Spain Road Trip",
+    "budget": "3000",
+    "wrong_budget": "-3",
+    "currency": "Euro",
+    "countries": ["Spain", "Germany"],
+    "edit_country": "Spain"
+}

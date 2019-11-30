@@ -11,6 +11,9 @@ class Command(BaseCommand):
     help = 'Create or update countries from JSON file'
     log = logging.getLogger(__name__)
 
+    def add_arguments(self, parser):
+        parser.add_argument('-c', '--countries', type=str, help='Specific countries to import separated by a comma',)
+
     def handle(self, *args, **kwargs):
         data_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../data'))
         data_filename = 'countries.json'
@@ -18,6 +21,11 @@ class Command(BaseCommand):
 
         with open(data_file) as json_file:
             countries = json.load(json_file)
+
+            if kwargs['countries']:
+                specific_countries = [country.strip() for country in kwargs['countries'].split(',')]
+                countries = [country for country in countries if country['code'] in specific_countries]
+
             for country in countries:
                 country_n, _ = Country.objects.update_or_create(
                     code=country['code'],

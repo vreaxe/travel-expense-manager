@@ -27,6 +27,7 @@ const CategoryCard = ({
         Cancel
       </Button>,
       <Button
+        data-cy="category-delete"
         style="danger"
         size="small"
         onClick={() => {
@@ -48,7 +49,7 @@ const CategoryCard = ({
   };
 
   return (
-    <div className="flex mb-5">
+    <div className="flex mb-5 category-card">
       <div className="flex w-11/12 bg-white shadow p-3">
         <div className="w-1/12">
           <span

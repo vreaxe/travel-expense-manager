@@ -45,6 +45,7 @@ const ExpenseCard = props => {
         Cancel
       </Button>,
       <Button
+        data-cy="expense-delete"
         loading={loading}
         style="danger"
         size="small"
@@ -68,14 +69,17 @@ const ExpenseCard = props => {
           .lighten(0.5);
 
   return (
-    <div className="flex mb-5">
+    <div className="flex mb-5 expense-card">
       <div
         className="flex w-11/12 bg-white shadow p-3"
         style={{ borderLeft: `4px solid ${props.expense.category.color}` }}
       >
         <div className="w-1/2">
-          <h2 className="text-md font-bold">{props.expense.title}</h2>
+          <h2 className="text-md font-bold" data-cy="expense-title">
+            {props.expense.title}
+          </h2>
           <span
+            data-cy="expense-category"
             className="text-sm font-bold"
             style={{
               borderRadius: "4px",
@@ -90,6 +94,7 @@ const ExpenseCard = props => {
         <div className="w-1/2">
           <p className="flex justify-end items-center h-full">
             <CurrencyNumber
+              data-cy="expense-amount"
               number={props.expense.amount}
               currency={props.expense.currency}
             />

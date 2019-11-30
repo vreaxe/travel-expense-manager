@@ -4,7 +4,8 @@ import React from "react";
 const Pencil = props => {
   return (
     <span
-      className={`cursor-pointer emoji ${props.className}`}
+      data-cy="pencil"
+      className={`cursor-pointer emoji ${props.className || ""}`}
       onClick={props.onClick}
     >
       ✏️

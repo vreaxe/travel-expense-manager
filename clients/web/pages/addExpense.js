@@ -23,7 +23,7 @@ const AddExpense = props => {
       <Meta title={`Add Expense to ${dataTrip.trip.title}`} />
       <Header>
         <BackButton routeName="trip" routeParams={{ id: dataTrip.trip.id }} />
-        ADD EXPENSE TO {dataTrip.trip.title}
+        Add Expense to {dataTrip.trip.title}
       </Header>
       <AddExpenseForm trip={dataTrip.trip} />
     </>
