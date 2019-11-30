@@ -19,3 +19,4 @@ pip-log.txt
 backend/secretkey.txt
 backend/static/admin
 backend/static/graphene_django
+backend/static/colorfield

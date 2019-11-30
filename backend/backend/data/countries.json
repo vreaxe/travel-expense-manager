@@ -2813,8 +2813,7 @@
   {
     "currencies": [
       {
-        "code": "TRY",
-        "name": "Turkish lira"
+        "code": "TRY"
       }
     ],
     "name": "Turkey",
@@ -2937,8 +2936,7 @@
   {
     "currencies": [
       {
-        "code": "UZS",
-        "name": "Uzbekistani so'm"
+        "code": "UZS"
       }
     ],
     "name": "Uzbekistan",
