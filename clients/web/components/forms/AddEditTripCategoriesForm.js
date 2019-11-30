@@ -36,7 +36,9 @@ const AddEditTripCategoriesForm = props => {
   const [deleteTripCategory] = useMutation(DELETE_TRIP_CATEGORY_MUTATION);
 
   const addCategory = () => {
-    let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    let randomColor = "#000000".replace(/0/g, function() {
+      return (~~(Math.random() * 16)).toString(16);
+    });
     let newCategory = {
       color: randomColor,
       name: `New category ${categories.length}`
