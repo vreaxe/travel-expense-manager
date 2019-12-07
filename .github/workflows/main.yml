@@ -1,0 +1,42 @@
+name: "Tests"
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Generate secret key
+        run: python ./backend/commands/generate_secret_key_file.py
+
+      - name: Environment files
+        run: |
+          cp clients/.env.testing clients/.env
+          cp backend/.env.testing backend/.env
+
+      - name: Build and run Docker containers
+        run: docker-compose -f docker-compose.testing.yml up -d --build
+
+      - name: Verify MySQL connection
+        run: |
+          while ! docker exec tem-testing-database mysql --user=root --password=secret -e "SELECT 1" >/dev/null 2>&1; do
+            sleep 1
+          done
+
+      - name: Migrate
+        run: docker exec tem-testing-backend python manage.py migrate --noinput
+
+      - name: Install Cypress
+        run: |
+          sudo apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+          npm run cypress:install --prefix clients/web
+
+      - name: Run tests
+        run: npm run cypress:run --prefix clients/web
