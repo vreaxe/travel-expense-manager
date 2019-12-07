@@ -32,6 +32,7 @@ Cypress.Commands.add("chooseReactSelectOption", (selector, text, option) => {
 
 Cypress.Commands.add("createTrip", (title, budget, currency, countries) => {
   cy.visit("trips");
+  cy.wait(500);
   cy.get(".rtf button.rtf--mb").trigger("mouseover");
   cy.get("button[text='Add Trip']").click();
   cy.location("pathname").should("eq", "/trips/add");
@@ -66,7 +67,7 @@ Cypress.Commands.add(
     cy.get(".trip-card")
       .first()
       .click();
-    cy.wait(200);
+    cy.wait(500);
     cy.get(".rtf button.rtf--mb").trigger("mouseover");
     cy.get("button[text='Add Expense']").click();
     cy.get("[data-cy=header-h1]").should("contain", `Add Expense to ${trip}`);

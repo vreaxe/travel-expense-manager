@@ -100,6 +100,7 @@ describe("Expenses", () => {
       .type(this.expense.edit_amount)
       .should("have.value", this.expense.edit_amount);
     cy.get("form").submit();
+    cy.wait(500);
   });
 
   it("deletes a expense", function() {
