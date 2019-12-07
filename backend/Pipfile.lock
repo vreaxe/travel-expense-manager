@@ -86,11 +86,11 @@
         },
         "django-graphql-jwt": {
             "hashes": [
-                "sha256:688c1e6a69f9715471fc250521ca5675c71af3f1159a629089c20cb3db0e2ba7",
-                "sha256:a189459086e97f2ff49203e9041f1f3d4b2a9502f02571d4e0087cc91b2cecd7"
+                "sha256:bcf0882a492e2148cba7cba3c39cf57834f736a2c289b66852239faf9b59b61e",
+                "sha256:c9c611d98510b57146c21484478eae793249553af3766a593e8f25ce73d3255a"
             ],
             "index": "pypi",
-            "version": "==0.2.2"
+            "version": "==0.3.0"
         },
         "graphene": {
             "hashes": [
