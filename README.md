@@ -12,9 +12,7 @@
 
 > **:warning: Warning**: WIP. Do not use in a production environment.
 
-## Development environment installation
-
-### :whale: With Docker
+## Development environment installation with Docker :whale:
 
 **1. Download or clone repo**
 
@@ -22,15 +20,9 @@
 git clone https://github.com/vreaxe/travel-expense-manager.git
 ```
 
-**2. Build and run Docker containers**
+**2. Create the .env files inside the "backend" and "clients" directories and change the environment variables**
 
-```
-docker-compose -f docker-compose.dev.yml up -d --build
-```
-
-**3. Create the .env files inside the backend and clients directories and change environment variables**
-
-Backend:
+"backend" folder:
 
 ```
 DEBUG=True
@@ -48,7 +40,7 @@ DB_PORT=3306
 CORS_ORIGIN_WHITELIST=http://127.0.0.1,http://localhost
 ```
 
-Frontend:
+"clients" folder:
 
 ```
 NODE_ENV=local
@@ -57,6 +49,12 @@ GRAPHQL_URL_CLIENT_SIDE=http://localhost:8000/graphql/
 GRAPHQL_URL_SERVER_SIDE=http://backend:8000/graphql/
 
 APP_NAME=Travel Expense Manager
+```
+
+**3. Build and run Docker containers**
+
+```
+docker-compose -f docker-compose.dev.yml up -d --build
 ```
 
 **4. Migrate**
