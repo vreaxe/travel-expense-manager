@@ -5,13 +5,6 @@ const Menu = props => {
   return (
     <div>
       <ul>
-        {/*<li>
-          <ActiveLink href="/dashboard">
-            <a className="">
-              <span className="emoji">📊</span> Dashboard
-            </a>
-          </ActiveLink>
-        </li>*/}
         <li>
           <ActiveLink href="/trips">
             <a className="">
