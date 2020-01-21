@@ -3,7 +3,7 @@ require("dotenv").config();
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
 const withCSS = require("@zeit/next-css");
-const withTM = require("next-transpile-modules");
+const withTM = require("next-transpile-modules")(['modali']);
 
 if (typeof require !== "undefined") {
   require.extensions[".css"] = file => {};
@@ -11,7 +11,6 @@ if (typeof require !== "undefined") {
 
 module.exports = withTM(
   withCSS({
-    transpileModules: ["modali"],
     webpack: (config, { isServer }) => {
       config.plugins = config.plugins || [];
 
