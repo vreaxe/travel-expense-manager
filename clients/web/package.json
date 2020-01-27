@@ -26,7 +26,7 @@
         "color": "^3.1.2",
         "date-fns": "^2.9.0",
         "dotenv": "^8.2.0",
-        "graphql": "^14.5.8",
+        "graphql": "^14.6.0",
         "graphql-tag": "^2.10.1",
         "lodash": "^4.17.15",
         "modali": "^1.2.0",
