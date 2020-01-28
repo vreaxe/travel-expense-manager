@@ -36,7 +36,8 @@ jobs:
       - name: Install Cypress
         run: |
           sudo apt-get install libgtk2.0-0 libgtk-3-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
-          clients/web/node_modules/.bin/cypress install
+          npm install --prefix clients/web
+          npm run cypress:install --prefix clients/web
 
       - name: Run tests
         run: npm run cypress:run --prefix clients/web
