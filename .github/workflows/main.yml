@@ -41,4 +41,4 @@ jobs:
           npm run cypress:install --prefix clients/web
 
       - name: Run tests
-        run: npm run cypress:run --prefix clients/web
+        run: xvfb-run npm run cypress:run --prefix clients/web
