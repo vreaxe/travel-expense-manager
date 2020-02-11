@@ -47,10 +47,11 @@
         },
         "django-colorfield": {
             "hashes": [
-                "sha256:663e527247719469aae155859cb4d2f8938f54c2c722e714f6370bece5e7a8d2"
+                "sha256:c4435b4fead2bb1113e97dc21390ac843a3d942d5ad6f4b1a23644a208f5e9ed",
+                "sha256:ea72e1ce422c3516df0d2d590516e96127ff6462837fffbf0d51a0a34d05d517"
             ],
             "index": "pypi",
-            "version": "==0.1.15"
+            "version": "==0.1.17"
         },
         "django-cors-headers": {
             "hashes": [
