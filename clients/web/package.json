@@ -38,7 +38,7 @@
         "next-with-apollo": "^5.0.0",
         "nookies": "^2.0.8",
         "nprogress": "^0.2.0",
-        "rc-tooltip": "^3.7.3",
+        "rc-tooltip": "^4.0.1",
         "react": "^16.13.0",
         "react-color": "^2.18.0",
         "react-datepicker": "^2.13.0",
