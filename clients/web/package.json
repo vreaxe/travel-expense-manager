@@ -36,14 +36,14 @@
         "next-routes": "^1.4.2",
         "next-transpile-modules": "^2.3.1",
         "next-with-apollo": "^5.0.0",
-        "nookies": "^2.0.8",
+        "nookies": "^2.2.0",
         "nprogress": "^0.2.0",
         "rc-tooltip": "^4.0.3",
         "react": "^16.13.1",
         "react-color": "^2.18.0",
         "react-datepicker": "^2.14.1",
         "react-dom": "^16.13.1",
-        "react-select": "^3.0.8",
+        "react-select": "^3.1.0",
         "react-tiny-fab": "^3.4.0"
     },
     "devDependencies": {
