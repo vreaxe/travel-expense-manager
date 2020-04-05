@@ -9,7 +9,7 @@
         "build": "next build",
         "prod": "NODE_ENV=production node server.js",
         "cypress:install": "cypress install",
-        "cypress:clear" : "cypress cache clear",
+        "cypress:clear": "cypress cache clear",
         "cypress:open": "wait-on http://localhost:3000 -t 1200000 && cypress open",
         "cypress:run": "wait-on http://localhost:3000 -t 1200000 && cypress run --config video=false"
     },
