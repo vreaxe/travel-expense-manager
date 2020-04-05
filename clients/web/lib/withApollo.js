@@ -4,6 +4,7 @@ import { destroyCookie, parseCookies } from "nookies";
 import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
+import { getDataFromTree } from "@apollo/react-ssr";
 import { onError } from "apollo-link-error";
 import withApollo from "next-with-apollo";
 
@@ -72,5 +73,5 @@ export default withApollo(
 
     return client;
   },
-  { getDataFromTree: "ssr" }
+  { getDataFromTree }
 );
