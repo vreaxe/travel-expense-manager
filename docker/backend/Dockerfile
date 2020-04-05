@@ -6,7 +6,7 @@ WORKDIR /data/backend
 
 # Install dependencies
 COPY ./backend/Pipfile ./backend/Pipfile.lock /data/backend/
-RUN pip install pipenv && pipenv lock && pipenv install --system
+RUN pip install pipenv && pipenv install --system
 
 # Copy code
 COPY ./backend /data/backend
