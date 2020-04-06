@@ -9,7 +9,7 @@
         "build": "next build",
         "prod": "NODE_ENV=production node server.js",
         "cypress:install": "cypress install",
-        "cypress:clear" : "cypress cache clear",
+        "cypress:clear": "cypress cache clear",
         "cypress:open": "wait-on http://localhost:3000 -t 1200000 && cypress open",
         "cypress:run": "wait-on http://localhost:3000 -t 1200000 && cypress run --config video=false"
     },
@@ -36,7 +36,7 @@
         "next-routes": "^1.4.2",
         "next-transpile-modules": "^2.3.1",
         "next-with-apollo": "^5.0.0",
-        "nookies": "^2.2.1",
+        "nookies": "^2.2.2",
         "nprogress": "^0.2.0",
         "rc-tooltip": "^4.0.3",
         "react": "^16.13.1",
@@ -49,7 +49,7 @@
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "^1.3.0",
         "autoprefixer": "^9.7.5",
-        "cypress": "^4.1.0",
+        "cypress": "^4.3.0",
         "dotenv-webpack": "^1.7.0",
         "postcss-easy-import": "^3.0.0",
         "postcss-nested": "^4.2.1",
