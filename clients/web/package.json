@@ -40,7 +40,7 @@
         "nprogress": "^0.2.0",
         "rc-tooltip": "^4.0.3",
         "react": "^16.13.1",
-        "react-color": "^2.18.0",
+        "react-color": "^2.18.1",
         "react-datepicker": "^2.14.1",
         "react-dom": "^16.13.1",
         "react-select": "^3.1.0",
