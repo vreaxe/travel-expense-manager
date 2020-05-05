@@ -31,7 +31,7 @@
         "graphql-tag": "^2.10.3",
         "lodash": "^4.17.15",
         "modali": "^1.2.0",
-        "moment": "^2.24.0",
+        "moment": "^2.25.3",
         "next": "^9.3.6",
         "next-routes": "^1.4.2",
         "next-transpile-modules": "^2.3.1",
