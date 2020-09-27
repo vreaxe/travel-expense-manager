@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 import BackButton from "../components/elements/BackButton";
 import Header from "../components/elements/Header";
-import { Link } from "../routes";
 import Meta from "../components/layouts/Meta";
 import NoItems from "../components/NoItems";
 import { Router } from "../routes";

@@ -1,8 +1,7 @@
-import { checkIfLoggedIn, redirect } from "./utils";
-
 import AuthWrapper from "../components/AuthWrapper";
 import { ME_QUERY } from "../graphql/queries";
 import React from "react";
+import { redirect } from "./utils";
 
 export default function withAuth(WrappedComponent, to = "/login") {
   return class Authenticated extends React.Component {
