@@ -44,7 +44,7 @@
         "react-datepicker": "^2.14.1",
         "react-dom": "^16.13.1",
         "react-select": "^3.1.0",
-        "react-tiny-fab": "^3.4.1"
+        "react-tiny-fab": "^3.5.0"
     },
     "devDependencies": {
         "autoprefixer": "^9.8.0",
