@@ -1,5 +1,4 @@
 import Content from "./layouts/Content";
-import PropTypes from "prop-types";
 import React from "react";
 import Sidebar from "./layouts/Sidebar";
 import ThreeLines from "../components/elements/ThreeLines";

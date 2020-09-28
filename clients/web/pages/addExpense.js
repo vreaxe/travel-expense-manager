@@ -4,7 +4,6 @@ import BackButton from "../components/elements/BackButton";
 import Header from "../components/elements/Header";
 import Meta from "../components/layouts/Meta";
 import React from "react";
-import { Router } from "../routes";
 import { TRIP_QUERY } from "../graphql/queries";
 import { useQuery } from "@apollo/react-hooks";
 import withAuth from "../lib/withAuth";
