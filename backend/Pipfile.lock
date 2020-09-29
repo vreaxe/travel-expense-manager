@@ -110,10 +110,10 @@
         },
         "graphene-django-optimizer": {
             "hashes": [
-                "sha256:34dd22ae8740076f5b8811bebac20a06d659ed3e9747453229ecb445f594cb4e"
+                "sha256:c00eab22f80a0abdc65e8b46b0b38e83654f6f3dc0a8df1033ba52efebcfb9d2"
             ],
             "index": "pypi",
-            "version": "==0.6.2"
+            "version": "==0.7.0"
         },
         "graphql-core": {
             "hashes": [
