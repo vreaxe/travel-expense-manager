@@ -14,7 +14,7 @@ context("Login", () => {
       .should("have.value", this.user.wrong_password);
     cy.get("form").submit();
 
-    cy.get("form").contains("Please, enter valid credentials");
+    cy.get("form").contains("Please enter valid credentials");
   });
 
   it("can login and logout", function() {

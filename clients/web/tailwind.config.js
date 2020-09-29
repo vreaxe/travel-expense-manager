@@ -1,4 +1,8 @@
 module.exports = {
+  future: {
+    purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true,
+  },
   prefix: "",
   important: false,
   separator: ":",
@@ -508,5 +512,34 @@ module.exports = {
     spinner: ["responsive"]
   },
   corePlugins: {},
-  plugins: [require("tailwindcss-spinner")()]
+  plugins: [require("tailwindcss-spinner")()],
+  purge: {
+    enabled: true,
+    content: [
+      "./components/**/*.js",
+      "./components/*.js",
+      "./pages/*.js",
+      "./hooks/*.js"
+    ],
+    options: {
+      whitelist: [
+        "html",
+        "body",
+        "__next",
+
+        // react-tiny-fab
+        "open",
+        "closed",
+        "right"
+      ],
+      whitelistPatterns: [
+        /rtf/,
+        /react-datepicker/,
+        /react-select/,
+        /rc-tooltip/,
+        /modali/,
+        /spinner/
+      ]
+    }
+  }
 };
