@@ -46,7 +46,7 @@
         "react-tiny-fab": "^3.5.0"
     },
     "devDependencies": {
-        "autoprefixer": "^9.8.0",
+        "autoprefixer": "^9.8.6",
         "cypress": "^4.5.0",
         "dotenv-webpack": "^1.8.0",
         "postcss-easy-import": "^3.0.0",
