@@ -9,8 +9,8 @@ if (typeof require !== "undefined") {
   require.extensions[".css"] = file => {};
 }
 
-module.exports = withTM(
-  withCSS({
+module.exports = withCSS(
+  withTM({
     webpack: (config, { isServer }) => {
       config.plugins = config.plugins || [];
 
