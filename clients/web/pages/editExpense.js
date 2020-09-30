@@ -4,7 +4,6 @@ import EditExpenseLoader from "../components/loaders/EditExpenseLoader";
 import Header from "../components/elements/Header";
 import Meta from "../components/layouts/Meta";
 import React from "react";
-import { Router } from "../routes";
 import { TRIP_EXPENSE_QUERY } from "../graphql/queries";
 import { useQuery } from "@apollo/react-hooks";
 import withAuth from "../lib/withAuth";

@@ -1,4 +1,3 @@
-import { Link } from "../routes";
 import React from "react";
 import { redirectIfLoggedIn } from "../lib/utils";
 import withAuth from "../lib/withAuth";
