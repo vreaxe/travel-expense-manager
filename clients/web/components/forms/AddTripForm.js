@@ -1,14 +1,10 @@
-import { Link, Router } from "../../routes";
 import React, { useState } from "react";
 import {
   TRIPS_QUERY,
   TRIP_EXPENSES_QUERY,
   TRIP_QUERY
 } from "../../graphql/queries";
-import { addDays, parse, subDays } from "date-fns";
-import { formatSelectOptions, redirect } from "../../lib/utils";
 
-import AddTripLoader from "../loaders/AddTripLoader";
 import Button from "../elements/Button";
 import { CREATE_TRIP_MUTATION } from "../../graphql/mutations";
 import DatePicker from "react-datepicker";
@@ -17,7 +13,9 @@ import ErrorField from "./errors/ErrorField";
 import ErrorMessage from "./errors/ErrorMessage";
 import Input from "./elements/Input";
 import Label from "./elements/Label";
+import { Router } from "../../routes";
 import Select from "react-select";
+import { formatSelectOptions } from "../../lib/utils";
 import { useMutation } from "@apollo/react-hooks";
 
 const AddTripForm = props => {

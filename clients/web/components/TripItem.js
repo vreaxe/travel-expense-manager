@@ -1,6 +1,5 @@
 import ExpensesList from "./ExpensesList";
 import React from "react";
-import { Router } from "../routes";
 import TripInfo from "./TripInfo";
 
 const TripItem = ({ trip, expenses }) => {
