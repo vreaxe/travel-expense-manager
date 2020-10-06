@@ -1,15 +1,30 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const useSidebar = () => {
-  const [isShowing, setIsShowing] = useState(false);
+  const [isShowingSidebar, setIsShowingSidebar] = useState(false);
+  const sidebarRef = useRef(null);
 
-  function toggle() {
-    setIsShowing(!isShowing);
+  function toggleSidebar() {
+    setIsShowingSidebar(!isShowingSidebar);
   }
 
+  const handleClickOutsideSidebar = (event) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target) && isShowingSidebar) {
+      toggleSidebar()
+    }
+  }
+  
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutsideSidebar);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutsideSidebar);
+    };
+  }, [sidebarRef, isShowingSidebar]);
+
   return {
-    isShowing,
-    toggle
+    sidebarRef,
+    isShowingSidebar,
+    toggleSidebar
   };
 };
 
